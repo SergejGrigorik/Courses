@@ -4,27 +4,26 @@ create index city_region_id_idx on city (region_id);
 create index address_city_id_idx on address (city_id);
 create index restaurant_restaurant_chain_id_idx on restaurant (restaurant_chain_id);
 create index restaurant_address_id_idx on restaurant (address_id);
-create index restaurant_role_id_idx on restaurant (role_id);
+
 create index profile_address_id_idx on profile (address_id);
-create index profile_role_id_idx on profile (role_id);
-create index user_card_payment_card_idx on user_card (payment_card);
+
+
 create index user_card_user_idx on user_card (user_id);
 create index courier_profile_id_idx on courier (profile_id);
 create index courier_status_id_idx on courier (courier_status_id);
 create index schedule_courier_courier_id_idx on schedule_courier (courier_id);
-create index schedule_restaurant_restaurant_id_idx on schedule_restaurant (restaurant);
+
 create index dish_category_id_idx on dish (category_id);
 create index dish_restaurant_id_idx on dish (restaurant_id);
 create index dish_pfcc_id_idx on dish (pfcc_id);
 create index basket_restaurant_id_idx on basket (restaurant_id);
 create index basket_user_id_idx on basket (user_id);
-create index basket_status_fullness_id_idx on basket (status_fullness_id);
+
 create index basket_item_basket_id_idx on basket_item (basket_id);
 create index basket_item_dish_id_idx on basket_item (dish_id);
 create index basket_ingredient_dish_basket_item_id_idx on basket_ingredient_dish (basket_item_id);
 create index basket_ingredient_dish_ingredients_idx on basket_ingredient_dish (ingredient);
-create index coupon_restaurant_idx on coupon (restaurant);
-create index order_users_id_idx on "order" (users_id);
+
 create index order_coupon_id_idx on "order" (coupon_id);
 create index order_promo_code_idx on "order"(promo_code);
 create index order_status_order_idx on "order"(status_order_id);
@@ -37,7 +36,8 @@ create index order_item_dish_id_idx on order_item(dish_id);
 create index ingredient_dish_order_item_id_idx on ingredient_dish(order_item_id);
 create index ingredient_dish_ingredients_id_idx on ingredient_dish(ingredients_id);
 create index rating_order_id_idx on rating (order_id);
-create index rating_user_id_idx on rating(users_id);
-create index rating_restaurant_chain_id_idx on rating(restaurant_chain_id);
-create index rating_courier_id_idx on rating(courier_id);
+
+create index restaurant_operator_restaurant_id_idx on restaurant_operator(restaurant_id);
+create index restaurant_operator_user_id_idx on restaurant_operator(user_id);
+
 

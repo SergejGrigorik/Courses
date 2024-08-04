@@ -154,3 +154,7 @@ R
 0homework-2/sql/37.create-table-administrator.sql,4\c\4cdc4978e92a871eac2bf8991345c2baadedb55b
 i
 9homework-2/sql/26.create-table-basket-ingredient-dish.sql,a\7\a74652cee9dce9426d4e2571e781b040228afd2a
+f
+6homework-2/sql/13.create-table-restaurant-operaror.sql,9\9\990b4a10bc9691acdb50c868cf2d68e84064b239
+f
+6homework-2/sql/13.create-table-restaurant-operator.sql,a\5\a5887a740d9e97416229e05ed5c1d5a9e413683a

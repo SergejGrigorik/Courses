@@ -2,6 +2,6 @@
 create table user_card
 (
     id           SERIAL PRIMARY KEY,
-    payment_card INT REFERENCES payment_card (id),
-    user_id      INT REFERENCES "user" (id)
+    payment_card_id INT REFERENCES payment_card (id) ON DELETE CASCADE,
+    user_id      INT REFERENCES "user" (id) ON DELETE CASCADE
 );

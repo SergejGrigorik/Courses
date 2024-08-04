@@ -1,5 +1,5 @@
 -- небольшая имитация банка
-create table bank
+create table bank.bank
 (
     id                                SERIAL PRIMARY KEY,
     account_restaurant                INT          NOT NULL UNIQUE,

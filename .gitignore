@@ -1,4 +1,5 @@
-.class
-.iml файлы
-.idea
-.jar
+/.idea/*
+*/target/*
+*.iml
+*.class
+*.jar

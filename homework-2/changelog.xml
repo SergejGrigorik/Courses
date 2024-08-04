@@ -63,17 +63,17 @@
         <sqlFile encoding="utf8" path="./sql/12.create-table-user-card.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
-    <changeSet id="homework-2-table-courier-status" author="Sergej Grigorik">
-        <sqlFile encoding="utf8" path="./sql/13.create-table-courier-status.sql" relativeToChangelogFile="true"/>
+    <changeSet id="homework-2-restaurant-operator" author="Sergej Grigorik">
+        <sqlFile encoding="utf8" path="./sql/13.create-table-restaurant-operator.sql" relativeToChangelogFile="true"/>
     </changeSet>
+
+
 
     <changeSet id="homework-2-courier" author="Sergej Grigorik">
         <sqlFile encoding="utf8" path="./sql/14.create-table-courier.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
-    <changeSet id="homework-2-days" author="Sergej Grigorik">
-        <sqlFile encoding="utf8" path="./sql/15.create-table-day.sql" relativeToChangelogFile="true"/>
-    </changeSet>
+
 
     <changeSet id="homework-2-schedule-courier" author="Sergej Grigorik">
         <sqlFile encoding="utf8" path="./sql/16.create-table-schedule-courier.sql" relativeToChangelogFile="true"/>
@@ -101,13 +101,7 @@
     </changeSet>
 
 
-    <changeSet id="homework-2-status-order" author="Sergej Grigorik">
-        <sqlFile encoding="utf8" path="./sql/22.create-table-status-order.sql" relativeToChangelogFile="true"/>
-    </changeSet>
 
-    <changeSet id="homework-2-status-fullness-basket" author="Sergej Grigorik">
-        <sqlFile encoding="utf8" path="./sql/23.create-table-status-fullness-basket.sql" relativeToChangelogFile="true"/>
-    </changeSet>
 
     <changeSet id="homework-2-basket" author="Sergej Grigorik">
         <sqlFile encoding="utf8" path="./sql/24.create-table-basket.sql" relativeToChangelogFile="true"/>
@@ -133,9 +127,6 @@
         <sqlFile encoding="utf8" path="./sql/29.create-table-delivery.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
-    <changeSet id="homework-2-story-order" author="Sergej Grigorik">
-        <sqlFile encoding="utf8" path="./sql/30.create-table-story-order.sql" relativeToChangelogFile="true"/>
-    </changeSet>
 
     <changeSet id="homework-2-order-item" author="Sergej Grigorik">
         <sqlFile encoding="utf8" path="./sql/31.create-table-order-item.sql" relativeToChangelogFile="true"/>
@@ -157,13 +148,9 @@
         <sqlFile encoding="utf8" path="./sql/35.create-index.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
-    <changeSet id="homework-2-drop-column-role_id" author="Sergej Grigorik">
-        <sqlFile encoding="utf8" path="./sql/36.alter-table-restaurant.sql" relativeToChangelogFile="true"/>
-    </changeSet>
 
-    <changeSet id="homework-2-administrator" author="Sergej Grigorik">
-        <sqlFile encoding="utf8" path="./sql/37.create-table-administrator.sql" relativeToChangelogFile="true"/>
-    </changeSet>
+
+
 
 
 </databaseChangeLog> 
