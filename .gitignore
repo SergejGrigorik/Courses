@@ -1,5 +1,9 @@
-/.idea/*
 */target/*
+!.mvn/wrapper/maven-wrapper.jar
+/.idea/*
+*.iws
 *.iml
-*.class
-*.jar
+*.ipr
+
+
+
