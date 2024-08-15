@@ -1,4 +1,4 @@
-package com.kciray.mapper;
+package com.kciray.mapper.interfaceMapper;
 
 import com.kciray.dto.CategoryDto;
 import com.kciray.entity.menu.Category;

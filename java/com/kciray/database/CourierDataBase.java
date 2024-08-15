@@ -87,10 +87,15 @@ public class CourierDataBase implements DataBase<Integer,Courier> {
 
     @Override
     public Courier addEntityDataBase(Courier courier) {
-        Integer id = searсhLastElement();
-        courier.setId(id);
-        courierDataBaseMap.put(id, courier);
-        return courierDataBaseMap.get(id);
+        if(courier.getId() == 0) {
+            Integer id = searсhLastElement();
+            courier.setId(id);
+            courierDataBaseMap.put(id, courier);
+            return courierDataBaseMap.get(id);
+        }else {
+            courierDataBaseMap.put(courier.getId(), courier);
+        }
+        return courierDataBaseMap.get(courier.getId());
     }
     private Integer searсhLastElement() {
         List<Integer> listKey = new ArrayList<>(courierDataBaseMap.keySet());

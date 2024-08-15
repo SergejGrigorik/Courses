@@ -1,5 +1,6 @@
 package com.kciray.entity.menu;
 
+import com.kciray.entity.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,7 +12,7 @@ import org.springframework.stereotype.Component;
 @Data
 @Builder
 @Component
-public class Category {
-    private int id;
+public class Category implements BaseEntity <Integer>{
+    private Integer id;
     private String name;
 }

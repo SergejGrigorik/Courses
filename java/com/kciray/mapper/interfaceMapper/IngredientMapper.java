@@ -1,6 +1,5 @@
-package com.kciray.mapper;
+package com.kciray.mapper.interfaceMapper;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.kciray.dto.IngredientDto;
 import com.kciray.entity.menu.Ingredient;
 import org.modelmapper.ModelMapper;

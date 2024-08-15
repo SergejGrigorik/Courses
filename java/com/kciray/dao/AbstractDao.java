@@ -1,10 +1,11 @@
 package com.kciray.dao;
 
 import com.kciray.database.DataBase;
+import org.springframework.stereotype.Component;
 
 import java.util.*;
 import java.util.stream.Collectors;
-
+@Component
 public abstract class AbstractDao<E> {
 
     private Map<Integer, E> map ;

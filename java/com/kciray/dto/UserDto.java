@@ -12,6 +12,8 @@ import lombok.NoArgsConstructor;
 @Data
 @Builder
 public class UserDto {
+    private  int id ;
+    private ProfileDto profile;
     private int password;
     private String login;
     private Role role;

@@ -1,8 +1,7 @@
-package com.kciray.mapper;
+package com.kciray.mapper.interfaceMapper;
 
 import com.kciray.dto.RestaurantDto;
 import com.kciray.entity.Restaurant;
-import com.kciray.mapper.interfaceMapper.RestaurantMapper;
 
 public class RestaurantMapperImpl implements RestaurantMapper<Restaurant, RestaurantDto> {
     @Override

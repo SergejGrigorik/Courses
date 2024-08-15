@@ -4,8 +4,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-//@Service
-public interface Services<K,E> {
+
+public interface BaseService<K,E> {
     E create(E entity);
     Optional<E> findById(K id);
     List<E> findAll();

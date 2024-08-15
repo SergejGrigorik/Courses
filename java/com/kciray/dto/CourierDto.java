@@ -11,9 +11,9 @@ import lombok.*;
 @Data
 @Builder
 public class CourierDto {
-
+    private int id;
     private String locationCoordinates;
     private CourierStatus courierStatus;
-//    private UserDto user;
+    private UserDto userDto;
 
 }
