@@ -1,8 +1,7 @@
 package com.kciray.service;
 
 import com.kciray.dao.AbstractDao;
-import com.kciray.mapper.CreateMapper;
-import com.kciray.mapper.ReadMapper;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
@@ -13,40 +12,34 @@ import java.util.stream.Collectors;
 public abstract class AbstractService<T, D> {
     @Autowired
     private AbstractDao<T> entityDao;
-
+    private Class<T> entityClass;
+    private Class<D> entityDtoClass;
     @Autowired
-    private ReadMapper<T, D> readMapper;
+    private ModelMapper modelMapper;
 
 
-    @Autowired
-    private CreateMapper<D, T> createdMapper;
-
-    private Class<T> entity;
-    private Class<D> entityDto;
-
-
-    protected AbstractService(Class<T> clazz, Class<D> dClass, AbstractDao<T> dClasss) {
-        this.entityDao = dClasss;
-        this.entityDto = dClass;
-        this.entity = clazz;
+    protected AbstractService(Class<T> entityClass, Class<D> entityDtoClass, AbstractDao<T> entityDao) {
+        this.entityDao = entityDao;
+        this.entityDtoClass = entityDtoClass;
+        this.entityClass = entityClass;
 
     }
 
-    public D create(D categoryDto) {
-        T categoryCardToSave = createdMapper.toEntity(categoryDto, entity);
+    public D create(D entityDto) {
+        T categoryCardToSave = modelMapper.map(entityDto, entityClass);
         T categoryCardFromSave =  entityDao.save( categoryCardToSave);
-        return readMapper.toDto(categoryCardFromSave, entityDto);
+        return modelMapper.map(categoryCardFromSave, this.entityDtoClass);
     }
 
 
     public Optional<D> findById(Integer id) {
         Optional<T> category = entityDao.findById(id);
-        return Optional.ofNullable(readMapper.toDto( category.orElseThrow(() -> new RuntimeException(String.format("++Entity by id = %d does not exist", id))), entityDto));
+        return Optional.ofNullable(modelMapper.map( category.orElseThrow(() -> new RuntimeException(String.format("Entity by id = %d does not exist", id))), entityDtoClass));
     }
 
     public List<D> findAll() {
         List<T> categories = entityDao.findAll();
-        return categories.stream().map(entity -> readMapper.toDto( entity, entityDto)).collect(Collectors.toList());
+        return categories.stream().map(entity -> modelMapper.map( entity, entityDtoClass)).collect(Collectors.toList());
     }
 
     public boolean deleteById(Integer id) {
@@ -59,7 +52,7 @@ public abstract class AbstractService<T, D> {
     }
 
     public Optional<D> update(Integer id, D categoryDto) {
-        entityDao.update(id, createdMapper.toEntity(categoryDto, entity));
+        entityDao.update(id, modelMapper.map(categoryDto, entityClass));
         return findById(id);
 
     }
