@@ -1,5 +1,6 @@
 package com.kciray.entity.menu;
 
+import com.kciray.entity.BaseEntity;
 import com.kciray.entity.Restaurant;
 import com.kciray.entity.RestaurantChain;
 import lombok.AllArgsConstructor;
@@ -12,8 +13,8 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @Data
 @Builder
-public class Dish {
-    private int id;
+public class Dish implements BaseEntity<Integer> {
+    private Integer id;
     private String name;
     private Category category;
     private Restaurant restaurant;

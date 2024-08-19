@@ -9,8 +9,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Builder
-public class User {
-    private  int id ;
+public class User implements BaseEntity<Integer> {
+    private  Integer id ;
     private Profile profile;
     private int password;
     private String login;

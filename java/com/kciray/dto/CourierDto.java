@@ -14,6 +14,6 @@ public class CourierDto {
     private int id;
     private String locationCoordinates;
     private CourierStatus courierStatus;
-    private UserDto userDto;
+    private UserDto user;
 
 }

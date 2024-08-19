@@ -10,8 +10,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Builder
-public class Courier {
-    private int id;
+public class Courier implements BaseEntity<Integer> {
+    private Integer id;
     private String locationCoordinates;
     private CourierStatus courierStatus;
     private User user;

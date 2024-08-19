@@ -9,8 +9,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Builder
-public class RestaurantOperator {
-    private int id;
+public class RestaurantOperator implements BaseEntity<Integer> {
+    private Integer id;
     private Restaurant restaurant;
     private User user;
 }

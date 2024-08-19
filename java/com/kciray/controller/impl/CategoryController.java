@@ -1,21 +1,22 @@
-package com.kciray.controller;
+package com.kciray.controller.impl;
 
+import com.kciray.controller.ControllerInterfaceRun;
+import com.kciray.controller.Controllers;
 import com.kciray.dto.CategoryDto;
-import com.kciray.service.CategoryService;
+import com.kciray.service.impl.CategoryServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 @Controller
 public class CategoryController extends Controllers<CategoryDto> implements ControllerInterfaceRun {
-    @Autowired
-    CategoryService categoryService;
 
-    public CategoryController(CategoryService services) {
+    @Autowired
+    public CategoryController(CategoryServiceImpl services) {
         super(services);
     }
 
     @Override
-    public void crud() {
+    public void crudDemo() {
         create(CategoryDto.builder()
                 .id(21)
                 .name("Burgers")

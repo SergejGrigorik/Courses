@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 
 public abstract class Controllers<E> {
-    //    @Autowired
+
     private BaseService<Integer, E> services;
     @Autowired
     private ObjectMapper objectMapper;
@@ -20,6 +20,7 @@ public abstract class Controllers<E> {
 
     @SneakyThrows
     public void create(E entityDto) {
+        services.create(entityDto);
         System.out.println(objectMapper.writeValueAsString(services.create(entityDto)));
     }
 

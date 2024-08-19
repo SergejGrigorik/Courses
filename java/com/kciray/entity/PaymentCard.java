@@ -9,8 +9,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Builder
-public class PaymentCard {
-    private int id;
+public class PaymentCard implements BaseEntity<Integer> {
+    private Integer id;
     private String cardHolder;
     private String cardNumber;
     private String expiryDate;

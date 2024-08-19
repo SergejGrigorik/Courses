@@ -1,5 +1,6 @@
 package com.kciray.entity.address;
 
+import com.kciray.entity.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,8 +10,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Builder
-public class City {
-    private int id;
+public class City implements BaseEntity<Integer> {
+    private Integer id;
     private Region region;
     private String nameCity;
 }

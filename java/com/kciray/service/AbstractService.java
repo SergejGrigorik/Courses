@@ -1,8 +1,8 @@
 package com.kciray.service;
 
 import com.kciray.dao.AbstractDao;
-import com.kciray.mapper.CreateEntityMapper;
-import com.kciray.mapper.ReadEntityMapper;
+import com.kciray.mapper.CreateMapper;
+import com.kciray.mapper.ReadMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
@@ -15,16 +15,17 @@ public abstract class AbstractService<T, D> {
     private AbstractDao<T> entityDao;
 
     @Autowired
-    private ReadEntityMapper<T, D> readMapper;
+    private ReadMapper<T, D> readMapper;
 
 
     @Autowired
-    private CreateEntityMapper<D, T> createdMapper;
+    private CreateMapper<D, T> createdMapper;
+
     private Class<T> entity;
     private Class<D> entityDto;
 
 
-    AbstractService(Class<T> clazz, Class<D> dClass, AbstractDao<T> dClasss) {
+    protected AbstractService(Class<T> clazz, Class<D> dClass, AbstractDao<T> dClasss) {
         this.entityDao = dClasss;
         this.entityDto = dClass;
         this.entity = clazz;

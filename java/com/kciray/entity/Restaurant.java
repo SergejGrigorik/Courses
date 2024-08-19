@@ -12,8 +12,8 @@ import org.springframework.stereotype.Component;
 @Data
 @Builder
 @Component
-public class Restaurant {
-    private int id;
+public class Restaurant implements BaseEntity<Integer> {
+    private Integer id;
     private RestaurantChain restaurantChain;
     private int accountBank;
     private String locationCoordinates;

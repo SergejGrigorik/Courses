@@ -10,14 +10,15 @@ import java.util.Map;
 public class RegionDataBase implements DataBase<Integer, Region>{
     private Map<Integer, Region> regionDataBase = new HashMap<>();
     @Autowired
-    private CreateId<Region> createId;
+    private GenerationId<Region> createId;
     @Override
     public Map<Integer, Region> getMapDataBase() {
+
         return regionDataBase;
     }
 
     @Override
-    public Region addEntityDataBase(Region value) {
+    public Region getEntityFromDataBase(Region value) {
     return createId.addEntityDataBase(value, regionDataBase);
     }
 }

@@ -1,6 +1,7 @@
 package com.kciray.database;
 
 import com.kciray.entity.menu.Pfcc;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
@@ -10,9 +11,10 @@ public class PfccDataBase implements  DataBase<Integer, Pfcc>{
 
     private static PfccDataBase pfccDataBase;
     private Map<Integer,Pfcc> dataBaseMap = new HashMap<>();
+    @Autowired
+    private GenerationId<Pfcc> generationId;
 
     private PfccDataBase (){
-    add();
     }
     public static PfccDataBase getInstance(){
         if (pfccDataBase == null){
@@ -21,26 +23,15 @@ public class PfccDataBase implements  DataBase<Integer, Pfcc>{
         return pfccDataBase;
     }
 
-    private void add(){
-        int id = 1;
-        for (int i = 0; i < 20 ; i++){
-            dataBaseMap.put(id,Pfcc.builder()
-                            .id(id)
-                            .proteins(100 + id)
-                            .fats(200 + id)
-                            .calories(300 + id)
-                            .carbohydrates(400 + id)
-                    .build());
-        }
-    }
 
     @Override
     public Map<Integer, Pfcc> getMapDataBase() {
-        return Map.of();
+        return dataBaseMap;
     }
 
     @Override
-    public Pfcc addEntityDataBase(Pfcc value) {
-        return null;
+    public Pfcc getEntityFromDataBase(Pfcc value) {
+
+        return generationId.addEntityDataBase(value, dataBaseMap);
     }
 }

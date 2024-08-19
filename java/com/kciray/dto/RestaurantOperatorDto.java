@@ -1,7 +1,9 @@
 package com.kciray.dto;
 
+import com.kciray.entity.Restaurant;
 import com.kciray.entity.Role;
 
+import com.kciray.entity.User;
 import lombok.*;
 
 
@@ -10,8 +12,7 @@ import lombok.*;
 @Data
 @Builder
 public class RestaurantOperatorDto  {
-    private int password;
-    private String login;
-    private Role role;
-
+    private Integer id;
+    private RestaurantDto restaurant;
+    private UserDto user;
 }

@@ -1,5 +1,6 @@
 package com.kciray.entity.menu;
 
+import com.kciray.entity.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,8 +11,8 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @Data
 @Builder
-public class Ingredient {
-    private int id;
+public class Ingredient implements BaseEntity<Integer> {
+    private Integer id;
     private String name;
     private double weigth;
     private BigDecimal price;

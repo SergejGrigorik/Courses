@@ -1,7 +1,6 @@
 package com.kciray.database;
 
 import com.kciray.entity.BaseEntity;
-import com.kciray.entity.menu.Category;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -9,12 +8,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 @Component
-public class CreateId<T extends BaseEntity<Integer>> {
+public class GenerationId<T extends BaseEntity<Integer>> {
 
 
     public T addEntityDataBase(T entity, Map<Integer,T> mapDataBase) {
 
-        if (entity.getId() == 0) {
+        if (entity.getId() == null) {
             Integer id = searсhLastElement(mapDataBase);
             entity.setId(id);
             mapDataBase.put(id, entity);
@@ -27,8 +26,11 @@ public class CreateId<T extends BaseEntity<Integer>> {
 
     private Integer searсhLastElement(Map<Integer, T> mapDataBase) {
         List<Integer> listKey = new ArrayList<>(mapDataBase.keySet());
-        List<Integer> listSortKey = listKey.stream().sorted().collect(Collectors.toList());
-        Integer lastElement = listSortKey.get(listSortKey.size() - 1);
-        return ++lastElement;
+        if (listKey.size() >= 1) {
+            List<Integer> listSortKey = listKey.stream().sorted().collect(Collectors.toList());
+            Integer lastElement = listSortKey.get(listSortKey.size() - 1);
+            return ++lastElement;
+        }
+        return 1;
     }
 }

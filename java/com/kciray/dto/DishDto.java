@@ -11,7 +11,6 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Component
 public class DishDto {
     private int id;
     private String name;

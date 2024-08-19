@@ -4,23 +4,20 @@ import com.kciray.database.DataBase;
 import org.springframework.stereotype.Component;
 
 import java.util.*;
-import java.util.stream.Collectors;
+
 @Component
 public abstract class AbstractDao<E> {
 
     private Map<Integer, E> map ;
     DataBase db ;
 
-    public AbstractDao(DataBase db) {
+    protected AbstractDao(DataBase<Integer, E> db) {
         map = db.getMapDataBase();
         this.db = db;
     }
 
     public E save( E entity) {
-//        if (map.containsKey(id)) {
-//            throw new IllegalArgumentException("Entity by id = " + id +  " already exists");
-//        }
-        return (E) db.addEntityDataBase(entity);
+        return (E) db.getEntityFromDataBase(entity);
     }
 
 

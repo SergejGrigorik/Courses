@@ -1,5 +1,6 @@
 package com.kciray.entity.menu;
 
+import com.kciray.entity.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,8 +12,8 @@ import org.springframework.stereotype.Component;
 @Data
 @Builder
 @Component
-public class Pfcc {
-    private int id;
+public class Pfcc implements BaseEntity<Integer> {
+    private Integer id;
     private double proteins;
     private double fats;
     private double calories;
