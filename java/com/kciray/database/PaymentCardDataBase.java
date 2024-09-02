@@ -8,13 +8,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-@Component
+
 public class PaymentCardDataBase implements DataBase<Integer, PaymentCard>{
 
 
     private static PaymentCardDataBase paymentCardDataBase;
     private Map<Integer, PaymentCard> dataBaseMap = new HashMap<>();
-    @Autowired
+
     private GenerationId<PaymentCard> generationId;
 
     private PaymentCardDataBase() {

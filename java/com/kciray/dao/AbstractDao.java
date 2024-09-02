@@ -3,6 +3,7 @@ package com.kciray.dao;
 import com.kciray.database.DataBase;
 import org.springframework.stereotype.Component;
 
+import java.sql.SQLException;
 import java.util.*;
 
 @Component
@@ -16,7 +17,7 @@ public abstract class AbstractDao<E> {
         this.db = db;
     }
 
-    public E save( E entity) {
+    public E save( E entity) throws SQLException {
         return (E) db.getEntityFromDataBase(entity);
     }
 

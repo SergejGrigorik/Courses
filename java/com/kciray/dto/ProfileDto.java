@@ -14,7 +14,7 @@ public class ProfileDto {
     private int id;
     private String firstName;
     private String lastName;
-    private int number;
-    private AddressDto address;
+    private long number;
+    private int address;
 
 }

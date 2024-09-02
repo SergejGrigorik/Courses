@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class IngredientServiceImpl extends AbstractService<Ingredient,IngredientDto> implements BaseService<Integer,IngredientDto>, IngredientService {
+public class IngredientServiceImpl extends AbstractService<Integer,Ingredient,IngredientDto> implements BaseService<Integer,IngredientDto>, IngredientService {
 
     @Autowired
     public IngredientServiceImpl(IngredientDaoImpl ingredientDao) {

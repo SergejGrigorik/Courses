@@ -1,13 +1,16 @@
 package com.kciray.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 
 import com.kciray.service.BaseService;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 
-
-public abstract class Controllers<E> {
+public  class Controllers<E> {
 
     private BaseService<Integer, E> services;
     @Autowired
@@ -18,13 +21,22 @@ public abstract class Controllers<E> {
 
     }
 
-    @SneakyThrows
+//    public Controllers() {
+//
+//    }
+
+
     public void create(E entityDto) {
-        services.create(entityDto);
-        System.out.println(objectMapper.writeValueAsString(services.create(entityDto)));
+        try {
+            System.out.println(objectMapper.writeValueAsString(services.create(entityDto)));
+
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @SneakyThrows
+
     public E findById(Integer id) {
         E entityDao = services.findById(id).get();
         System.out.println(objectMapper.writeValueAsString(entityDao));

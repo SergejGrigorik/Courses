@@ -9,13 +9,31 @@ import com.kciray.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service
 
-public class UserServiceImpl extends AbstractService<User, UserDto> implements BaseService<Integer, UserDto>, UserService {
+import java.util.Optional;
+
+@Service
+//@Transaction
+public class UserServiceImpl extends AbstractService<Integer, User, UserDto> implements BaseService<Integer, UserDto>, UserService {
+
 
     @Autowired
     public UserServiceImpl(UserDaoImpl userDao) {
         super(User.class, UserDto.class, userDao);
+
+    }
+
+    public UserServiceImpl() {
+
+    }
+
+
+
+//    @Transaction
+    @Override
+    public Optional<UserDto> findById(Integer id) {
+        Optional<User> category = entityDao.findById(id);
+        return Optional.ofNullable(modelMapper.map(category.orElseThrow(() -> new RuntimeException(String.format("Entity by id = %d does not exist", id))), entityDtoClass));
     }
 
 }

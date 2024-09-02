@@ -1,19 +1,20 @@
 package com.kciray.controller.impl;
 
+
 import com.kciray.controller.ControllerInterfaceRun;
 import com.kciray.controller.Controllers;
 import com.kciray.dto.CityDto;
 import com.kciray.dto.RegionDto;
+import com.kciray.service.BaseService;
 import com.kciray.service.impl.CityServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 @Controller
-public class CityController extends Controllers<CityDto> implements ControllerInterfaceRun {
-    @Autowired
-    CityServiceImpl cityService ;
 
-    public CityController(CityServiceImpl cityService) {
+public class CityController extends Controllers<CityDto> implements ControllerInterfaceRun {
+@Autowired
+    public CityController(BaseService<Integer,CityDto> cityService) {
         super(cityService);
     }
 

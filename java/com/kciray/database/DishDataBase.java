@@ -9,11 +9,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-@Component
+
 public class DishDataBase implements DataBase<Integer, Dish> {
     private static DishDataBase dishDataBase;
     private Map<Integer, Dish> dishDataBaseMap = new HashMap<>();
-    @Autowired
+
     private GenerationId<Dish> generationId;
 
     private DishDataBase() {

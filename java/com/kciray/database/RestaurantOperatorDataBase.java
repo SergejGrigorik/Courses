@@ -12,7 +12,7 @@ public class RestaurantOperatorDataBase implements DataBase<Integer, RestaurantO
 
     private static RestaurantOperatorDataBase restaurantOperatorDataBase;
     private Map<Integer, RestaurantOperator> restaurantOperatorDataBaseMap = new HashMap<>();
-    @Autowired
+
     private GenerationId<RestaurantOperator> generationId;
 
     private RestaurantOperatorDataBase() {

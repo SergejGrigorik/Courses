@@ -8,11 +8,11 @@ import org.springframework.stereotype.Component;
 import java.util.HashMap;
 import java.util.Map;
 
-@Component
+
 public class CategoryDataBase implements DataBase<Integer, Category> {
     private static CategoryDataBase instance;
     Map<Integer, Category> categoryMap = new HashMap<>();
-    @Autowired
+
     private GenerationId<Category> generationId;
 
 

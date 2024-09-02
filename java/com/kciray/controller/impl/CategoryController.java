@@ -3,15 +3,17 @@ package com.kciray.controller.impl;
 import com.kciray.controller.ControllerInterfaceRun;
 import com.kciray.controller.Controllers;
 import com.kciray.dto.CategoryDto;
+import com.kciray.service.BaseService;
 import com.kciray.service.impl.CategoryServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 @Controller
+
 public class CategoryController extends Controllers<CategoryDto> implements ControllerInterfaceRun {
 
     @Autowired
-    public CategoryController(CategoryServiceImpl services) {
+    public CategoryController(BaseService<Integer,CategoryDto> services) {
         super(services);
     }
 

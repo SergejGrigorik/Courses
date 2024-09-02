@@ -10,12 +10,12 @@ import java.util.Map;
 
 
 
-@Component
+
 public class CourierDataBase implements DataBase<Integer, Courier> {
     private static CourierDataBase courierDataBase;
     private Map<Integer, Courier> courierDataBaseMap = new HashMap<>();
 
-    @Autowired
+
     private GenerationId<Courier> generationId;
 
     private CourierDataBase() {

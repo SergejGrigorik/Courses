@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class PaymentCardServiceImpl extends AbstractService<PaymentCard,PaymentCardDto> implements BaseService<Integer,PaymentCardDto>, PaymentCardService {
+public class PaymentCardServiceImpl extends AbstractService<Integer,PaymentCard,PaymentCardDto> implements BaseService<Integer,PaymentCardDto>, PaymentCardService {
 
     @Autowired
     public PaymentCardServiceImpl(PaymentCardDaoImpl paymentCardDao) {

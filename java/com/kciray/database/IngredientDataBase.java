@@ -8,11 +8,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-@Component
+
 public class IngredientDataBase  implements DataBase<Integer,Ingredient>{
     private static IngredientDataBase ingredientDataBase;
     private Map<Integer, Ingredient> ingredientDataBaseMap = new HashMap<>();
-    @Autowired
     private GenerationId<Ingredient> generationId;
 
     private IngredientDataBase() {
