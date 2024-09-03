@@ -1,5 +1,7 @@
 package com.kciray.service.impl;
 
+import com.kciray.annotation.Transaction;
+import com.kciray.connection.ConnectionPool;
 import com.kciray.dao.impl.UserDaoImpl;
 import com.kciray.dto.UserDto;
 import com.kciray.entity.User;
@@ -24,12 +26,11 @@ public class UserServiceImpl extends AbstractService<Integer, User, UserDto> imp
     }
 
     public UserServiceImpl() {
-
     }
 
 
 
-//    @Transaction
+    @Transaction
     @Override
     public Optional<UserDto> findById(Integer id) {
         Optional<User> category = entityDao.findById(id);

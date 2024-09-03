@@ -46,7 +46,7 @@ public class UserDaoImpl implements UserDao, Dao<Integer, User> {
 
     public User save(User entity) {
 
-        try (PreparedStatement preparedStatement = connectionPool.get().prepareStatement(SAVE_SQL, Statement.RETURN_GENERATED_KEYS)) {
+        try (PreparedStatement preparedStatement = connectionPool.getConnectionForThread().get().prepareStatement(SAVE_SQL, Statement.RETURN_GENERATED_KEYS)) {
 
 
             preparedStatement.setInt(1, entity.getId());
@@ -69,7 +69,7 @@ public class UserDaoImpl implements UserDao, Dao<Integer, User> {
 
 
     public void update(User entity) {
-        try (PreparedStatement preparedStatement = connectionPool.get().prepareStatement(UPDATE_SQL)) {
+        try (PreparedStatement preparedStatement = connectionPool.getConnectionForThread().get().prepareStatement(UPDATE_SQL)) {
             preparedStatement.setInt(1, entity.getProfile().getId());
             preparedStatement.setString(2, entity.getPassword());
             preparedStatement.setString(3, entity.getLogin());
@@ -84,7 +84,7 @@ public class UserDaoImpl implements UserDao, Dao<Integer, User> {
 
     public boolean delete(Integer id) {
 
-        try (PreparedStatement preparedStatement = connectionPool.get().prepareStatement(DELETE_SQL)) {
+        try (PreparedStatement preparedStatement = connectionPool.getConnectionForThread().get().prepareStatement(DELETE_SQL)) {
             preparedStatement.setInt(1, id);
             return preparedStatement.executeUpdate() > 0;
         } catch (SQLException e) {
@@ -95,7 +95,7 @@ public class UserDaoImpl implements UserDao, Dao<Integer, User> {
 
 
     public Optional<User> findById(Integer id) {
-        try (PreparedStatement preparedStatement = connectionPool.get().prepareStatement(FIND_BY_ID);) {
+        try (PreparedStatement preparedStatement = connectionPool.getConnectionForThread().get().prepareStatement(FIND_BY_ID);) {
 
             preparedStatement.setInt(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -111,7 +111,7 @@ public class UserDaoImpl implements UserDao, Dao<Integer, User> {
     }
 
     public List<User> findAll() {
-        try (PreparedStatement preparedStatement = connectionPool.get().prepareStatement(FIND_ALL_SQL)) {
+        try (PreparedStatement preparedStatement = connectionPool.getConnectionForThread().get().prepareStatement(FIND_ALL_SQL)) {
             ResultSet resultSet = preparedStatement.executeQuery();
             List<User> users = new ArrayList<>();
             while (resultSet.next()) {

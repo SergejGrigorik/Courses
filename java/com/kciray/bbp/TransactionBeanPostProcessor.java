@@ -57,9 +57,9 @@ public class TransactionBeanPostProcessor implements BeanPostProcessor {
             return Proxy.newProxyInstance(transClass.getClassLoader(), transClass.getInterfaces(),
 
                     (proxy, method, args) -> {
-                        Connection connection = connectionPool.get();
+                        Connection connection = connectionPool.getConnectionForThread().get();
                         try {
-                            connection = connectionPool.get();
+                            connection = connectionPool.getConnectionForThread().get();
                             connection.setAutoCommit(false);
                             return method.invoke(bean, args);
                         } catch (RuntimeException e) {
@@ -88,9 +88,9 @@ public class TransactionBeanPostProcessor implements BeanPostProcessor {
                                 .findAny().get();
 
                         if (!(methodInvokeWithAnnotation == null)) {
-                            Connection connection = connectionPool.get();
+                            Connection connection = connectionPool.getConnectionForThread().get();
                             try {
-                                connection = connectionPool.get();
+                                connection = connectionPool.getConnectionForThread().get();
                                 connection.setAutoCommit(false);
                                 return method.invoke(bean, args);
                             } catch (RuntimeException e) {
@@ -99,7 +99,7 @@ public class TransactionBeanPostProcessor implements BeanPostProcessor {
                                 }
                                 throw e;
                             } finally {
-                                if (connection != null) {
+                                if (connectionPool.isValidateConnection()) {
                                     connection.commit();
                                 }
                             }

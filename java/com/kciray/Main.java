@@ -12,8 +12,10 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class Main {
 
     public static void main(String[] args) {
+
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfiguration.class);
         ConnectionPool connectionPool = context.getBean(ConnectionPool.class);
+
         try {
 
             PfccController pfccController = context.getBean(PfccController.class);
@@ -63,7 +65,7 @@ public class Main {
                 pfccController.findById(1);
             }).start();
         } finally {
-            connectionPool.close();
+            connectionPool.closePool();
         }
 
     }

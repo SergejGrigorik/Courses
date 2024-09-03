@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-@Transaction
+//@Transaction
 public abstract class  AbstractService<K, T, D> {
     @Autowired
     protected Dao<K, T> entityDao;
@@ -39,7 +39,7 @@ public abstract class  AbstractService<K, T, D> {
     }
 
 
-//    @Transaction
+    @Transaction
     public Optional<D> findById(K id) {
         Optional<T> category = entityDao.findById(id);
         return Optional.ofNullable(modelMapper.map(category.orElseThrow(() -> new RuntimeException(String.format("Entity by id = %d does not exist", id))), entityDtoClass));
