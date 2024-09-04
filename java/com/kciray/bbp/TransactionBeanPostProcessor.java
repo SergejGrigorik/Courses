@@ -57,21 +57,22 @@ public class TransactionBeanPostProcessor implements BeanPostProcessor {
             return Proxy.newProxyInstance(transClass.getClassLoader(), transClass.getInterfaces(),
 
                     (proxy, method, args) -> {
-                        Connection connection = connectionPool.getConnectionForThread().get();
+                        Connection connection = connectionPool.getFreeConnectForThread().get();
+                        connectionPool.setThreadLocalActiveTransaction();
+                        Object val;
                         try {
-                            connection = connectionPool.getConnectionForThread().get();
+                            connection = connectionPool.getFreeConnectForThread().get();
                             connection.setAutoCommit(false);
-                            return method.invoke(bean, args);
+                            val = method.invoke(bean, args);
                         } catch (RuntimeException e) {
-                            if (connection != null) {
+                            if (connection != null || connectionPool.isValidateConnection()) {
                                 connection.rollback();
                             }
                             throw e;
-                        } finally {
-                            if (connection != null) {
-                                connection.commit();
-                            }
                         }
+                        if ( connectionPool.isValidateConnection())
+                            connection.commit();
+                        return val;
                     });
         }
 
@@ -88,23 +89,24 @@ public class TransactionBeanPostProcessor implements BeanPostProcessor {
                                 .findAny().get();
 
                         if (!(methodInvokeWithAnnotation == null)) {
-                            Connection connection = connectionPool.getConnectionForThread().get();
+                            Connection connection = connectionPool.getFreeConnectForThread().get();
+                            connectionPool.setThreadLocalActiveTransaction();
+                            Object val;
                             try {
-                                connection = connectionPool.getConnectionForThread().get();
+                                connection = connectionPool.getFreeConnectForThread().get();
                                 connection.setAutoCommit(false);
-                                return method.invoke(bean, args);
+                                val = method.invoke(bean, args);
                             } catch (RuntimeException e) {
-                                if (connection != null) {
+                                if (connection != null || connectionPool.isValidateConnection()) {
                                     connection.rollback();
                                 }
                                 throw e;
-                            } finally {
-                                if (connectionPool.isValidateConnection()) {
-                                    connection.commit();
-                                }
                             }
-                        }
+                            if ( connectionPool.isValidateConnection())
+                            connection.commit();
+                            return val;
 
+                        }
                         return method.invoke(bean, args);
                     });
         }

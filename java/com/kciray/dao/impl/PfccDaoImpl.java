@@ -26,7 +26,7 @@ public class PfccDaoImpl implements PfccDao, Dao<Integer, Pfcc> {
     @SneakyThrows
     @Override
     public Pfcc save(Pfcc entity) {
-        Connection connection = connectionPool.getConnectionForThread().get();
+        Connection connection = connectionPool.getFreeConnectForThread().get();
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
         preparedStatement.setInt(1, entity.getId());
         preparedStatement.setDouble(5, entity.getProteins());
@@ -47,7 +47,7 @@ public class PfccDaoImpl implements PfccDao, Dao<Integer, Pfcc> {
     public Optional<Pfcc> findById(Integer id) {
         Pfcc pfcc = null;
         try {
-            PreparedStatement preparedStatement = connectionPool.getConnectionForThread().get().prepareStatement("SELECT * FROM pfcc WHERE id=?");
+            PreparedStatement preparedStatement = connectionPool.getFreeConnectForThread().get().prepareStatement("SELECT * FROM pfcc WHERE id=?");
             preparedStatement.setInt(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
             resultSet.next();
@@ -73,7 +73,7 @@ public class PfccDaoImpl implements PfccDao, Dao<Integer, Pfcc> {
     public boolean delete(Integer id) {
         PreparedStatement preparedStatement;
         try {
-            preparedStatement = connectionPool.getConnectionForThread().get().prepareStatement("DELETE FROM pfcc WHERE id=?");
+            preparedStatement = connectionPool.getFreeConnectForThread().get().prepareStatement("DELETE FROM pfcc WHERE id=?");
 
             preparedStatement.setInt(1, id);
 

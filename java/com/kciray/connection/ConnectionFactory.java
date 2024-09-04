@@ -7,32 +7,29 @@ import org.springframework.stereotype.Component;
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.HashMap;
+
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Component
 class ConnectionFactory {
-    @Getter
-    private final int size = 5;
     @Autowired
     DataSource dataSource;
     @Getter
-    private Map<Connection, Boolean> freeConnection =  new ConcurrentHashMap<>();
+    private Map<Connection, Boolean> mapFreeConnection =  new ConcurrentHashMap<>();
 
     public ConnectionFactory() {
 
     }
 
-
-    public void createConnectionPool() {
+    public void createConnectionPool(Integer size) {
         for (int i = 0; i < size; i++) {
-            freeConnection.put(openConnection(), true);
+            mapFreeConnection.put(openConnection(), true);
         }
     }
 
     public Connection createConnection() {
-        freeConnection.put(openConnection(), false);
+        mapFreeConnection.put(openConnection(), false);
         return openConnection();
     }
 

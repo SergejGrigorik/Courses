@@ -16,7 +16,6 @@ public class Main {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfiguration.class);
         ConnectionPool connectionPool = context.getBean(ConnectionPool.class);
 
-        try {
 
             PfccController pfccController = context.getBean(PfccController.class);
 
@@ -26,17 +25,17 @@ public class Main {
             userController.findById(2);
             userController.deleteById(8);
             userController.create(UserDto.builder()
-                            .id(8)
-                            .profile(ProfileDto.builder()
-                                    .id(7)
-                                    .build())
-                            .password("2222")
-                            .login("senla")
-                            .role(Role.builder()
-                                    .id(2)
-                                    .build())
+                    .id(8)
+                    .profile(ProfileDto.builder()
+                            .id(7)
+                            .build())
+                    .password("2222")
+                    .login("senla")
+                    .role(Role.builder()
+                            .id(2)
+                            .build())
                     .build());
-            userController.update(8,UserDto.builder()
+            userController.update(8, UserDto.builder()
                     .id(8)
                     .profile(ProfileDto.builder()
                             .id(7)
@@ -64,10 +63,9 @@ public class Main {
                 userController.findById(2);
                 pfccController.findById(1);
             }).start();
-        } finally {
-            connectionPool.closePool();
+
+
         }
 
-    }
 }
 

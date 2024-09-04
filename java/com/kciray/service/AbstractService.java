@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-//@Transaction
+@Transaction
 public abstract class  AbstractService<K, T, D> {
     @Autowired
     protected Dao<K, T> entityDao;
