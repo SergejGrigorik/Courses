@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @NoArgsConstructor
 @Builder
 @Component
-public class PfccDto {
+public class PfccDto implements PfccDtoIntef{
     private Integer id;
     private double proteins;
     private double fats;

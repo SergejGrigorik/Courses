@@ -10,7 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class RestaurantServiceImpl extends AbstractService<Restaurant,RestaurantDto> implements BaseService<Integer, RestaurantDto> , RestaurantService {
+public class RestaurantServiceImpl extends AbstractService<Integer,Restaurant,RestaurantDto> implements BaseService<Integer,RestaurantDto>
+ ,RestaurantService{
 
     @Autowired
     public RestaurantServiceImpl(RestaurantDaoImpl categoryDao) {

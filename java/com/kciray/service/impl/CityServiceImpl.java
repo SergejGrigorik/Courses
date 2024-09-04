@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CityServiceImpl extends AbstractService<City, CityDto> implements BaseService<Integer, CityDto>, CityService {
+public class CityServiceImpl extends AbstractService<Integer,City, CityDto> implements BaseService<Integer, CityDto>, CityService {
 
     @Autowired
     CityServiceImpl(CityDaoImpl dao) {

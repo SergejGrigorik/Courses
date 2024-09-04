@@ -10,7 +10,6 @@ create index profile_address_id_idx on profile (address_id);
 
 create index user_card_user_idx on user_card (user_id);
 create index courier_profile_id_idx on courier (profile_id);
-create index courier_status_id_idx on courier (courier_status_id);
 create index schedule_courier_courier_id_idx on schedule_courier (courier_id);
 
 create index dish_category_id_idx on dish (category_id);
@@ -26,7 +25,7 @@ create index basket_ingredient_dish_ingredients_idx on basket_ingredient_dish (i
 
 create index order_coupon_id_idx on "order" (coupon_id);
 create index order_promo_code_idx on "order"(promo_code);
-create index order_status_order_idx on "order"(status_order_id);
+
 create index order_id_idx on delivery(order_id);
 create index delivery_courier_id_idx on delivery(courier_id);
 create index delivery_address_id_user_idx on delivery(address_id_user);

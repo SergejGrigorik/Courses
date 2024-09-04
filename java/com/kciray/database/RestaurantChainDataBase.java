@@ -8,12 +8,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-@Component
+
 public class RestaurantChainDataBase  implements DataBase<Integer, RestaurantChain>{
 
     private static RestaurantChainDataBase restaurantChainDataBase;
     Map<Integer, RestaurantChain> restaurantDataBaseMap = new HashMap<>();
-    @Autowired
+
     private GenerationId<RestaurantChain> generationId;
 
     private RestaurantChainDataBase(){

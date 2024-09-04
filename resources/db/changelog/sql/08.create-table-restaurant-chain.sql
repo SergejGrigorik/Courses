@@ -1,3 +1,4 @@
+
 -- название сети компаний или одной компании
 create table restaurant_chain
 (

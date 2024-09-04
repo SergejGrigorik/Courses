@@ -6,10 +6,10 @@ import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Map;
-@Component
+
 public class RegionDataBase implements DataBase<Integer, Region>{
     private Map<Integer, Region> regionDataBase = new HashMap<>();
-    @Autowired
+
     private GenerationId<Region> createId;
     @Override
     public Map<Integer, Region> getMapDataBase() {

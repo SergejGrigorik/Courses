@@ -7,13 +7,13 @@ import org.springframework.stereotype.Component;
 import java.util.HashMap;
 import java.util.Map;
 
-@Component
+
 public class RestaurantDataBase implements DataBase<Integer, Restaurant> {
     private static RestaurantDataBase restaurantDataBase;
 
     private Map<Integer, Restaurant> restaurantDataBaseDataBaseMap = new HashMap<>();
 
-    @Autowired
+
     private GenerationId<Restaurant> generationId;
 
     private RestaurantDataBase() {

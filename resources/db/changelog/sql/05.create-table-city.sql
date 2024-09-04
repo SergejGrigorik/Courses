@@ -1,4 +1,4 @@
--- город
+ -- город
 create table city
 (
     id        SERIAL PRIMARY KEY,

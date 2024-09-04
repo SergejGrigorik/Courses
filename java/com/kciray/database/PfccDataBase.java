@@ -6,12 +6,12 @@ import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Map;
-@Component
+
 public class PfccDataBase implements  DataBase<Integer, Pfcc>{
 
     private static PfccDataBase pfccDataBase;
     private Map<Integer,Pfcc> dataBaseMap = new HashMap<>();
-    @Autowired
+
     private GenerationId<Pfcc> generationId;
 
     private PfccDataBase (){

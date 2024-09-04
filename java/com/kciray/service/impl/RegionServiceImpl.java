@@ -10,9 +10,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class RegionServiceImpl extends AbstractService<Region, RegionDto> implements BaseService<Integer,RegionDto>, RegionService {
+public class RegionServiceImpl extends AbstractService<Integer,Region, RegionDto>
+implements BaseService<Integer,RegionDto>, RegionService{
     @Autowired
     public RegionServiceImpl(RegionDaoImpl regionDao){
+
         super(Region.class,RegionDto.class,regionDao);
     }
 }

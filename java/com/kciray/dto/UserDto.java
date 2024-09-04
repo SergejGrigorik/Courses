@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 public class UserDto {
     private  int id ;
     private ProfileDto profile;
-    private int password;
+    private String password;
     private String login;
     private Role role;
 }

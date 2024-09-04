@@ -14,7 +14,7 @@ public class Profile {
     private int id;
     private String firstName;
     private String lastName;
-    private int number;
-    private Address address;
+    private long number;
+    private int address;
 
 }
