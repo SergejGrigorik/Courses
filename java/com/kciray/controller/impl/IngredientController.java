@@ -19,27 +19,5 @@ public class IngredientController extends Controllers<IngredientDto> implements 
 
     @Override
     public void crudDemo() {
-        create(IngredientDto.builder()
-                .id(1)
-                .name("Cheese")
-                .weigth(123.2)
-                .price(BigDecimal.valueOf(1000))
-                .build());
-
-        create(IngredientDto.builder()
-                .id(2)
-                .name("Bakon")
-                .weigth(239.2)
-                .price(BigDecimal.valueOf(340))
-                .build());
-        IngredientDto ingredientDto = findById(1);
-        ingredientDto.setName("mushroom");
-        update(1,ingredientDto);
-        findById(1);
-        deleteById(1);
-
-
-
-
     }
 }

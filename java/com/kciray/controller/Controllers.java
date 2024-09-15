@@ -9,8 +9,10 @@ import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
+import org.springframework.stereotype.Component;
 
-public  class Controllers<E> {
+
+public abstract  class Controllers<E> {
 
     private BaseService<Integer, E> services;
     @Autowired
@@ -39,7 +41,7 @@ public  class Controllers<E> {
 
     public E findById(Integer id) {
         E entityDao = services.findById(id).get();
-        System.out.println(objectMapper.writeValueAsString(entityDao));
+//        System.out.println(objectMapper.writeValueAsString(entityDao));
         return entityDao;
     }
 

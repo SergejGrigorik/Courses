@@ -1,9 +1,9 @@
 package com.kciray.service.impl;
 
 
-import com.kciray.dao.impl.CourierDaoImpl;
+import com.kciray.repository.impl.CourierRepositoryImpl;
 import com.kciray.dto.CourierDto;
-import com.kciray.entity.Courier;
+import com.kciray.model.Courier;
 import com.kciray.service.AbstractService;
 import com.kciray.service.BaseService;
 import com.kciray.service.CategoryService;
@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 public class CourierServiceImpl extends AbstractService<Integer,Courier, CourierDto> implements BaseService<Integer, CourierDto> , CategoryService {
 
     @Autowired
-    public CourierServiceImpl(CourierDaoImpl courierDao) {
+    public CourierServiceImpl(CourierRepositoryImpl courierDao) {
         super(Courier.class, CourierDto.class, courierDao);
     }
 

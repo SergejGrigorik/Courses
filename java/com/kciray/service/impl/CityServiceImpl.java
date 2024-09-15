@@ -1,8 +1,8 @@
 package com.kciray.service.impl;
 
-import com.kciray.dao.impl.CityDaoImpl;
+import com.kciray.repository.impl.CityRepositoryImpl;
 import com.kciray.dto.CityDto;
-import com.kciray.entity.address.City;
+import com.kciray.model.address.City;
 import com.kciray.service.AbstractService;
 import com.kciray.service.BaseService;
 import com.kciray.service.CityService;
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 public class CityServiceImpl extends AbstractService<Integer,City, CityDto> implements BaseService<Integer, CityDto>, CityService {
 
     @Autowired
-    CityServiceImpl(CityDaoImpl dao) {
+    CityServiceImpl(CityRepositoryImpl dao) {
         super(City.class, CityDto.class, dao);
     }
 }

@@ -1,12 +1,10 @@
 package com.kciray.dto;
 
-import com.kciray.entity.Profile;
-import com.kciray.entity.Role;
+import com.kciray.model.Role;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.stereotype.Component;
 
 @AllArgsConstructor
 @NoArgsConstructor

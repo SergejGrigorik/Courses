@@ -1,8 +1,8 @@
 package com.kciray.service.impl;
 
-import com.kciray.dao.impl.RegionDaoImpl;
+import com.kciray.repository.impl.RegionRepositoryImpl;
 import com.kciray.dto.RegionDto;
-import com.kciray.entity.address.Region;
+import com.kciray.model.address.Region;
 import com.kciray.service.AbstractService;
 import com.kciray.service.BaseService;
 import com.kciray.service.RegionService;
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 public class RegionServiceImpl extends AbstractService<Integer,Region, RegionDto>
 implements BaseService<Integer,RegionDto>, RegionService{
     @Autowired
-    public RegionServiceImpl(RegionDaoImpl regionDao){
+    public RegionServiceImpl(RegionRepositoryImpl regionDao){
 
         super(Region.class,RegionDto.class,regionDao);
     }

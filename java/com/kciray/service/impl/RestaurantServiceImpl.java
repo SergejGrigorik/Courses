@@ -1,8 +1,8 @@
 package com.kciray.service.impl;
 
-import com.kciray.dao.impl.RestaurantDaoImpl;
+import com.kciray.repository.impl.RestaurantRepositoryImpl;
 import com.kciray.dto.RestaurantDto;
-import com.kciray.entity.Restaurant;
+import com.kciray.model.Restaurant;
 import com.kciray.service.AbstractService;
 import com.kciray.service.BaseService;
 import com.kciray.service.RestaurantService;
@@ -14,7 +14,7 @@ public class RestaurantServiceImpl extends AbstractService<Integer,Restaurant,Re
  ,RestaurantService{
 
     @Autowired
-    public RestaurantServiceImpl(RestaurantDaoImpl categoryDao) {
+    public RestaurantServiceImpl(RestaurantRepositoryImpl categoryDao) {
         super(Restaurant.class, RestaurantDto.class, categoryDao);
     }
 

@@ -32,25 +32,6 @@ public class PfccController extends Controllers<PfccDto> implements ControllerIn
     //    BaseService<Integer, PfccDto>
     @Override
     public void crudDemo() {
-//        create(PfccDto.builder()
-//                .id(62)
-//                .proteins(163.123)
-//                .fats(163.123)
-//                .calories(163.123)
-//                .carbohydrates(163.123)
-//                .build());
-//        create(PfccDto.builder()
-//                .id(61)
-//                .proteins(111.111)
-//                .fats(111.111)
-//                .calories(111.111)
-//                .carbohydrates(111.111)
-//                .build());
-//        PfccDto pfccDto = findById(1);
-//        pfccDto.setCalories(1111111111);
-//        update(1, pfccDto);
-//        findById(1);
-        deleteById(62);
 
     }
 

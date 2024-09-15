@@ -1,8 +1,8 @@
 package com.kciray.service.impl;
 
-import com.kciray.dao.impl.IngredientDaoImpl;
+import com.kciray.repository.impl.IngredientRepositoryImpl;
 import com.kciray.dto.IngredientDto;
-import com.kciray.entity.menu.Ingredient;
+import com.kciray.model.menu.Ingredient;
 import com.kciray.service.AbstractService;
 import com.kciray.service.BaseService;
 import com.kciray.service.IngredientService;
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 public class IngredientServiceImpl extends AbstractService<Integer,Ingredient,IngredientDto> implements BaseService<Integer,IngredientDto>, IngredientService {
 
     @Autowired
-    public IngredientServiceImpl(IngredientDaoImpl ingredientDao) {
+    public IngredientServiceImpl(IngredientRepositoryImpl ingredientDao) {
         super(Ingredient.class, IngredientDto.class, ingredientDao);
     }
 

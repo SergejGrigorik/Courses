@@ -17,19 +17,6 @@ public class RegionController extends Controllers<RegionDto> implements Controll
 
     @Override
     public void crudDemo() {
-//        create(RegionDto.builder()
-//                .id(1)
-//                .nameRegion("Grodno")
-//                .build());
-//
-//        create(RegionDto.builder()
-//                .id(2)
-//                .nameRegion("Golinka")
-//                .build());
-//        RegionDto regionDto = findById(1);
-//        regionDto.setNameRegion("Nichego krome Grodno");
-//        update(1,regionDto);
-//        findById(1);
-//        deleteById(2);
+
     }
 }

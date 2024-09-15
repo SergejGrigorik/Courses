@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 @Builder
 @Component
 public class PfccDto implements PfccDtoIntef{
-    private Integer id;
+//    private Integer id;
     private double proteins;
     private double fats;
     private double calories;

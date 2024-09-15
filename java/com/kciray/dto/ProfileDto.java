@@ -1,6 +1,5 @@
 package com.kciray.dto;
 
-import com.kciray.entity.address.Address;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,10 +10,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 public class ProfileDto {
-    private int id;
+    private Integer id;
     private String firstName;
     private String lastName;
     private long number;
-    private int address;
+    private AddressDto address;
 
 }

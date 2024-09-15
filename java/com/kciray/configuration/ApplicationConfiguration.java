@@ -3,19 +3,21 @@ package com.kciray.configuration;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
 import liquibase.integration.spring.SpringLiquibase;
-import lombok.SneakyThrows;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.*;
 import org.springframework.core.env.Environment;
-import org.springframework.jdbc.datasource.ConnectionHolder;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.orm.jpa.JpaTransactionManager;
+import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
-
+import java.util.HashMap;
 import java.util.Objects;
-
 
 import static org.modelmapper.config.Configuration.AccessLevel.PRIVATE;
 
@@ -23,10 +25,10 @@ import static org.modelmapper.config.Configuration.AccessLevel.PRIVATE;
 @Configuration(proxyBeanMethods = true)
 @ComponentScan(basePackages = "com.kciray")
 @PropertySource("classpath:database.properties")
-
+//@EnableJpaRepositories
+@EnableTransactionManagement
 
 public class ApplicationConfiguration {
-
 
     private final Environment environment;
 
@@ -59,8 +61,6 @@ public class ApplicationConfiguration {
     }
 
 
-
-
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
@@ -71,6 +71,42 @@ public class ApplicationConfiguration {
         return dataSource;
     }
 
+
+
+    @Bean
+    @Primary
+    public LocalContainerEntityManagerFactoryBean entityManager() {
+        LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
+        em.setDataSource(dataSource());
+        em.setPackagesToScan("com.kciray");
+        em.setPersistenceUnitName("entityManager");
+        HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
+        vendorAdapter.setShowSql(true);
+        vendorAdapter.setGenerateDdl(false);
+        em.setJpaVendorAdapter(vendorAdapter);
+
+        HashMap<String, Object> properties = new HashMap<>();
+
+        properties.put("hibernate.dialect", environment.getProperty("hibernate.dialect"));
+        properties.put("hibernate.show-sql", environment.getProperty("jdbc.show-sql"));
+        properties.put("hibernate.ddl-auto", environment.getProperty("hibernate.ddl-auto"));
+        properties.put("generate-ddl", environment.getProperty("generate-ddl"));
+        properties.put("hibernate.defer-datasource-initialization", environment.getProperty("hibernate.defer-datasource-initialization"));
+
+
+        em.setJpaPropertyMap(properties);
+        return em;
+    }
+
+
+    @Bean()
+    public PlatformTransactionManager transactionManager() {
+        JpaTransactionManager transactionManager = new JpaTransactionManager();
+        transactionManager.setEntityManagerFactory(entityManager().getObject());
+        return transactionManager;
+    }
+
+
     @Bean
     public SpringLiquibase springLiquibase(DataSource dataSource) {
         SpringLiquibase springLiquibase = new SpringLiquibase();
@@ -80,39 +116,7 @@ public class ApplicationConfiguration {
     }
 
 
-    @Bean
-    @SneakyThrows
-    public ConnectionHolder connectionHolder() {
-
-        return new ConnectionHolder(dataSource().getConnection());
-    }
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //    @Bean
