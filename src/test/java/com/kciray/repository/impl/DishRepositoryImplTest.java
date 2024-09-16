@@ -1,6 +1,7 @@
 package com.kciray.repository.impl;
 
 import com.kciray.model.menu.Dish;
+import com.kciray.repository.DishRepository;
 import com.kciray.repository.impl.config.ConfigurationTest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +12,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class DishRepositoryImplTest extends ConfigurationTest {
     @Autowired
-    public DishRepositoryImpl dishRepository;
+    public DishRepository dishRepository;
 
     @Test
     void findAllDishByRestaurantIdAndCategoryById() {

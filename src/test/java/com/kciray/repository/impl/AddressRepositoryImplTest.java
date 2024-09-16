@@ -1,6 +1,7 @@
 package com.kciray.repository.impl;
 
 import com.kciray.model.address.Address;
+import com.kciray.repository.AddressRepository;
 import com.kciray.repository.impl.config.ConfigurationTest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class AddressRepositoryImplTest extends ConfigurationTest {
     @Autowired
-    public  AddressRepositoryImpl addressRepository;
+    public AddressRepository addressRepository;
     private final int id = 1;
 
 

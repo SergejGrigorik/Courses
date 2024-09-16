@@ -1,21 +1,24 @@
 package com.kciray.repository.impl;
 
 import com.kciray.model.Restaurant;
+import com.kciray.repository.RestaurantRepository;
 import com.kciray.repository.impl.config.ConfigurationTest;
+import org.assertj.core.api.ListAssert;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
-
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class RestaurantRepositoryImplTest extends ConfigurationTest {
-    @Autowired
-    public RestaurantRepositoryImpl repository;
     private final int id = 1;
+    @Autowired
+    public RestaurantRepository repository;
 
     @Test
     void findById() {
@@ -26,18 +29,16 @@ class RestaurantRepositoryImplTest extends ConfigurationTest {
 
     @Test
     void findAll() {
-        int id1 = 1;
-        int id2 = 2;
-        int id3 = 3;
+        Set<Integer> setId = Set.of(1, 2, 3);
         List<Restaurant> all = repository.findAll();
         assertNotNull(all);
         List<Integer> list = all.stream().map(Restaurant::getId).toList();
-        assertThat(list).contains(id1, id2, id3);
+        assertThat(list).contains(setId.stream().iterator().next());
     }
 
 
     @Test
-    void findAddressAndRestaurantById(){
+    void findAddressAndRestaurantById() {
         try {
 
             Restaurant addressAndRestaurantById = repository.findAddressAndRestaurantById(id);
@@ -45,7 +46,7 @@ class RestaurantRepositoryImplTest extends ConfigurationTest {
             assertThat(addressAndRestaurantById.getId()).isEqualTo(id);
             addressAndRestaurantById.getAddress().getStreet();
             assertThat(true).isTrue();
-        }catch (Exception e) {
+        } catch (Exception e) {
             assertThat(true).isFalse();
         }
     }

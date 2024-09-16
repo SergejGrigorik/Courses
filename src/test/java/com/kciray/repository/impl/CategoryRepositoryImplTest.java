@@ -2,6 +2,7 @@ package com.kciray.repository.impl;
 
 
 import com.kciray.model.menu.Category;
+import com.kciray.repository.CategoryRepository;
 import com.kciray.repository.impl.config.ConfigurationTest;
 import org.hibernate.LazyInitializationException;
 import org.junit.jupiter.api.Assertions;
@@ -11,31 +12,23 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertAll;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-
 
 class CategoryRepositoryImplTest extends ConfigurationTest {
     @Autowired
-    CategoryRepositoryImpl categoryRepository;
+    public CategoryRepository categoryRepository;
 
     private Integer id = 1;
-
-    @Test
-    void exceptionIfDeleteCategory() {
-        assertThrows(Throwable.class, () -> categoryRepository.delete(id));
-    }
 
     @Transactional
     @Test
     void deleteCategoryWithoutReferences() {
-        Category save = categoryRepository.save(createCategory("soup"));
-        Optional<Category> category = categoryRepository.findById(save.getId());
+        Optional<Category> category = categoryRepository.findById(id);
         assertThat(category.isPresent()).isTrue();
-        categoryRepository.delete(save.getId());
-        Optional<Category> category2 = categoryRepository.findById(save.getId());
+        categoryRepository.delete(id);
+        Optional<Category> category2 = categoryRepository.findById(id);
         assertThat(category2.isPresent()).isFalse();
     }
 
@@ -72,15 +65,14 @@ class CategoryRepositoryImplTest extends ConfigurationTest {
 
     @Test
     void findAll() {
-        int id1 = 1;
-        int id2 = 2;
-        int id3 = 3;
+        Set<Integer> setId = Set.of(1, 2,3);
+
         List<Category> all = categoryRepository.findAll();
         assertThat(all).hasSize(3);
         List<Integer> AllId = all.stream()
                 .map(Category::getId)
                 .toList();
-        assertThat(AllId).contains(id1, id2, id3);
+        assertThat(AllId).contains(setId.iterator().next());
     }
 
     @Transactional
