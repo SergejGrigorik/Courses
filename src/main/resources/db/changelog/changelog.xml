@@ -96,13 +96,6 @@
     </changeSet>
 
 
-    <changeSet id="homework-2-ingredient" author="Sergej Grigorik">
-        <sqlFile encoding="utf8" path="./sql/21.create-table-ingredient.sql" relativeToChangelogFile="true"/>
-    </changeSet>
-
-
-
-
     <changeSet id="homework-2-basket" author="Sergej Grigorik">
         <sqlFile encoding="utf8" path="./sql/24.create-table-basket.sql" relativeToChangelogFile="true"/>
     </changeSet>
@@ -111,9 +104,7 @@
         <sqlFile encoding="utf8" path="./sql/25.create-table-basket-item.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
-    <changeSet id="homework-2-basket-ingredients-dish" author="Sergej Grigorik">
-        <sqlFile encoding="utf8" path="./sql/26.create-table-basket-ingredient-dish.sql" relativeToChangelogFile="true"/>
-    </changeSet>
+
 
     <changeSet id="homework-2-coupon" author="Sergej Grigorik">
         <sqlFile encoding="utf8" path="./sql/27.create-table-coupon.sql" relativeToChangelogFile="true"/>
@@ -132,9 +123,7 @@
         <sqlFile encoding="utf8" path="sql/31.create-table-booking-item.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
-    <changeSet id="homework-2-ingredient-dish" author="Sergej Grigorik">
-        <sqlFile encoding="utf8" path="./sql/32.create-table-ingredient-dish.sql" relativeToChangelogFile="true"/>
-    </changeSet>
+
 
     <changeSet id="homework-2-rating" author="Sergej Grigorik">
         <sqlFile encoding="utf8" path="./sql/33.create-table-rating.sql" relativeToChangelogFile="true"/>

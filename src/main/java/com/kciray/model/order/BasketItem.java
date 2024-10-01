@@ -1,11 +1,9 @@
 package com.kciray.model.order;
 
+import com.kciray.model.BaseEntity;
 import com.kciray.model.menu.Dish;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -15,9 +13,11 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 @Builder
+@ToString(exclude = {"basket","dish","basketIngredientDishes"})
+@EqualsAndHashCode (exclude = {"basket","dish","basketIngredientDishes"})
 @Entity
 @Table(name = "basket_item")
-public class BasketItem {
+public class BasketItem implements BaseEntity<Integer> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,6 +33,5 @@ public class BasketItem {
 
     private BigDecimal price;
 
-    @OneToMany(mappedBy = "basketItem")
-    private List<BasketIngredientDish> basketIngredientDishes = new ArrayList<>();
+
 }

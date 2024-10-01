@@ -1,0 +1,23 @@
+spring:
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        dialect: org.hibernate.dialect.H2Dialect
+  #  liquibase:
+#    change-log: db/changelog/db.changelog-master.xml
+#    enabled: true
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;IGNORECASE=TRUE;
+    driver: org.h2.Driver
+
+
+#logging:
+#  file:
+#    name: file.log
+#    path: /
+#  level:
+#    root: info
+
+

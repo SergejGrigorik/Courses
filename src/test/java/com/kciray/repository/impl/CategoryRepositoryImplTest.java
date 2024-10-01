@@ -4,23 +4,25 @@ package com.kciray.repository.impl;
 import com.kciray.model.menu.Category;
 import com.kciray.repository.CategoryRepository;
 import com.kciray.repository.impl.config.ConfigurationTest;
-import org.hibernate.LazyInitializationException;
+
+import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
+
 
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
-
+@RequiredArgsConstructor
 class CategoryRepositoryImplTest extends ConfigurationTest {
-    @Autowired
-    public CategoryRepository categoryRepository;
 
-    private Integer id = 1;
+    private final CategoryRepository categoryRepository;
+
+    private final Integer id = 1;
 
     @Transactional
     @Test

@@ -1,48 +1,54 @@
 package com.kciray.controller.impl;
 
 
-import com.kciray.controller.ControllerInterfaceRun;
-import com.kciray.controller.Controllers;
 import com.kciray.dto.CityDto;
-import com.kciray.dto.RegionDto;
-import com.kciray.service.BaseService;
-import com.kciray.service.impl.CityServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import com.kciray.repository.CityRepository;
+import com.kciray.service.CityService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
-@Controller
+import java.util.List;
 
-public class CityController extends Controllers<CityDto> implements ControllerInterfaceRun {
-@Autowired
-    public CityController(BaseService<Integer,CityDto> cityService) {
-        super(cityService);
+@RequiredArgsConstructor
+@RestController
+@RequestMapping("/api/v1/city")
+public class CityController  {
+
+    private final CityService cityService;
+
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    private List<CityDto> findAll(){
+        return cityService.findAll();
     }
 
-    @Override
-    public void crudDemo() {
-        create(CityDto.builder()
-                .id(1)
-                .region(RegionDto.builder()
-                        .id(1)
-                        .nameRegion("grodno region")
-                        .build())
-                .nameCity("Golynochka")
-                .build());
-        create(CityDto.builder()
-                .id(2)
-                .region(RegionDto.builder()
-                        .id(2)
-                        .nameRegion("grodno region")
-                        .build())
-                .nameCity("Grodno")
-                .build());
-        CityDto cityDto = findById(1);
-        cityDto.setNameCity("Tolko Groooooooooooodno ");
-        update(1,cityDto);
-        findById(1);
-        deleteById(1);
-
+    @GetMapping(("/{id}"))
+    public CityDto findById(@PathVariable("id") Integer id){
+        return cityService.findById(id)
+                .orElseThrow(()->new ResponseStatusException(HttpStatus.NOT_FOUND));
     }
+
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    public CityDto create(@RequestBody CityDto cityDto){
+        return cityService.create(cityDto);
+    }
+
+    @PutMapping("/{id}")
+    public CityDto update(@PathVariable("id") Integer id, @RequestBody CityDto cityDto){
+        return cityService.update(id,cityDto)
+                .orElseThrow(()->new ResponseStatusException(HttpStatus.NOT_FOUND));
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable("id") Integer id){
+        if(cityService.deleteById(id)){
+            throw new ResponseStatusException(HttpStatus.NO_CONTENT);
+        }
+    }
+
+
 }
-
-//{"id":1,"region":{"id":1,"nameRegion":"grodno region"},"nameCity":"Grodno"}

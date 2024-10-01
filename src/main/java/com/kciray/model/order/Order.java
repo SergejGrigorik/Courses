@@ -1,14 +1,12 @@
 package com.kciray.model.order;
 
+import com.kciray.model.BaseEntity;
 import com.kciray.model.Coupon;
 import com.kciray.model.User;
 import com.kciray.model.status.StatusOrder;
 import com.kciray.model.status.StatusPayment;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -18,9 +16,11 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 @Builder
+@ToString(exclude = {"user","coupon","statusOrder","statusPayment","orderItems"})
+@EqualsAndHashCode(exclude = {"user","coupon","statusOrder","statusPayment","orderItems"})
 @Entity
 @Table(name = "booking")
-public class Order {
+public class Order implements BaseEntity<Integer> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

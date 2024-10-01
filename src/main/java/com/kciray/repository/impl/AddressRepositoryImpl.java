@@ -13,6 +13,7 @@ import java.util.Optional;
 public class AddressRepositoryImpl extends RepositoryBase<Integer,Address> implements AddressRepository {
     public AddressRepositoryImpl() {
         super(Address.class);
+
     }
 
     @Override

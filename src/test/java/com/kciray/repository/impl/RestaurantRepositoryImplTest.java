@@ -3,6 +3,7 @@ package com.kciray.repository.impl;
 import com.kciray.model.Restaurant;
 import com.kciray.repository.RestaurantRepository;
 import com.kciray.repository.impl.config.ConfigurationTest;
+import lombok.RequiredArgsConstructor;
 import org.assertj.core.api.ListAssert;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,11 +15,11 @@ import java.util.Set;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
+@RequiredArgsConstructor
 class RestaurantRepositoryImplTest extends ConfigurationTest {
+
     private final int id = 1;
-    @Autowired
-    public RestaurantRepository repository;
+    private final RestaurantRepository repository;
 
     @Test
     void findById() {

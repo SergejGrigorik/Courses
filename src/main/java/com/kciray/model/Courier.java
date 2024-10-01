@@ -1,5 +1,6 @@
 package com.kciray.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.kciray.model.status.CourierStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -23,6 +24,7 @@ public class Courier implements BaseEntity<Integer> {
     @Column(name = "courier_status")
     @Enumerated(value = EnumType.STRING)
     private CourierStatus courierStatus;
+
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "application_user_id")

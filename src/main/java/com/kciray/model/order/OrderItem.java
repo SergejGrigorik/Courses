@@ -1,5 +1,6 @@
 package com.kciray.model.order;
 
+import com.kciray.model.BaseEntity;
 import com.kciray.model.menu.Dish;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -17,7 +18,7 @@ import java.util.List;
 @Builder
 @Entity
 @Table(name = "booking_item")
-public class OrderItem {
+public class OrderItem implements BaseEntity<Integer> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,7 +35,5 @@ public class OrderItem {
 
     private BigDecimal price;
 
-    @Builder.Default
-    @OneToMany(mappedBy = "orderItem")
-    private List<IngredientDish> ingredientDishes = new ArrayList<>();
+
 }

@@ -1,7 +1,7 @@
 insert into role (role)
-values ('courier'),
-       ('administrator'),
-       ('user');
+values ('COURIER'),
+       ('ADMINISTRATOR'),
+       ('USER');
 
 insert into privilege(name_privilege)
 values ('change order'),
@@ -64,16 +64,16 @@ values (1, 111111, '1234x1234', 4, 375255234534),
        (2, 333333, '2222x3333', 5, 375253256734),
        (3, 444444, '5555x2222', 6, 375333247391);
 
-insert into application_user (profile_id, password, login, role_id)
-values (1, '1111', 'ivan@mail.com', 3),
-       (2, '2222', 'sveta@mail.com', 3),
-       (3, '3333', 'petr@mail.ru', 3),
-       (4, '4444', 'sergej@mail.com', 2),
-       (5, '5555', 'timofej@mail.com', 2),
-       (6, '6666', 'andrej@mail.com', 2),
-       (7,'4444','alex@mail.com',1),
-       (8,'5555','maks@mail.com',1),
-       (9,'6666','artem@mail.com',1);
+insert into application_user (profile_id, user_name, password, email, role)
+values (1,'Grisha','1111', 'ivan@mail.com', 'USER'),
+       (2,'Zevs', '2222', 'sveta@mail.com', 'USER'),
+       (3,'Latosh', '3333', 'petr@mail.ru', 'USER'),
+       (4,'KuharXantia', '4444', 'sergej@mail.com', 'ADMINISTRATOR'),
+       (5,'KuharQ7', '5555', 'timofej@mail.com', 'ADMINISTRATOR'),
+       (6,'Ganshard', '6666', 'andrej@mail.com', 'ADMINISTRATOR'),
+       (7,'Gorod','4444','alex@mail.com','COURIER'),
+       (8,'Misha','5555','maks@mail.com','COURIER'),
+       (9,'Poluf','6666','artem@mail.com','COURIER');
 
 insert into application_user_card (payment_card_id, application_user_id)
 values (1, 1),
@@ -118,10 +118,6 @@ values ('Margarita', 1, 1, 30, 1000, 1, 'tender pizza'),
        ('Fettuccine', 3, 3, 32, 400, 6,
         'thick noodles, 7 mm wide, similar to tagliatelle, the friability of which allows them to go well with all sorts of sauces and ingredients');
 
-insert into ingredient (name, weight, price)
-VALUES ('Mushrooms', 20, 1),
-       ('Cheese', 25, 1),
-       ('Bacon', 20, 1);
 
 
 

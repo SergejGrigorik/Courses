@@ -1,4 +1,8 @@
 package com.kciray.service;
 
-public interface CityService {
+import com.kciray.dto.CityDto;
+import com.kciray.model.address.City;
+
+public interface CityService extends BaseService<Integer, CityDto> {
+
 }

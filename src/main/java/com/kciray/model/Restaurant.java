@@ -11,8 +11,8 @@ import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString(exclude = {"restaurantChain","address","dish"})
-@EqualsAndHashCode(exclude = {"restaurantChain","address","dish"})
+@ToString(exclude = {"restaurantChain","address","dish","coupons","deliveries","restaurantOperatories"})
+@EqualsAndHashCode(exclude = {"restaurantChain","address","dish","coupons","deliveries","restaurantOperatories"})
 @Data
 @Builder
 @Component

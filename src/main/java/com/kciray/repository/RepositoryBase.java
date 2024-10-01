@@ -4,16 +4,16 @@ import com.kciray.model.BaseEntity;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.criteria.CriteriaQuery;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.transaction.annotation.Transactional;
+
 
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-
-public abstract class RepositoryBase<K extends Serializable, E extends BaseEntity<K>> implements Repository<K, E> {
+@Transactional
+public abstract class RepositoryBase<K extends Serializable, E extends BaseEntity<K>> implements ApplicationRepository<K, E> {
     public  Class<E> clazz;
     @PersistenceContext
     protected EntityManager entityManager;
@@ -44,15 +44,15 @@ public abstract class RepositoryBase<K extends Serializable, E extends BaseEntit
     }
 
     @Override
-    public Optional<E> findById(K id, Map<String, Object> properties) {
+    public Optional<E> findById(K id) {
 
-        return Optional.ofNullable(entityManager.find(clazz, id, properties));
+        return Optional.ofNullable(entityManager.find(clazz, id));
     }
 
     @Override
     public List<E> findAll() {
         CriteriaQuery<E> criteria = entityManager.getCriteriaBuilder().createQuery(clazz);
-
+        criteria.from(clazz);
         return entityManager.createQuery(criteria)
                 .getResultList();
     }

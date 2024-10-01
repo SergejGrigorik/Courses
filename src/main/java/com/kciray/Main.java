@@ -1,16 +1,19 @@
 package com.kciray;
 
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
+import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 
-import com.kciray.configuration.ApplicationConfiguration;
-import com.kciray.repository.impl.RestaurantRepositoryImpl;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+//@SpringBootApplication(exclude = SecurityAutoConfiguration.class)
+@SpringBootApplication
+@ConfigurationPropertiesScan(basePackages = "com")
 public class Main {
-
     public static void main(String[] args) {
-
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfiguration.class);
+        SpringApplication.run(Main.class, args);
 
     }
+
 
 }

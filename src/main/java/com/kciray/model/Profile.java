@@ -2,16 +2,15 @@ package com.kciray.model;
 
 import com.kciray.model.address.Address;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.core.annotation.MergedAnnotation;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Builder
+@ToString(exclude = "address")
+@EqualsAndHashCode(exclude = "address")
 @Entity
 public class Profile implements BaseEntity<Integer> {
     @Id

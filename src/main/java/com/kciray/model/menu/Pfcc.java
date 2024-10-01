@@ -5,6 +5,9 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
@@ -15,7 +18,6 @@ import org.springframework.stereotype.Component;
 @Table(name = "Pfcc")
 public class Pfcc implements BaseEntity<Integer> {
     @Id
-
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private Double proteins;
@@ -23,8 +25,9 @@ public class Pfcc implements BaseEntity<Integer> {
     private Double calories;
     private Double carbohydrates;
 
-    @OneToOne(mappedBy = "pfcc", fetch = FetchType.LAZY)
-    private Dish dish;
+    @Builder.Default
+    @OneToMany(mappedBy = "pfcc", fetch = FetchType.LAZY)
+    private List <Dish> dish = new ArrayList<>();
 
 
 }
