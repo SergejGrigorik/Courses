@@ -1,20 +1,15 @@
 package com.kciray.controller.impl;
 
-import com.kciray.domain.model.UserDtoInRequest;
-import com.kciray.domain.model.UserDtoUpRequest;
-import com.kciray.dto.AddressDto;
-import com.kciray.dto.UserDto;
-import com.kciray.model.User;
+import com.kciray.dto.address.AddressDto;
 import com.kciray.service.AddressService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
-import java.util.Optional;
 
 @RequiredArgsConstructor
 @RestController
@@ -28,11 +23,12 @@ public class AddressController {
         return addressService.findAll();
     }
 
+    //        @Secured("change schedule_courier")
+    @PreAuthorize("hasRole('')")
+//    @PreAuthorize("hasRole('change schedule_courier1')")
     @GetMapping("/{id}")
     public AddressDto findById(@PathVariable("id") Integer id) {
-
-        return addressService.findById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+        return addressService.findById(id);
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)

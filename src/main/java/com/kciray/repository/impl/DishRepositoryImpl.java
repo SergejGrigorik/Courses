@@ -1,7 +1,6 @@
 package com.kciray.repository.impl;
 
 import com.kciray.dto.entityfilter.DishFilter;
-import com.kciray.model.Restaurant;
 import com.kciray.model.Restaurant_;
 import com.kciray.model.menu.Category_;
 import com.kciray.model.menu.Dish;
@@ -60,7 +59,7 @@ public class DishRepositoryImpl extends RepositoryBase<Integer, Dish> implements
         CriteriaBuilder cb = entityManager.getCriteriaBuilder();
         CriteriaQuery<Dish> query = cb.createQuery(Dish.class);
         Root<Dish> from = query.from(Dish.class);
-        Join<Dish, Restaurant> join = from.join(Dish_.restaurant);
+        from.join(Dish_.restaurant);
         query.select(from);
         List<Predicate> predicates = new ArrayList<>();
         if (dishFilter.name()!=null){
@@ -94,7 +93,6 @@ public class DishRepositoryImpl extends RepositoryBase<Integer, Dish> implements
         query.where(predicates.toArray(Predicate[]::new));
         return entityManager.createQuery(query).getResultList();
     }
-
 
 }
 

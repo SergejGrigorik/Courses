@@ -5,7 +5,6 @@ import com.kciray.model.User;
 import com.kciray.repository.FilterUserRepository;
 import com.kciray.service.querydsl.QPredicates;
 import com.querydsl.core.types.Predicate;
-import com.querydsl.core.types.dsl.Expressions;
 import com.querydsl.jpa.impl.JPAQuery;
 import jakarta.persistence.EntityManager;
 import lombok.RequiredArgsConstructor;
@@ -18,7 +17,6 @@ import static com.kciray.model.QUser.user;
 public class FilterUserRepositoryImpl implements FilterUserRepository {
 
     private final EntityManager em;
-
 
     @Override
     public List<User> findAllByFilter(UserFilter filter) {

@@ -1,16 +1,13 @@
 package com.kciray.controller.impl;
 
 
-import com.kciray.dto.PfccDto;
-
+import com.kciray.dto.menu.PfccDto;
 import com.kciray.service.PfccService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
-
 
 @RequiredArgsConstructor
 @RestController
@@ -26,25 +23,24 @@ public class PfccController {
 
     @GetMapping("/{id}")
     public PfccDto findById(@PathVariable("id") Integer id) {
-        return pfccService.findById(id)
-                .orElseThrow(()->new ResponseStatusException(HttpStatus.NOT_FOUND));
+        return pfccService.findById(id);
     }
 
+    @PreAuthorize("hasRole('ADMINISTRATOR')")
     @PostMapping
     public PfccDto create(@RequestBody PfccDto pfccDto) {
         return pfccService.create(pfccDto);
     }
 
+    @PreAuthorize("hasRole('ADMINISTRATOR')")
     @PutMapping("/{id}")
     public PfccDto update(@PathVariable("id") Integer id, @RequestBody PfccDto pfccDto) {
-        return pfccService.update(id,pfccDto)
-                .orElseThrow(()->new ResponseStatusException(HttpStatus.NOT_FOUND));
+        return pfccService.update(id, pfccDto);
     }
 
+    @PreAuthorize("hasRole('ADMINISTRATOR')")
     @DeleteMapping("/{id}")
     public void delete(@PathVariable("id") Integer id) {
-        if(pfccService.deleteById(id))
-            throw new ResponseStatusException(HttpStatus.NO_CONTENT);
+        pfccService.deleteById(id);
     }
-
 }

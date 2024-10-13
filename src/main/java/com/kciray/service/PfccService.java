@@ -1,7 +1,6 @@
 package com.kciray.service;
 
-import com.kciray.dto.PfccDto;
-import com.kciray.model.menu.Pfcc;
+import com.kciray.dto.menu.PfccDto;
 
-public interface PfccService extends BaseService<Integer , PfccDto>{
+public interface PfccService extends BaseService<Integer, PfccDto> {
 }

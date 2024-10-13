@@ -15,5 +15,5 @@ public interface UserService extends BaseService<Integer, UserDto> {
 
     UserDetailsService userDetailsService();
 
-    void getAdmin();
+//    void getAdmin();
 }

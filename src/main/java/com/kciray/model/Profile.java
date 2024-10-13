@@ -3,7 +3,6 @@ package com.kciray.model;
 import com.kciray.model.address.Address;
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.core.annotation.MergedAnnotation;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -13,6 +12,7 @@ import org.springframework.core.annotation.MergedAnnotation;
 @EqualsAndHashCode(exclude = "address")
 @Entity
 public class Profile implements BaseEntity<Integer> {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

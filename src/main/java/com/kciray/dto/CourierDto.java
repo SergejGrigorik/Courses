@@ -6,14 +6,12 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Builder
 public class CourierDto {
     private Integer id;
-    private String locationCoordinates;
     private CourierStatus courierStatus;
     private UserDto user;
 

@@ -7,10 +7,11 @@ import lombok.*;
 @NoArgsConstructor
 @Data
 @Builder
-@ToString(exclude ={"restaurant","user"})
+@ToString(exclude = {"restaurant", "user"})
 @Entity
 @Table(name = "restaurant_operator")
 public class RestaurantOperator implements BaseEntity<Integer> {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

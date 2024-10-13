@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalTime;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
@@ -22,10 +24,10 @@ public class ScheduleRestaurant {
     private Restaurant restaurant;
 
     @Column(name = "working_hours_from")
-    private String workingHoursFrom;
+    private LocalTime workingHoursFrom;
 
     @Column(name = "working_hours_to")
-    private String workingHoursTo;
+    private LocalTime workingHoursTo;
 
     @Enumerated(value = EnumType.STRING)
     @Column(name = "day_of_week")

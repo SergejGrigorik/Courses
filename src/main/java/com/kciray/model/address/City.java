@@ -26,7 +26,6 @@ public class City implements BaseEntity<Integer> {
     @Column(name = "name_city")
     private String nameCity;
 
-
     @OneToMany(mappedBy = "city")
     private List<Address> addresses = new ArrayList<>();
 }

@@ -1,41 +1,41 @@
 spring:
+
   jpa:
     properties:
       hibernate:
         show_sql: true
         format_sql: true
+
   mvc:
     view:
       prefix: /WEBINF/views/
-#      prefix: /static/
       suffix: .html
-
-
 
   liquibase:
     change-log: db/changelog/db.changelog-master.xml
     enabled: true
+
   datasource:
     url: jdbc:postgresql://localhost:5432/postgres
     username: postgres
     password: postgresql
     driver: org.postgresql.Driver
-#  datasource:
-#    url: jdbc:postgresql://localhost:5433
-#    username: my_user
-#    password: 12345
-#    driver: org.postgresql.Driver
 
 token:
   signing:
     key: 53A73E5F1C4E0A2D3B5F2D784E6A1B423D6F247D1F6E5C3A596D635A75327855
 
-
-
 logging:
-#  file:
-#    name: file.log
-#    path: /
-#  level:
-#    root: info
+  file:
+    name: file.log
+    path: /
+  level:
+    root: info
 
+scheduled:
+  fixedRateString:
+    time:
+      find_courier: 5
+  cron:
+    time:
+      createScheduleForDay: "0 0 22 * * 7"

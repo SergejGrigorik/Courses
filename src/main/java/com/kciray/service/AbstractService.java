@@ -1,16 +1,16 @@
 package com.kciray.service;
 
+import com.kciray.exception.ResourceNotFoundException;
 import com.kciray.repository.ApplicationRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
-
-public abstract class  AbstractService<K, T, D> {
+@Transactional
+public abstract class AbstractService<K, T, D> {
     @Autowired
     protected ApplicationRepository<K, T> entityRepository;
     protected Class<T> entityClass;
@@ -18,15 +18,10 @@ public abstract class  AbstractService<K, T, D> {
     @Autowired
     protected ModelMapper modelMapper;
 
-
     protected AbstractService(Class<T> entityClass, Class<D> entityDtoClass, ApplicationRepository<K, T> entityRepository) {
         this.entityRepository = entityRepository;
         this.entityDtoClass = entityDtoClass;
         this.entityClass = entityClass;
-
-    }
-
-    protected AbstractService() {
 
     }
 
@@ -36,10 +31,8 @@ public abstract class  AbstractService<K, T, D> {
         return modelMapper.map(categoryCardFromSave, entityDtoClass);
     }
 
-
-    public Optional<D> findById(K id) {
-        Optional<T> category = entityRepository.findById(id);
-        return Optional.ofNullable(modelMapper.map(category.orElseThrow(() -> new RuntimeException(String.format("Entity by id = %d does not exist", id))), entityDtoClass));
+    public D findById(K id) {
+        return modelMapper.map(entityRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException(String.format("Request with id = %id  not found", id))), entityDtoClass);
     }
 
     public List<D> findAll() {
@@ -48,17 +41,13 @@ public abstract class  AbstractService<K, T, D> {
 
     }
 
-    public boolean deleteById(K id) {
-        return entityRepository.findById(id)
+    public void deleteById(K id) {
+        entityRepository.findById(id);
+        entityRepository.delete(id);
 
-                .map(entity -> {
-                    entityRepository.delete(id);
-                    return true;
-                })
-                .orElse(false);
     }
 
-    public Optional<D> update(K id, D categoryDto) {
+    public D update(K id, D categoryDto) {
         entityRepository.update(modelMapper.map(categoryDto, entityClass));
         return findById(id);
     }

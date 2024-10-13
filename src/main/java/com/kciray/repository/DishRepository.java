@@ -1,6 +1,5 @@
 package com.kciray.repository;
 
-import com.kciray.dto.DishDto;
 import com.kciray.dto.entityfilter.DishFilter;
 import com.kciray.model.menu.Dish;
 import org.springframework.data.domain.Pageable;
@@ -13,6 +12,5 @@ public interface DishRepository extends ApplicationRepository<Integer, Dish> {
     List<Dish> findAllBy(Pageable pageable);
 
     List<Dish> findAllByFilter(DishFilter dishFilter);
-
 
 }

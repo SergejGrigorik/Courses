@@ -7,7 +7,6 @@ import com.kciray.repository.RepositoryBase;
 @org.springframework.stereotype.Repository
 public class ProfileRepositoryImpl extends RepositoryBase<Integer,Profile> implements ProfileRepository {
 
-
     public ProfileRepositoryImpl() {
         super(Profile.class);
     }

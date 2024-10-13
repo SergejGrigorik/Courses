@@ -7,7 +7,6 @@ import com.kciray.repository.RoleRepository;
 @org.springframework.stereotype.Repository
 public class RoleRepositoryImpl extends RepositoryBase<Integer, Role> implements RoleRepository {
 
-
     public RoleRepositoryImpl() {
         super(Role.class);
     }

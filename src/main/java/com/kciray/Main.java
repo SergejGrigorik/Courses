@@ -1,18 +1,22 @@
 package com.kciray;
 
+import com.kciray.service.impl.ScheduleCourierForDayServiceImpl;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
+
+import java.time.LocalTime;
 
 
-//@SpringBootApplication(exclude = SecurityAutoConfiguration.class)
+
 @SpringBootApplication
 @ConfigurationPropertiesScan(basePackages = "com")
+@EnableScheduling
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         SpringApplication.run(Main.class, args);
-
     }
 
 

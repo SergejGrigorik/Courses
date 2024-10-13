@@ -1,6 +1,7 @@
 package com.kciray.domain.model;
 
-import com.kciray.model.status.RoleEnum;
+import com.kciray.dto.RoleDto;
+import com.kciray.model.Role;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -8,7 +9,6 @@ import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 
 @Data
 @AllArgsConstructor
@@ -34,5 +34,6 @@ public class UserDtoUpRequest {
     @Size(max = 255, message =
             "Password length must be no more than 255 characters")
     private String password;
-    private RoleEnum role;
+
+    private RoleDto role;
 }

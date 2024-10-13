@@ -19,8 +19,10 @@ public class Region implements BaseEntity<Integer> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     @Column(name = "name_region")
     private String nameRegion;
+
     @OneToMany(mappedBy = "region")
     private List<City> city = new ArrayList<>();
 }

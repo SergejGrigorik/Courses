@@ -2,6 +2,7 @@ package com.kciray.model.menu;
 
 import com.kciray.model.BaseEntity;
 import com.kciray.model.Restaurant;
+import com.kciray.model.status.StatusAvailability;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -19,24 +20,19 @@ public class Dish implements BaseEntity<Integer> {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-
     private String name;
-
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id", nullable = false)
     private Category category;
 
-
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
     @JoinColumn(name = "restaurant_id", nullable = false)
     private Restaurant restaurant;
 
-
     private BigDecimal price;
 
     private Double weight;
-
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "pfcc_id", nullable = false)
@@ -44,7 +40,8 @@ public class Dish implements BaseEntity<Integer> {
 
     private String description;
 
-    private Integer discount;
-
+    @Column(name = "availability")
+    @Enumerated(value = EnumType.STRING)
+    private StatusAvailability availability;
 
 }

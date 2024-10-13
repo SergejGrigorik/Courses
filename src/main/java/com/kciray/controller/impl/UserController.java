@@ -10,7 +10,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -39,9 +38,9 @@ public class UserController {
 
     @GetMapping("/{id}")
     public UserDto findById(@PathVariable("id") Integer id) {
-        return userService.findById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+        return userService.findById(id);
     }
+
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public UserDto create(@RequestBody UserDto userDto) {
         return userService.create(userDto);
@@ -49,16 +48,13 @@ public class UserController {
 
     @PutMapping("/{id}")
     public UserDto update(@PathVariable("id") Integer id, @RequestBody UserDto userDto) {
-        return userService.update(id, userDto)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+        return userService.update(id, userDto);
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable("id") Integer id) {
-        if (userService.deleteById(id)) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
-        }
+        userService.deleteById(id);
     }
 
 

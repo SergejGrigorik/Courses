@@ -8,21 +8,12 @@ import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
-@NamedEntityGraph(
-        name = "WithCityAndRegion",
-        attributeNodes = {
-                @NamedAttributeNode(value = "city", subgraph = "region")
-        },
-        subgraphs = {
-                @NamedSubgraph(name = "region", attributeNodes = @NamedAttributeNode("region"))
-        }
-)
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @ToString(exclude = {"city", "restaurants", "profile"})
-@EqualsAndHashCode(exclude = {"city", "restaurants", "profile"})
 @Builder
 @Entity
 public class Address implements BaseEntity<Integer> {
@@ -43,4 +34,16 @@ public class Address implements BaseEntity<Integer> {
     @OneToOne(mappedBy = "address", fetch = FetchType.LAZY, optional = false)
     private Profile profile;
 
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        Address address = (Address) object;
+        return Objects.equals(city, address.city) && Objects.equals(street, address.street) && Objects.equals(house, address.house) && Objects.equals(apartment, address.apartment);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(city, street, house, apartment);
+    }
 }

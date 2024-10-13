@@ -4,7 +4,6 @@ import com.kciray.model.BaseEntity;
 import com.kciray.model.Coupon;
 import com.kciray.model.User;
 import com.kciray.model.status.StatusOrder;
-import com.kciray.model.status.StatusPayment;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -16,11 +15,12 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 @Builder
-@ToString(exclude = {"user","coupon","statusOrder","statusPayment","orderItems"})
-@EqualsAndHashCode(exclude = {"user","coupon","statusOrder","statusPayment","orderItems"})
+@ToString(exclude = {"user","coupon","statusOrder","orderItems"})
+@EqualsAndHashCode(exclude = {"user","coupon","statusOrder","orderItems"})
 @Entity
 @Table(name = "booking")
 public class Order implements BaseEntity<Integer> {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -36,18 +36,11 @@ public class Order implements BaseEntity<Integer> {
     @OneToOne
     private Coupon coupon;
 
-
-
     @Column(name = "promo_code")
-    private Integer promoCode;
+    private String promoCode;
 
-    @Column(name = "status_booking_id")
+    @Column(name = "status_order_id")
     private StatusOrder statusOrder;
-
-    @Column(name = "status_payment")
-    @Enumerated(value = EnumType.STRING)
-    private StatusPayment statusPayment;
-    // change table type
 
     @Builder.Default
     @OneToMany(mappedBy = "order")

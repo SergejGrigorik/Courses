@@ -3,23 +3,20 @@ package com.kciray.service.impl;
 
 import com.kciray.dto.UserDto;
 import com.kciray.dto.entityfilter.UserFilter;
-import com.kciray.model.Role;
+import com.kciray.exception.ResourceNotFoundException;
 import com.kciray.model.User;
-import com.kciray.model.status.RoleEnum;
 import com.kciray.repository.UserRepository;
 import com.kciray.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -30,16 +27,15 @@ public class UserServiceImpl implements UserService {
     private final ModelMapper modelMapper;
     private final UserRepository userRepository;
 
-
     public UserDto save(User user) {
         User categoryCardFromSave = userRepository.save(user);
-        return modelMapper.map(categoryCardFromSave, UserDto.class);
+        User userGraph = userRepository.findById(categoryCardFromSave.getId()).get();
+        return modelMapper.map(userGraph, UserDto.class);
     }
 
     public UserDto create(UserDto entityDto) {
         User categoryCardToSave = modelMapper.map(entityDto, User.class);
         if (userRepository.existsByUsername(categoryCardToSave.getUsername())) {
-            // Заменить на свои исключения
             throw new RuntimeException("A user with the same name already exists");
         }
 
@@ -49,49 +45,24 @@ public class UserServiceImpl implements UserService {
 
         return save(categoryCardToSave);
     }
+
     public User getByUsername(String username) {
         return userRepository.findByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException("User not found"));
 
     }
+
     public UserDetailsService userDetailsService() {
         return this::getByUsername;
     }
 
-    /**
-     * Получение текущего пользователя
-     *
-     * @return текущий пользователь
-     */
-    public User getCurrentUser() {
-        // Получение имени пользователя из контекста Spring Security
-        String username = SecurityContextHolder.getContext().getAuthentication().getName();
-        return getByUsername(username);
-    }
-
-
-    /**
-     * Выдача прав администратора текущему пользователю
-     * <p>
-     * Нужен для демонстрации
-     */
-    @Deprecated
-    public void getAdmin() {
-        User user = getCurrentUser();
-        user.setRole(RoleEnum.ADMINISTRATOR);
-        save(user);
-    }
-
-
-    public Optional<UserDto> findById(Integer id) {
-        Optional<User> category = userRepository.findById(id);
-        return Optional.ofNullable(modelMapper.map(category.orElseThrow(() -> new RuntimeException(String.format("Entity by id = %d does not exist", id))), UserDto.class));
+    public UserDto findById(Integer id) {
+        return modelMapper.map(userRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException(String.format("Request with id = %id  not found", id))), UserDto.class);
     }
 
     public List<UserDto> findAll() {
         List<User> categories = userRepository.findAll();
         return categories.stream().map(entity -> modelMapper.map(entity, UserDto.class)).collect(Collectors.toList());
-
     }
 
     @Override
@@ -106,22 +77,15 @@ public class UserServiceImpl implements UserService {
                 .map(entity -> modelMapper.map(entity, UserDto.class)).collect(Collectors.toList());
     }
 
-    public boolean deleteById(Integer id) {
-        return userRepository.findById(id)
-
-                .map(entity -> {
-                    userRepository.deleteById(id);
-                    return true;
-                })
-                .orElse(false);
+    public void deleteById(Integer id) {
+        userRepository.findById(id);
+        userRepository.deleteById(id);
     }
 
-    public Optional<UserDto> update(Integer id, UserDto categoryDto) {
-
-        userRepository.save(modelMapper.map(categoryDto, User.class));
-        return findById(id);
+    public UserDto update(Integer id, UserDto userDto) {
+        User user = modelMapper.map(userDto, User.class);
+        return modelMapper.map(userRepository.updateUser(id, user), UserDto.class);
     }
-
 
 }
 
