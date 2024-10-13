@@ -11,8 +11,8 @@ import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString(exclude = {"restaurantChain","address","dish"})
-@EqualsAndHashCode(exclude = {"restaurantChain","address","dish"})
+@ToString(exclude = {"restaurantChain", "address", "dish", "coupons", "deliveries", "restaurantOperatories"})
+@EqualsAndHashCode(exclude = {"restaurantChain", "address", "dish", "coupons", "deliveries", "restaurantOperatories"})
 @Data
 @Builder
 @Component
@@ -23,14 +23,11 @@ public class Restaurant implements BaseEntity<Integer> {
     private Integer id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "restaurant_chain_id" )
+    @JoinColumn(name = "restaurant_chain_id")
     private RestaurantChain restaurantChain;
 
     @Column(name = "account_bank")
     private int accountBank;
-
-    @Column(name = "location_coordinates")
-    private String locationCoordinates;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "address_id")
@@ -39,11 +36,11 @@ public class Restaurant implements BaseEntity<Integer> {
     private Long number;
 
     @Builder.Default
-    @OneToMany(mappedBy = "restaurant",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "restaurant", cascade = CascadeType.ALL)
     private List<Dish> dish = new ArrayList<Dish>();
 
     @Builder.Default
-    @OneToMany(mappedBy = "restaurant",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "restaurant", cascade = CascadeType.ALL)
     private List<Coupon> coupons = new ArrayList<Coupon>();
 
     @Builder.Default

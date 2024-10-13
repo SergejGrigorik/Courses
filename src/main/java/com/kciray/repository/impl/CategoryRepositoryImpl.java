@@ -8,6 +8,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 
+import java.security.Principal;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,6 +17,7 @@ import java.util.Optional;
 public class CategoryRepositoryImpl extends RepositoryBase<Integer,Category> implements CategoryRepository {
     @PersistenceContext
     private EntityManager entityManager;
+    Principal principal;
 
 
     public CategoryRepositoryImpl( ) {

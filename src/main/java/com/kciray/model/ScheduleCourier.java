@@ -1,11 +1,12 @@
 package com.kciray.model;
 
-import com.kciray.model.Courier;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.time.LocalTime;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -23,10 +24,12 @@ public class ScheduleCourier {
     private Courier courier;
 
     @Column(name = "working_hours_from")
-    private String workingHoursFrom;
+    @Temporal(TemporalType.TIME)
+    private LocalTime workingHoursFrom;
 
     @Column(name = "working_hours_to")
-    private String workingHoursTo;
+    @Temporal(TemporalType.TIME)
+    private LocalTime workingHoursTo;
 
     @Enumerated(value = EnumType.STRING)
     @Column(name = "day_of_week")

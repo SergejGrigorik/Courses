@@ -1,18 +1,17 @@
 package com.kciray.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Builder
+@ToString(exclude = {"restaurant", "user"})
 @Entity
 @Table(name = "restaurant_operator")
 public class RestaurantOperator implements BaseEntity<Integer> {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

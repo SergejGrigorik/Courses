@@ -1,4 +1,6 @@
 package com.kciray.service;
 
-public interface CategoryService {
+import com.kciray.dto.CategoryDto;
+
+public interface CategoryService extends BaseService<Integer, CategoryDto> {
 }

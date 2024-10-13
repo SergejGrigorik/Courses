@@ -18,9 +18,13 @@ public class Privilege {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     @Column(name = "name_privilege")
     private String namePrivilege;
 
-    @OneToMany(mappedBy = "privilege")
-    private List<RolePrivilege> rolePrivileges = new ArrayList<>();
+    @ManyToMany(mappedBy = "privileges")
+    private List<Role> roles = new ArrayList<>();
+
+//    @OneToMany(mappedBy = "privilege")
+//    private List<RolePrivilege> rolePrivileges = new ArrayList<>();
 }

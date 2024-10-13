@@ -1,13 +1,11 @@
 package com.kciray.model.order;
 
+import com.kciray.model.BaseEntity;
 import com.kciray.model.Restaurant;
 import com.kciray.model.User;
 import com.kciray.model.status.StatusFullness;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +15,9 @@ import java.util.List;
 @Data
 @Builder
 @Entity
-public class Basket {
+@ToString(exclude = {"restaurant", "user", "statusFullness", "listBasketItem"})
+@EqualsAndHashCode(exclude = {"restaurant", "user", "statusFullness", "listBasketItem"})
+public class Basket implements BaseEntity<Integer> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,7 +35,7 @@ public class Basket {
     @Column(name = "status_fullness")
     private StatusFullness statusFullness;
 
-    @OneToMany(mappedBy = "basket")
-    private List<BasketItem> list = new ArrayList<>();
+    @OneToMany(mappedBy = "basket", cascade = CascadeType.ALL)
+    private List<BasketItem> listBasketItem = new ArrayList<>();
 
 }

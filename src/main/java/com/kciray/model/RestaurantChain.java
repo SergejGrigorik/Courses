@@ -16,11 +16,12 @@ import java.util.List;
 @Entity
 @Table(name = "restaurant_chain")
 public class RestaurantChain implements BaseEntity<Integer> {
+
     @Id
     private Integer id;
     private String name;
 
-    @OneToMany(mappedBy = "restaurantChain",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "restaurantChain", cascade = CascadeType.ALL)
     @Builder.Default
     private List<Restaurant> restaurant = new ArrayList<>();
 }

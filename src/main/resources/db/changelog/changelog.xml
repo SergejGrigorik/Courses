@@ -37,10 +37,6 @@
         <sqlFile encoding="utf8" path="./sql/06.create-table-address.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
-    <changeSet id="homework-2-payment-card" author="Sergej Grigorik">
-        <sqlFile encoding="utf8" path="./sql/07.create-table-payment-card.sql" relativeToChangelogFile="true"/>
-    </changeSet>
-
     <changeSet id="homework-2-restaurant-chain" author="Sergej Grigorik">
         <sqlFile encoding="utf8" path="./sql/08.create-table-restaurant-chain.sql" relativeToChangelogFile="true"/>
     </changeSet>
@@ -48,7 +44,6 @@
     <changeSet id="homework-2-profile" author="Sergej Grigorik">
         <sqlFile encoding="utf8" path="./sql/09.create-table-profile.sql" relativeToChangelogFile="true"/>
     </changeSet>
-
 
     <changeSet id="homework-2-restaurant" author="Sergej Grigorik">
         <sqlFile encoding="utf8" path="./sql/10.create-table-restaurant.sql" relativeToChangelogFile="true"/>
@@ -58,22 +53,13 @@
         <sqlFile encoding="utf8" path="sql/11.create-table-application-user.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
-
-    <changeSet id="homework-2-user-card" author="Sergej Grigorik">
-        <sqlFile encoding="utf8" path="sql/12.create-table-application-user-card.sql" relativeToChangelogFile="true"/>
-    </changeSet>
-
     <changeSet id="homework-2-restaurant-operator" author="Sergej Grigorik">
         <sqlFile encoding="utf8" path="./sql/13.create-table-restaurant-operator.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
-
-
     <changeSet id="homework-2-courier" author="Sergej Grigorik">
         <sqlFile encoding="utf8" path="./sql/14.create-table-courier.sql" relativeToChangelogFile="true"/>
     </changeSet>
-
-
 
     <changeSet id="homework-2-schedule-courier" author="Sergej Grigorik">
         <sqlFile encoding="utf8" path="./sql/16.create-table-schedule-courier.sql" relativeToChangelogFile="true"/>
@@ -96,23 +82,12 @@
     </changeSet>
 
 
-    <changeSet id="homework-2-ingredient" author="Sergej Grigorik">
-        <sqlFile encoding="utf8" path="./sql/21.create-table-ingredient.sql" relativeToChangelogFile="true"/>
-    </changeSet>
-
-
-
-
     <changeSet id="homework-2-basket" author="Sergej Grigorik">
         <sqlFile encoding="utf8" path="./sql/24.create-table-basket.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
     <changeSet id="homework-2-basket-item" author="Sergej Grigorik">
         <sqlFile encoding="utf8" path="./sql/25.create-table-basket-item.sql" relativeToChangelogFile="true"/>
-    </changeSet>
-
-    <changeSet id="homework-2-basket-ingredients-dish" author="Sergej Grigorik">
-        <sqlFile encoding="utf8" path="./sql/26.create-table-basket-ingredient-dish.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
     <changeSet id="homework-2-coupon" author="Sergej Grigorik">
@@ -127,30 +102,24 @@
         <sqlFile encoding="utf8" path="./sql/29.create-table-delivery.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
+    <changeSet id="homework-2-schedule-courier-for-day" author="Sergej Grigorik">
+        <sqlFile encoding="utf8" path="./sql/30.schedule-courier-for-day.sql" relativeToChangelogFile="true"/>
+    </changeSet>
 
     <changeSet id="homework-2-order-item" author="Sergej Grigorik">
         <sqlFile encoding="utf8" path="sql/31.create-table-booking-item.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
-    <changeSet id="homework-2-ingredient-dish" author="Sergej Grigorik">
-        <sqlFile encoding="utf8" path="./sql/32.create-table-ingredient-dish.sql" relativeToChangelogFile="true"/>
+    <changeSet id="homework-2-stand-deliver" author="Sergej Grigorik">
+        <sqlFile encoding="utf8" path="sql/32.create-table-delivery-stand.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
-    <changeSet id="homework-2-rating" author="Sergej Grigorik">
-        <sqlFile encoding="utf8" path="./sql/33.create-table-rating.sql" relativeToChangelogFile="true"/>
-    </changeSet>
-
-    <changeSet id="homework-2-bank" author="Sergej Grigorik">
-        <sqlFile encoding="utf8" path="./sql/34.create-table-bank.sql" relativeToChangelogFile="true"/>
-    </changeSet>
-
-    <changeSet id="homework-2-index" author="Sergej Grigorik">
+      <changeSet id="homework-2-index" author="Sergej Grigorik">
         <sqlFile encoding="utf8" path="./sql/35.create-index.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
     <changeSet id="homework-5-insert" author="Sergej Grigorik">
         <sqlFile encoding="utf8" path="./sql/36.insert-data.sql" relativeToChangelogFile="true"/>
     </changeSet>
-
 
 </databaseChangeLog> 

@@ -17,9 +17,6 @@ public class Courier implements BaseEntity<Integer> {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "location_coordinates_courier")
-    private String locationCoordinates;
-
     @Column(name = "courier_status")
     @Enumerated(value = EnumType.STRING)
     private CourierStatus courierStatus;
@@ -27,8 +24,6 @@ public class Courier implements BaseEntity<Integer> {
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "application_user_id")
     private User user;
-
-
 
 
 }

@@ -16,6 +16,7 @@ import java.util.List;
 @Component
 @Entity
 public class Category implements BaseEntity<Integer> {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -25,8 +26,4 @@ public class Category implements BaseEntity<Integer> {
     @OneToMany(mappedBy = "category" ,cascade = CascadeType.ALL)
     private List<Dish> dishes = new ArrayList<>();
 
-    public void addDish(Dish dish){
-        dishes.add(dish);
-        dish.setCategory(this);
-    }
 }

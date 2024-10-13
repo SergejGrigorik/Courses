@@ -1,4 +1,6 @@
 package com.kciray.service;
 
-public interface RestaurantOperatorService {
+import com.kciray.dto.RestaurantOperatorDto;
+
+public interface RestaurantOperatorService extends BaseService<Integer, RestaurantOperatorDto> {
 }

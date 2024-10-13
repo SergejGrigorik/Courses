@@ -1,5 +1,6 @@
 package com.kciray.model.order;
 
+import com.kciray.model.BaseEntity;
 import com.kciray.model.menu.Dish;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -8,8 +9,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -17,24 +16,21 @@ import java.util.List;
 @Builder
 @Entity
 @Table(name = "booking_item")
-public class OrderItem {
+public class OrderItem implements BaseEntity<Integer> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "order_id")
+    @JoinColumn(name = "booking_id")
     private Order order;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "dish_id")
     private Dish dish;
 
-
     private BigDecimal price;
 
-    @Builder.Default
-    @OneToMany(mappedBy = "orderItem")
-    private List<IngredientDish> ingredientDishes = new ArrayList<>();
+
 }

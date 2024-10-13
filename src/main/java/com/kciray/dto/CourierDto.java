@@ -1,8 +1,10 @@
 package com.kciray.dto;
 
 import com.kciray.model.status.CourierStatus;
-import lombok.*;
-
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -10,7 +12,6 @@ import lombok.*;
 @Builder
 public class CourierDto {
     private Integer id;
-    private String locationCoordinates;
     private CourierStatus courierStatus;
     private UserDto user;
 

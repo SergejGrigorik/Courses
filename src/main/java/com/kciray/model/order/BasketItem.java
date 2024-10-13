@@ -1,29 +1,27 @@
 package com.kciray.model.order;
 
+import com.kciray.model.BaseEntity;
 import com.kciray.model.menu.Dish;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Builder
+@ToString(exclude = {"basket", "dish",})
+@EqualsAndHashCode(exclude = {"basket", "dish"})
 @Entity
 @Table(name = "basket_item")
-public class BasketItem {
+public class BasketItem implements BaseEntity<Integer> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne()
     @JoinColumn(name = "basket_id")
     private Basket basket;
 
@@ -33,6 +31,5 @@ public class BasketItem {
 
     private BigDecimal price;
 
-    @OneToMany(mappedBy = "basketItem")
-    private List<BasketIngredientDish> basketIngredientDishes = new ArrayList<>();
+
 }

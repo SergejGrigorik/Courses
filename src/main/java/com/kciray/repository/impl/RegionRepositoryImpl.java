@@ -7,15 +7,10 @@ import com.kciray.repository.RepositoryBase;
 
 @org.springframework.stereotype.Repository
 public class RegionRepositoryImpl extends RepositoryBase<Integer, Region> implements RegionRepository {
-//    @PersistenceContext
-//    private EntityManager entityManager;
-
 
     public RegionRepositoryImpl() {
         super(Region.class);
     }
-
-
 
 }
 

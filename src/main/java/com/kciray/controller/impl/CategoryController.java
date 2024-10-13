@@ -1,23 +1,47 @@
 package com.kciray.controller.impl;
 
-import com.kciray.controller.ControllerInterfaceRun;
-import com.kciray.controller.Controllers;
 import com.kciray.dto.CategoryDto;
-import com.kciray.service.BaseService;
-import com.kciray.service.impl.CategoryServiceImpl;
-import lombok.NoArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Controller;
+import com.kciray.service.CategoryService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
 
-@Component
+import java.util.List;
 
-public class CategoryController extends Controllers<CategoryDto>  {
+@RequiredArgsConstructor
+@RestController
+@RequestMapping("/api/v1/category")
+public class CategoryController {
+    private final CategoryService categoryService;
 
-     @Autowired
-    public CategoryController(BaseService<Integer,CategoryDto> services) {
-        super(services);
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<CategoryDto> findAll() {
+        return categoryService.findAll();
     }
 
+    @GetMapping("/{id}")
+    public CategoryDto findById(@PathVariable("id") Integer id) {
+        return categoryService.findById(id);
+    }
 
+    @PreAuthorize("hasRole('ADMINISTRATOR')")
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    public CategoryDto create(@RequestBody CategoryDto categoryDto) {
+        return categoryService.create(categoryDto);
+    }
+
+    @PreAuthorize("hasRole('ADMINISTRATOR')")
+    @PutMapping("/{id}")
+    public CategoryDto update(@PathVariable("id") Integer id, @RequestBody CategoryDto categoryDto) {
+        return categoryService.update(id, categoryDto);
+    }
+
+    @PreAuthorize("hasRole('ADMINISTRATOR')")
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable("id") Integer id) {
+        categoryService.deleteById(id);
+    }
 }
