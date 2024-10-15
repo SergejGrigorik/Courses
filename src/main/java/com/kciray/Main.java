@@ -9,8 +9,6 @@ import org.springframework.scheduling.annotation.Scheduled;
 
 import java.time.LocalTime;
 
-
-
 @SpringBootApplication
 @ConfigurationPropertiesScan(basePackages = "com")
 @EnableScheduling
