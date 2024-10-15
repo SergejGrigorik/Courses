@@ -1,6 +1,5 @@
 package com.kciray.repository.impl;
 
-
 import com.kciray.model.Restaurant;
 import com.kciray.model.Restaurant_;
 import com.kciray.model.address.Address;

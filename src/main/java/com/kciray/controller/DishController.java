@@ -1,4 +1,4 @@
-package com.kciray.controller.impl;
+package com.kciray.controller;
 
 import com.kciray.dto.entityfilter.DishFilter;
 import com.kciray.dto.menu.DishDto;
@@ -10,7 +10,6 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
 
 @RequiredArgsConstructor
 @RestController
@@ -38,7 +37,6 @@ public class DishController {
     List<DishDto> findAllDishByRestaurantIdAndCategoryById(@ParameterObject Integer restId, @ParameterObject Integer catId) {
         return dishService.findAllDishByRestaurantIdAndCategoryById(restId, catId);
     }
-
 
     @GetMapping("/{id}")
     public DishDto findById(@PathVariable("id") Integer id) {

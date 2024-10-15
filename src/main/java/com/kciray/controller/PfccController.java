@@ -1,5 +1,4 @@
-package com.kciray.controller.impl;
-
+package com.kciray.controller;
 
 import com.kciray.dto.menu.PfccDto;
 import com.kciray.service.PfccService;

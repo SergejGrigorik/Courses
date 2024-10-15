@@ -1,4 +1,4 @@
-package com.kciray.controller.impl;
+package com.kciray.controller;
 
 import com.kciray.dto.address.AddressDto;
 import com.kciray.service.AddressService;

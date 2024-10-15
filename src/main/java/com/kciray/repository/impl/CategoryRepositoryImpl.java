@@ -8,7 +8,6 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 
-import java.security.Principal;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,19 +16,15 @@ import java.util.Optional;
 public class CategoryRepositoryImpl extends RepositoryBase<Integer,Category> implements CategoryRepository {
     @PersistenceContext
     private EntityManager entityManager;
-    Principal principal;
-
 
     public CategoryRepositoryImpl( ) {
         super(Category.class);
     }
 
-
     @Override
     public void delete(Integer id){
         entityManager.createQuery("delete Category c where c.id = :id")
-                .setParameter("id",id).executeUpdate()
-        ;
+                .setParameter("id",id).executeUpdate();
     }
 
     @Override
@@ -58,6 +53,5 @@ public class CategoryRepositoryImpl extends RepositoryBase<Integer,Category> imp
     public List<Category> findAll(){
         return entityManager.createQuery("select c from Category c ",Category.class).getResultList();
     }
-
 
 }

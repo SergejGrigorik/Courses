@@ -1,9 +1,9 @@
-package com.kciray.controller.impl;
-
+package com.kciray.controller;
 
 import com.kciray.dto.address.CityDto;
 import com.kciray.service.CityService;
 import lombok.RequiredArgsConstructor;
+import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -42,5 +42,10 @@ public class CityController {
     public void delete(@PathVariable("id") Integer id) {
         cityService.deleteById(id);
 
+    }
+    @GetMapping("/findByRegion")
+    @ResponseStatus(HttpStatus.OK)
+    public List<CityDto> findByRegion(@ParameterObject String regionName) {
+       return cityService.findByRegionName(regionName);
     }
 }

@@ -1,4 +1,4 @@
-package com.kciray.controller.impl;
+package com.kciray.controller;
 
 import com.kciray.dto.RestaurantOperatorDto;
 import com.kciray.service.RestaurantOperatorService;

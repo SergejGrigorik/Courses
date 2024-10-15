@@ -1,4 +1,4 @@
--- профайл для курьера и
+
 create table profile
 (
     id         SERIAL PRIMARY KEY,

@@ -17,6 +17,5 @@ public interface AddressRepository extends JpaRepository<Address,Integer> {
     Optional<AddressDto> update(Integer id, City city, String street, String house, String apartment);
 
     @EntityGraph(attributePaths = {"city","city.region"})
-    @Query()
     Optional<Address> findById(Integer id);
 }

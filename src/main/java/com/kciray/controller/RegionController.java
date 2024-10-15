@@ -1,12 +1,10 @@
-package com.kciray.controller.impl;
+package com.kciray.controller;
 
 import com.kciray.dto.menu.RegionDto;
 import com.kciray.service.RegionService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
 
 @RequiredArgsConstructor
 @RestController

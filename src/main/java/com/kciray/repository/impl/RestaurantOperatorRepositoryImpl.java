@@ -11,5 +11,4 @@ public class RestaurantOperatorRepositoryImpl extends RepositoryBase<Integer, Re
         super(RestaurantOperator.class);
     }
 
-
 }
