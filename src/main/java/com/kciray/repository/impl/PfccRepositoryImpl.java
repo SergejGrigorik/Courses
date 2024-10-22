@@ -68,6 +68,7 @@ public class PfccRepositoryImpl implements PfccRepository, ApplicationRepository
                 .stream().findAny();
     }
 
+
     @Override
     public List<Pfcc> findAll() {
         return new ArrayList<>(jdbcTemplate.query(FIND_ALL, new Object[]{}, new BeanPropertyRowMapper<>(Pfcc.class)));

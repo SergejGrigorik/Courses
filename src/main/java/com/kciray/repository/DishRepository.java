@@ -12,5 +12,4 @@ public interface DishRepository extends ApplicationRepository<Integer, Dish> {
     List<Dish> findAllBy(Pageable pageable);
 
     List<Dish> findAllByFilter(DishFilter dishFilter);
-
 }

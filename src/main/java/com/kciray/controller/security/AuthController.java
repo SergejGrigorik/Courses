@@ -1,8 +1,8 @@
 package com.kciray.controller.security;
 
-import com.kciray.domain.dto.JwtAuthenticationResponse;
-import com.kciray.domain.model.UserDtoInRequest;
-import com.kciray.domain.model.UserDtoUpRequest;
+import com.kciray.dto.dtoSecurity.JwtAuthenticationResponse;
+import com.kciray.dto.dtoSecurity.UserDtoInRequest;
+import com.kciray.dto.dtoSecurity.UserDtoUpRequest;
 import com.kciray.service.security.AuthenticationService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;

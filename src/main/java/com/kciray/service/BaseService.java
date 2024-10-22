@@ -13,7 +13,5 @@ public interface BaseService<K, E> {
     void deleteById(K id);
 
     E update(K id, E entity);
-
-
 }
 

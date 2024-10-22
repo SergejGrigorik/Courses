@@ -20,24 +20,25 @@ public class PfccController {
         return pfccService.findAll();
     }
 
+    @PreAuthorize("hasRole('OPERATOR')")
     @GetMapping("/{id}")
     public PfccDto findById(@PathVariable("id") Integer id) {
         return pfccService.findById(id);
     }
 
-    @PreAuthorize("hasRole('ADMINISTRATOR')")
+    @PreAuthorize("hasRole('OPERATOR')")
     @PostMapping
     public PfccDto create(@RequestBody PfccDto pfccDto) {
         return pfccService.create(pfccDto);
     }
 
-    @PreAuthorize("hasRole('ADMINISTRATOR')")
+    @PreAuthorize("hasRole('OPERATOR')")
     @PutMapping("/{id}")
     public PfccDto update(@PathVariable("id") Integer id, @RequestBody PfccDto pfccDto) {
         return pfccService.update(id, pfccDto);
     }
 
-    @PreAuthorize("hasRole('ADMINISTRATOR')")
+    @PreAuthorize("hasRole('DELETE_DISH')")
     @DeleteMapping("/{id}")
     public void delete(@PathVariable("id") Integer id) {
         pfccService.deleteById(id);

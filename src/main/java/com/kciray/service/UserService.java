@@ -8,12 +8,11 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 
 import java.util.List;
 
-public interface UserService extends BaseService<Integer, UserDto> {
+public interface UserService extends BaseService<Integer, UserDto>, UserDetailsService {
     Page<UserDto> findAllBy(Pageable pageable);
 
     List<UserDto> findAllByFilter(UserFilter userFilter);
 
     UserDetailsService userDetailsService();
 
-//    void getAdmin();
 }

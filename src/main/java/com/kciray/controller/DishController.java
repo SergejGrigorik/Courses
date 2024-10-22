@@ -3,6 +3,7 @@ package com.kciray.controller;
 import com.kciray.dto.entityfilter.DishFilter;
 import com.kciray.dto.menu.DishDto;
 import com.kciray.service.DishService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.data.domain.Pageable;
@@ -17,11 +18,6 @@ import java.util.List;
 public class DishController {
 
     private final DishService dishService;
-
-    @GetMapping
-    public List<DishDto> findAllDish(Pageable pageable) {
-        return dishService.findAllBy(pageable);
-    }
 
     @GetMapping("/filter")
     public List<DishDto> findAllByFilter(@ParameterObject DishFilter dishFilter) {
@@ -43,19 +39,19 @@ public class DishController {
         return dishService.findById(id);
     }
 
-    @PreAuthorize("hasRole('ADMINISTRATOR')")
+    @PreAuthorize("hasRole('OPERATOR')")
     @PostMapping
-    public DishDto create(@RequestBody DishDto dto) {
+    public DishDto create(@RequestBody @Valid  DishDto dto) {
         return dishService.create(dto);
     }
 
-    @PreAuthorize("hasRole('ADMINISTRATOR')")
+    @PreAuthorize("hasRole('OPERATOR')")
     @PutMapping("/{id}")
-    public DishDto update(@PathVariable("id") Integer id, @RequestBody DishDto dto) {
+    public DishDto update(@PathVariable("id") Integer id, @RequestBody @Valid DishDto dto) {
         return dishService.update(id, dto);
     }
 
-    @PreAuthorize("hasRole('ADMINISTRATOR')")
+    @PreAuthorize("hasRole('DELETE_DISH')")
     @DeleteMapping("/{id}")
     public void delete(@PathVariable("id") Integer id) {
         dishService.deleteById(id);

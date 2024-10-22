@@ -22,8 +22,7 @@ public class CourierController {
     private List<CourierDto> findAll() {
         return courierService.findAll();
     }
-
-    @PreAuthorize("hasRole('COURIER')")
+    @PreAuthorize("hasRole('READ_COURIER')")
     @GetMapping(("/{id}"))
     public CourierDto findById(@PathVariable("id") Integer id) {
         return courierService.findById(id);
@@ -35,20 +34,20 @@ public class CourierController {
         return courierService.create(courierDto);
     }
 
-    @PreAuthorize("hasRole({'COURIER'})")
+    @PreAuthorize("hasRole({'UPDATE_COURIER'})")
     @PutMapping("/{id}")
     public CourierDto update(@PathVariable("id") Integer id, @RequestBody CourierDto courierDto) {
         return courierService.update(id, courierDto);
     }
 
-    @PreAuthorize("hasRole({'COURIER'})")
+    @PreAuthorize("hasRole({'ADMINISTRATOR'})")
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable("id") Integer id) {
         courierService.deleteById(id);
     }
 
-    @PreAuthorize("hasRole({'COURIER'})")
+    @PreAuthorize("hasRole({'ADMINISTRATOR'})")
     @GetMapping
     public List<CourierDto> findByCourierStatus(CourierStatus courierStatus) {
         return courierService.findAllByCourierStatus(courierStatus);

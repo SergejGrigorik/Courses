@@ -7,13 +7,12 @@ import com.kciray.model.User;
 import com.kciray.model.order.Basket;
 import com.kciray.model.order.Order;
 import com.kciray.model.status.StatusOrder;
-import com.kciray.model.status.StatusPayment;
 import com.kciray.model.status.Validity;
+import com.kciray.repository.CouponRepository;
 import com.kciray.repository.basket.BasketItemRepository;
 import com.kciray.repository.basket.BasketRepository;
-import com.kciray.repository.CouponRepository;
-import com.kciray.service.order.OrderItemService;
 import com.kciray.repository.order.OrderRepository;
+import com.kciray.service.order.OrderItemService;
 import com.kciray.service.order.OrderService;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
@@ -23,7 +22,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @Data
@@ -51,6 +52,23 @@ public class OrderServiceImpl implements OrderService {
         basketRepository.delete(basket);
         modelMapper.map(saveOrder, OrderDto.class);
         return saveOrder;
+    }
+
+    @Override
+    public OrderDto findById(Integer id) {
+        return modelMapper.map(orderRepository.findById(id), OrderDto.class);
+    }
+
+    @Override
+    public List<OrderDto> findAll() {
+        List<Order> allOrder = orderRepository.findAll();
+        return allOrder.stream().map(entity -> modelMapper.map(entity, OrderDto.class)).collect(Collectors.toList());
+    }
+
+    @Override
+    public void deleteById(Integer id) {
+        orderRepository.deleteById(1);
+
     }
 
     private void createOrder() {

@@ -13,7 +13,7 @@ import java.time.LocalTime;
 @ConfigurationPropertiesScan(basePackages = "com")
 @EnableScheduling
 public class Main {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         SpringApplication.run(Main.class, args);
     }
 }

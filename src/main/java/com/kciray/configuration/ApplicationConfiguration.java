@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Import;
 
 import static org.modelmapper.config.Configuration.AccessLevel.PRIVATE;
 
-@Import(WebConfiguration.class)
+//@Import(WebConfiguration.class)
 @Configuration(proxyBeanMethods = true)
 public class ApplicationConfiguration {
 
