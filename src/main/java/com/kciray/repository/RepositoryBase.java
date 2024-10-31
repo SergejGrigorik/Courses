@@ -21,10 +21,6 @@ public abstract class RepositoryBase<K extends Serializable, E extends BaseEntit
         this.clazz = clazz;
     }
 
-    public RepositoryBase() {
-
-    }
-
     @Override
     public E save(E entity) {
         entityManager.persist(entity);

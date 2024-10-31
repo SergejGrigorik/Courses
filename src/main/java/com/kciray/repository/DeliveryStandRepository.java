@@ -9,19 +9,18 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.Optional;
 
-public interface DeliveryStandRepository extends JpaRepository<DeliveryStand,Integer> {
+public interface DeliveryStandRepository extends JpaRepository<DeliveryStand, Integer> {
 
-    @Modifying(clearAutomatically = true,flushAutomatically = true)
+    @Modifying(clearAutomatically = true, flushAutomatically = true)
     @Query("update DeliveryStand d set d.courier = :freeCourier, d.lookCourier = :statusLookCourier " +
            "where d.id = :id")
-    void update(Integer id, Courier freeCourier,StatusLookCourier statusLookCourier);
+    void update(Integer id, Courier freeCourier, StatusLookCourier statusLookCourier);
 
-    @Modifying(clearAutomatically  = true)
     DeliveryStand saveAndFlush(DeliveryStand deliveryStand);
 
     Optional<DeliveryStand> findById(Integer id);
 
-    @Modifying(clearAutomatically = true,flushAutomatically = true)
+    @Modifying(clearAutomatically = true, flushAutomatically = true)
     @Query("update DeliveryStand d set d.lookCourier = :statusLookCourier " +
            "where d.id = :id")
     void updateStatus(Integer id, StatusLookCourier statusLookCourier);

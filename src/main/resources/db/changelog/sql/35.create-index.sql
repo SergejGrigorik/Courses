@@ -24,5 +24,6 @@ create index order_item_order_id_idx on booking_item(booking_id);
 create index order_item_dish_id_idx on booking_item(dish_id);
 create index restaurant_operator_restaurant_id_idx on restaurant_operator(restaurant_id);
 create index restaurant_operator_user_id_idx on restaurant_operator(application_user_id);
+create index find_By_TimeFrom_And_TimeTo_And_Day_And_StatusHas_idx on schedule_courier_for_day(working_hours_from,working_hours_to,day,busy);
 
 

@@ -1,0 +1,1289 @@
+2024-10-22T12:54:48.166+03:00  INFO 18060 --- [main] c.k.controller.AddressControllerTest     : Starting AddressControllerTest using Java 22.0.2 with PID 18060 (started by Asus in D:\final\skil task\main)
+2024-10-22T12:54:48.177+03:00  INFO 18060 --- [main] c.k.controller.AddressControllerTest     : The following 1 profile is active: "test"
+2024-10-22T12:54:53.223+03:00  INFO 18060 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-22T12:54:53.466+03:00  INFO 18060 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 243 ms. Found 13 JPA repository interfaces.
+2024-10-22T12:54:54.707+03:00  INFO 18060 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-22T12:54:55.168+03:00  INFO 18060 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=POSTGRES
+2024-10-22T12:54:55.168+03:00  INFO 18060 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-22T12:54:55.292+03:00  INFO 18060 --- [main] liquibase.database                       : Set default schema name to PUBLIC
+2024-10-22T12:54:56.213+03:00  INFO 18060 --- [main] liquibase.changelog                      : Creating database history table with name: PUBLIC.DATABASECHANGELOG
+2024-10-22T12:54:56.402+03:00  INFO 18060 --- [main] liquibase.changelog                      : Reading from PUBLIC.DATABASECHANGELOG
+2024-10-22T12:54:56.544+03:00  INFO 18060 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2024-10-22T12:54:56.544+03:00  INFO 18060 --- [main] liquibase.command                        : Using deploymentId: 9590896544
+2024-10-22T12:54:56.544+03:00  INFO 18060 --- [main] liquibase.changelog                      : Reading from PUBLIC.DATABASECHANGELOG
+2024-10-22T12:54:56.849+03:00  INFO 18060 --- [main] liquibase.ui                             : Running Changeset: db/changelog/changelog.xml::homework-2-role::Sergej Grigorik
+2024-10-22T12:54:56.912+03:00  INFO 18060 --- [main] liquibase.changelog                      : SQL in file ./sql/01.create-table-role.sql executed
+2024-10-22T12:54:56.912+03:00  INFO 18060 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changelog.xml::homework-2-role::Sergej Grigorik ran successfully in 63ms
+2024-10-22T12:54:56.928+03:00  INFO 18060 --- [main] liquibase.ui                             : Running Changeset: db/changelog/changelog.xml::homework-2-privilege::Sergej Grigorik
+2024-10-22T12:54:56.928+03:00  INFO 18060 --- [main] liquibase.changelog                      : SQL in file ./sql/02.create-table-privilege.sql executed
+2024-10-22T12:54:56.928+03:00  INFO 18060 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changelog.xml::homework-2-privilege::Sergej Grigorik ran successfully in 0ms
+2024-10-22T12:54:56.928+03:00  INFO 18060 --- [main] liquibase.ui                             : Running Changeset: db/changelog/changelog.xml::homework-2-role-privilege::Sergej Grigorik
+2024-10-22T12:54:56.944+03:00  INFO 18060 --- [main] liquibase.changelog                      : SQL in file ./sql/03.create-table-role-privilege.sql executed
+2024-10-22T12:54:56.944+03:00  INFO 18060 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changelog.xml::homework-2-role-privilege::Sergej Grigorik ran successfully in 16ms
+2024-10-22T12:54:56.959+03:00  INFO 18060 --- [main] liquibase.ui                             : Running Changeset: db/changelog/changelog.xml::homework-2-region::Sergej Grigorik
+2024-10-22T12:54:56.959+03:00  INFO 18060 --- [main] liquibase.changelog                      : SQL in file ./sql/04.create-table-region.sql executed
+2024-10-22T12:54:56.959+03:00  INFO 18060 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changelog.xml::homework-2-region::Sergej Grigorik ran successfully in 0ms
+2024-10-22T12:54:56.975+03:00  INFO 18060 --- [main] liquibase.ui                             : Running Changeset: db/changelog/changelog.xml::homework-2-city::Sergej Grigorik
+2024-10-22T12:54:56.975+03:00  INFO 18060 --- [main] liquibase.changelog                      : SQL in file ./sql/05.create-table-city.sql executed
+2024-10-22T12:54:56.975+03:00  INFO 18060 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changelog.xml::homework-2-city::Sergej Grigorik ran successfully in 0ms
+2024-10-22T12:54:56.990+03:00  INFO 18060 --- [main] liquibase.ui                             : Running Changeset: db/changelog/changelog.xml::homework-2-address::Sergej Grigorik
+2024-10-22T12:54:57.006+03:00  INFO 18060 --- [main] liquibase.changelog                      : SQL in file ./sql/06.create-table-address.sql executed
+2024-10-22T12:54:57.006+03:00  INFO 18060 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changelog.xml::homework-2-address::Sergej Grigorik ran successfully in 16ms
+2024-10-22T12:54:57.006+03:00  INFO 18060 --- [main] liquibase.ui                             : Running Changeset: db/changelog/changelog.xml::homework-2-restaurant-chain::Sergej Grigorik
+2024-10-22T12:54:57.006+03:00  INFO 18060 --- [main] liquibase.changelog                      : SQL in file ./sql/08.create-table-restaurant-chain.sql executed
+2024-10-22T12:54:57.006+03:00  INFO 18060 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changelog.xml::homework-2-restaurant-chain::Sergej Grigorik ran successfully in 0ms
+2024-10-22T12:54:57.022+03:00  INFO 18060 --- [main] liquibase.ui                             : Running Changeset: db/changelog/changelog.xml::homework-2-profile::Sergej Grigorik
+2024-10-22T12:54:57.022+03:00  INFO 18060 --- [main] liquibase.changelog                      : SQL in file ./sql/09.create-table-profile.sql executed
+2024-10-22T12:54:57.022+03:00  INFO 18060 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changelog.xml::homework-2-profile::Sergej Grigorik ran successfully in 0ms
+2024-10-22T12:54:57.038+03:00  INFO 18060 --- [main] liquibase.ui                             : Running Changeset: db/changelog/changelog.xml::homework-2-restaurant::Sergej Grigorik
+2024-10-22T12:54:57.038+03:00  INFO 18060 --- [main] liquibase.changelog                      : SQL in file ./sql/10.create-table-restaurant.sql executed
+2024-10-22T12:54:57.038+03:00  INFO 18060 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changelog.xml::homework-2-restaurant::Sergej Grigorik ran successfully in 0ms
+2024-10-22T12:54:57.054+03:00  INFO 18060 --- [main] liquibase.ui                             : Running Changeset: db/changelog/changelog.xml::homework-2-application_user::Sergej Grigorik
+2024-10-22T12:54:57.054+03:00  INFO 18060 --- [main] liquibase.changelog                      : SQL in file sql/11.create-table-application-user.sql executed
+2024-10-22T12:54:57.054+03:00  INFO 18060 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changelog.xml::homework-2-application_user::Sergej Grigorik ran successfully in 0ms
+2024-10-22T12:54:57.070+03:00  INFO 18060 --- [main] liquibase.ui                             : Running Changeset: db/changelog/changelog.xml::homework-2-restaurant-operator::Sergej Grigorik
+2024-10-22T12:54:57.070+03:00  INFO 18060 --- [main] liquibase.changelog                      : SQL in file ./sql/13.create-table-restaurant-operator.sql executed
+2024-10-22T12:54:57.070+03:00  INFO 18060 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changelog.xml::homework-2-restaurant-operator::Sergej Grigorik ran successfully in 0ms
+2024-10-22T12:54:57.086+03:00  INFO 18060 --- [main] liquibase.ui                             : Running Changeset: db/changelog/changelog.xml::homework-2-courier::Sergej Grigorik
+2024-10-22T12:54:57.086+03:00  INFO 18060 --- [main] liquibase.changelog                      : SQL in file ./sql/14.create-table-courier.sql executed
+2024-10-22T12:54:57.086+03:00  INFO 18060 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changelog.xml::homework-2-courier::Sergej Grigorik ran successfully in 0ms
+2024-10-22T12:54:57.086+03:00  INFO 18060 --- [main] liquibase.ui                             : Running Changeset: db/changelog/changelog.xml::homework-2-schedule-courier::Sergej Grigorik
+2024-10-22T12:54:57.102+03:00  INFO 18060 --- [main] liquibase.changelog                      : SQL in file ./sql/16.create-table-schedule-courier.sql executed
+2024-10-22T12:54:57.102+03:00  INFO 18060 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changelog.xml::homework-2-schedule-courier::Sergej Grigorik ran successfully in 16ms
+2024-10-22T12:54:57.102+03:00  INFO 18060 --- [main] liquibase.ui                             : Running Changeset: db/changelog/changelog.xml::homework-2-schedule-restaurant::Sergej Grigorik
+2024-10-22T12:54:57.118+03:00  INFO 18060 --- [main] liquibase.changelog                      : SQL in file ./sql/17.create-table-schedule-restaurant.sql executed
+2024-10-22T12:54:57.118+03:00  INFO 18060 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changelog.xml::homework-2-schedule-restaurant::Sergej Grigorik ran successfully in 16ms
+2024-10-22T12:54:57.118+03:00  INFO 18060 --- [main] liquibase.ui                             : Running Changeset: db/changelog/changelog.xml::homework-2-category::Sergej Grigorik
+2024-10-22T12:54:57.133+03:00  INFO 18060 --- [main] liquibase.changelog                      : SQL in file ./sql/18.create-table-category.sql executed
+2024-10-22T12:54:57.133+03:00  INFO 18060 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changelog.xml::homework-2-category::Sergej Grigorik ran successfully in 15ms
+2024-10-22T12:54:57.133+03:00  INFO 18060 --- [main] liquibase.ui                             : Running Changeset: db/changelog/changelog.xml::homework-2-pfcc::Sergej Grigorik
+2024-10-22T12:54:57.133+03:00  INFO 18060 --- [main] liquibase.changelog                      : SQL in file ./sql/19.create-table-pfcc.sql executed
+2024-10-22T12:54:57.133+03:00  INFO 18060 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changelog.xml::homework-2-pfcc::Sergej Grigorik ran successfully in 0ms
+2024-10-22T12:54:57.149+03:00  INFO 18060 --- [main] liquibase.ui                             : Running Changeset: db/changelog/changelog.xml::homework-2-dish::Sergej Grigorik
+2024-10-22T12:54:57.149+03:00  INFO 18060 --- [main] liquibase.changelog                      : SQL in file ./sql/20.create-table-dish.sql executed
+2024-10-22T12:54:57.149+03:00  INFO 18060 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changelog.xml::homework-2-dish::Sergej Grigorik ran successfully in 0ms
+2024-10-22T12:54:57.164+03:00  INFO 18060 --- [main] liquibase.ui                             : Running Changeset: db/changelog/changelog.xml::homework-2-basket::Sergej Grigorik
+2024-10-22T12:54:57.172+03:00  INFO 18060 --- [main] liquibase.changelog                      : SQL in file ./sql/24.create-table-basket.sql executed
+2024-10-22T12:54:57.172+03:00  INFO 18060 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changelog.xml::homework-2-basket::Sergej Grigorik ran successfully in 8ms
+2024-10-22T12:54:57.172+03:00  INFO 18060 --- [main] liquibase.ui                             : Running Changeset: db/changelog/changelog.xml::homework-2-basket-item::Sergej Grigorik
+2024-10-22T12:54:57.172+03:00  INFO 18060 --- [main] liquibase.changelog                      : SQL in file ./sql/25.create-table-basket-item.sql executed
+2024-10-22T12:54:57.188+03:00  INFO 18060 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changelog.xml::homework-2-basket-item::Sergej Grigorik ran successfully in 16ms
+2024-10-22T12:54:57.188+03:00  INFO 18060 --- [main] liquibase.ui                             : Running Changeset: db/changelog/changelog.xml::homework-2-coupon::Sergej Grigorik
+2024-10-22T12:54:57.203+03:00  INFO 18060 --- [main] liquibase.changelog                      : SQL in file ./sql/27.create-table-coupon.sql executed
+2024-10-22T12:54:57.203+03:00  INFO 18060 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changelog.xml::homework-2-coupon::Sergej Grigorik ran successfully in 15ms
+2024-10-22T12:54:57.203+03:00  INFO 18060 --- [main] liquibase.ui                             : Running Changeset: db/changelog/changelog.xml::homework-2-order::Sergej Grigorik
+2024-10-22T12:54:57.219+03:00  INFO 18060 --- [main] liquibase.changelog                      : SQL in file sql/28.create-table-booking.sql executed
+2024-10-22T12:54:57.219+03:00  INFO 18060 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changelog.xml::homework-2-order::Sergej Grigorik ran successfully in 16ms
+2024-10-22T12:54:57.219+03:00  INFO 18060 --- [main] liquibase.ui                             : Running Changeset: db/changelog/changelog.xml::homework-2-delivery::Sergej Grigorik
+2024-10-22T12:54:57.235+03:00  INFO 18060 --- [main] liquibase.changelog                      : SQL in file ./sql/29.create-table-delivery.sql executed
+2024-10-22T12:54:57.235+03:00  INFO 18060 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changelog.xml::homework-2-delivery::Sergej Grigorik ran successfully in 16ms
+2024-10-22T12:54:57.235+03:00  INFO 18060 --- [main] liquibase.ui                             : Running Changeset: db/changelog/changelog.xml::homework-2-schedule-courier-for-day::Sergej Grigorik
+2024-10-22T12:54:57.235+03:00 ERROR 18060 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changelog.xml::homework-2-schedule-courier-for-day::Sergej Grigorik encountered an exception.
+
+liquibase.exception.DatabaseException: Синтаксическая ошибка в выражении SQL "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; ожидалось "identifier"
+Syntax error in SQL statement "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; expected "identifier"; SQL statement:
+create table schedule_courier_for_day
+(
+    id       SERIAL PRIMARY KEY,
+    courier_id INT REFERENCES courier ,
+    schedule_courier_id INT REFERENCES  schedule_courier,
+    working_hours_from TIME ,
+    working_hours_to TIME,
+    day VARCHAR(128) ,
+    busy VARCHAR(128)
+
+) [42001-232] [Failed SQL: (42001) create table schedule_courier_for_day
+(
+    id       SERIAL PRIMARY KEY,
+    courier_id INT REFERENCES courier ,
+    schedule_courier_id INT REFERENCES  schedule_courier,
+    working_hours_from TIME ,
+    working_hours_to TIME,
+    day VARCHAR(128) ,
+    busy VARCHAR(128)
+
+)]
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:476) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:83) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:185) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.executor.AbstractExecutor.execute(AbstractExecutor.java:141) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.database.AbstractJdbcDatabase.executeStatements(AbstractJdbcDatabase.java:1189) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:775) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.changelog.visitor.UpdateVisitor.executeAcceptedChange(UpdateVisitor.java:119) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.changelog.visitor.UpdateVisitor.visit(UpdateVisitor.java:68) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.changelog.ChangeLogIterator.lambda$run$0(ChangeLogIterator.java:131) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:191) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:200) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:190) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:169) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.changelog.ChangeLogIterator.lambda$run$1(ChangeLogIterator.java:120) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:191) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:200) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:190) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:169) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:257) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:261) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:89) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.command.core.AbstractUpdateCommandStep.lambda$run$0(AbstractUpdateCommandStep.java:113) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:191) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:200) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:190) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:169) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.command.core.AbstractUpdateCommandStep.run(AbstractUpdateCommandStep.java:111) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.command.core.UpdateCommandStep.run(UpdateCommandStep.java:105) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.command.CommandScope.execute(CommandScope.java:220) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Liquibase.lambda$update$0(Liquibase.java:216) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:191) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:200) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:190) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:169) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Liquibase.runInScope(Liquibase.java:1290) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Liquibase.update(Liquibase.java:205) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Liquibase.update(Liquibase.java:188) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:305) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.lambda$afterPropertiesSet$0(SpringLiquibase.java:257) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:191) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:200) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:190) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:169) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:257) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:250) ~[liquibase-core-4.29.1.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:954) ~[spring-context-6.1.13.jar:6.1.13]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625) ~[spring-context-6.1.13.jar:6.1.13]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.3.4.jar:3.3.4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.3.4.jar:3.3.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.3.4.jar:3.3.4]
+	at org.springframework.boot.test.context.SpringBootContextLoader.lambda$loadContext$3(SpringBootContextLoader.java:137) ~[spring-boot-test-3.3.4.jar:3.3.4]
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:58) ~[spring-core-6.1.13.jar:6.1.13]
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:46) ~[spring-core-6.1.13.jar:6.1.13]
+	at org.springframework.boot.SpringApplication.withHook(SpringApplication.java:1463) ~[spring-boot-3.3.4.jar:3.3.4]
+	at org.springframework.boot.test.context.SpringBootContextLoader$ContextLoaderHook.run(SpringBootContextLoader.java:553) ~[spring-boot-test-3.3.4.jar:3.3.4]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:137) ~[spring-boot-test-3.3.4.jar:3.3.4]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:108) ~[spring-boot-test-3.3.4.jar:3.3.4]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:225) ~[spring-test-6.1.13.jar:6.1.13]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:152) ~[spring-test-6.1.13.jar:6.1.13]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:130) ~[spring-test-6.1.13.jar:6.1.13]
+	at org.springframework.test.context.junit.jupiter.SpringExtension.getApplicationContext(SpringExtension.java:355) ~[spring-test-6.1.13.jar:6.1.13]
+	at org.springframework.test.context.junit.jupiter.SpringExtension.resolveParameter(SpringExtension.java:341) ~[spring-test-6.1.13.jar:6.1.13]
+	at org.junit.jupiter.engine.execution.ParameterResolutionUtils.resolveParameter(ParameterResolutionUtils.java:136) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.ParameterResolutionUtils.resolveParameters(ParameterResolutionUtils.java:103) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:59) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestClassConstructor(ClassBasedTestDescriptor.java:364) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateTestClass(ClassBasedTestDescriptor.java:311) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.ClassTestDescriptor.instantiateTestClass(ClassTestDescriptor.java:79) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:287) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:279) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at java.base/java.util.Optional.orElseGet(Optional.java:364) ~[na:na]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:278) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:106) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:105) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:69) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:123) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:123) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:90) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56) ~[surefire-junit-platform-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184) ~[surefire-junit-platform-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148) ~[surefire-junit-platform-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122) ~[surefire-junit-platform-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385) ~[surefire-booter-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162) ~[surefire-booter-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507) ~[surefire-booter-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495) ~[surefire-booter-3.2.5.jar:3.2.5]
+Caused by: org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; ожидалось "identifier"
+Syntax error in SQL statement "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; expected "identifier"; SQL statement:
+create table schedule_courier_for_day
+(
+    id       SERIAL PRIMARY KEY,
+    courier_id INT REFERENCES courier ,
+    schedule_courier_id INT REFERENCES  schedule_courier,
+    working_hours_from TIME ,
+    working_hours_to TIME,
+    day VARCHAR(128) ,
+    busy VARCHAR(128)
+
+) [42001-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.message.DbException.getSyntaxError(DbException.java:261) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.readIdentifier(Parser.java:5527) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parseTableColumnDefinition(Parser.java:8871) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parseCreateTable(Parser.java:8819) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parseCreate(Parser.java:6398) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parsePrepared(Parser.java:645) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parse(Parser.java:581) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parse(Parser.java:556) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.prepareCommand(Parser.java:484) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:645) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:561) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1164) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:245) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231) ~[h2-2.3.232.jar:2.3.232]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-5.1.0.jar:na]
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:470) ~[liquibase-core-4.29.1.jar:na]
+	... 130 common frames omitted
+
+2024-10-22T12:54:57.267+03:00  INFO 18060 --- [main] liquibase.util                           : UPDATE SUMMARY
+2024-10-22T12:54:57.267+03:00  INFO 18060 --- [main] liquibase.util                           : Run:                         22
+2024-10-22T12:54:57.267+03:00  INFO 18060 --- [main] liquibase.util                           : Previously run:               0
+2024-10-22T12:54:57.267+03:00  INFO 18060 --- [main] liquibase.util                           : Filtered out:                 0
+2024-10-22T12:54:57.267+03:00  INFO 18060 --- [main] liquibase.util                           : -------------------------------
+2024-10-22T12:54:57.267+03:00  INFO 18060 --- [main] liquibase.util                           : Total change sets:           27
+2024-10-22T12:54:57.267+03:00  INFO 18060 --- [main] liquibase.util                           : Update summary generated
+2024-10-22T12:54:57.283+03:00  INFO 18060 --- [main] liquibase.command                        : Update command encountered an exception.
+2024-10-22T12:54:57.283+03:00  INFO 18060 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2024-10-22T12:54:57.283+03:00  INFO 18060 --- [main] liquibase.command                        : Logging exception.
+2024-10-22T12:54:57.283+03:00  INFO 18060 --- [main] liquibase.ui                             : ERROR: Exception Details
+2024-10-22T12:54:57.283+03:00  INFO 18060 --- [main] liquibase.ui                             : ERROR: Exception Primary Class:  JdbcSQLSyntaxErrorException
+2024-10-22T12:54:57.283+03:00  INFO 18060 --- [main] liquibase.ui                             : ERROR: Exception Primary Reason:  Синтаксическая ошибка в выражении SQL "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; ожидалось "identifier"
+Syntax error in SQL statement "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; expected "identifier"; SQL statement:
+create table schedule_courier_for_day
+(
+    id       SERIAL PRIMARY KEY,
+    courier_id INT REFERENCES courier ,
+    schedule_courier_id INT REFERENCES  schedule_courier,
+    working_hours_from TIME ,
+    working_hours_to TIME,
+    day VARCHAR(128) ,
+    busy VARCHAR(128)
+
+) [42001-232]
+2024-10-22T12:54:57.283+03:00  INFO 18060 --- [main] liquibase.ui                             : ERROR: Exception Primary Source:  H2 2.3.232 (2024-08-11)
+2024-10-22T12:54:57.283+03:00  INFO 18060 --- [main] liquibase.command                        : Command execution complete
+2024-10-22T12:54:57.299+03:00  WARN 18060 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'liquibase' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.CommandExecutionException: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/changelog.xml::homework-2-schedule-courier-for-day::Sergej Grigorik:
+     Reason: liquibase.exception.DatabaseException: Синтаксическая ошибка в выражении SQL "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; ожидалось "identifier"
+Syntax error in SQL statement "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; expected "identifier"; SQL statement:
+create table schedule_courier_for_day
+(
+    id       SERIAL PRIMARY KEY,
+    courier_id INT REFERENCES courier ,
+    schedule_courier_id INT REFERENCES  schedule_courier,
+    working_hours_from TIME ,
+    working_hours_to TIME,
+    day VARCHAR(128) ,
+    busy VARCHAR(128)
+
+) [42001-232] [Failed SQL: (42001) create table schedule_courier_for_day
+(
+    id       SERIAL PRIMARY KEY,
+    courier_id INT REFERENCES courier ,
+    schedule_courier_id INT REFERENCES  schedule_courier,
+    working_hours_from TIME ,
+    working_hours_to TIME,
+    day VARCHAR(128) ,
+    busy VARCHAR(128)
+
+)]
+2024-10-22T12:54:57.299+03:00  INFO 18060 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-22T12:54:57.299+03:00  INFO 18060 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-22T12:54:57.315+03:00  INFO 18060 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-10-22T12:54:57.346+03:00 ERROR 18060 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'liquibase' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.CommandExecutionException: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/changelog.xml::homework-2-schedule-courier-for-day::Sergej Grigorik:
+     Reason: liquibase.exception.DatabaseException: Синтаксическая ошибка в выражении SQL "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; ожидалось "identifier"
+Syntax error in SQL statement "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; expected "identifier"; SQL statement:
+create table schedule_courier_for_day
+(
+    id       SERIAL PRIMARY KEY,
+    courier_id INT REFERENCES courier ,
+    schedule_courier_id INT REFERENCES  schedule_courier,
+    working_hours_from TIME ,
+    working_hours_to TIME,
+    day VARCHAR(128) ,
+    busy VARCHAR(128)
+
+) [42001-232] [Failed SQL: (42001) create table schedule_courier_for_day
+(
+    id       SERIAL PRIMARY KEY,
+    courier_id INT REFERENCES courier ,
+    schedule_courier_id INT REFERENCES  schedule_courier,
+    working_hours_from TIME ,
+    working_hours_to TIME,
+    day VARCHAR(128) ,
+    busy VARCHAR(128)
+
+)]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:326) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:954) ~[spring-context-6.1.13.jar:6.1.13]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625) ~[spring-context-6.1.13.jar:6.1.13]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.3.4.jar:3.3.4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.3.4.jar:3.3.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.3.4.jar:3.3.4]
+	at org.springframework.boot.test.context.SpringBootContextLoader.lambda$loadContext$3(SpringBootContextLoader.java:137) ~[spring-boot-test-3.3.4.jar:3.3.4]
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:58) ~[spring-core-6.1.13.jar:6.1.13]
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:46) ~[spring-core-6.1.13.jar:6.1.13]
+	at org.springframework.boot.SpringApplication.withHook(SpringApplication.java:1463) ~[spring-boot-3.3.4.jar:3.3.4]
+	at org.springframework.boot.test.context.SpringBootContextLoader$ContextLoaderHook.run(SpringBootContextLoader.java:553) ~[spring-boot-test-3.3.4.jar:3.3.4]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:137) ~[spring-boot-test-3.3.4.jar:3.3.4]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:108) ~[spring-boot-test-3.3.4.jar:3.3.4]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:225) ~[spring-test-6.1.13.jar:6.1.13]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:152) ~[spring-test-6.1.13.jar:6.1.13]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:130) ~[spring-test-6.1.13.jar:6.1.13]
+	at org.springframework.test.context.junit.jupiter.SpringExtension.getApplicationContext(SpringExtension.java:355) ~[spring-test-6.1.13.jar:6.1.13]
+	at org.springframework.test.context.junit.jupiter.SpringExtension.resolveParameter(SpringExtension.java:341) ~[spring-test-6.1.13.jar:6.1.13]
+	at org.junit.jupiter.engine.execution.ParameterResolutionUtils.resolveParameter(ParameterResolutionUtils.java:136) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.ParameterResolutionUtils.resolveParameters(ParameterResolutionUtils.java:103) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:59) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestClassConstructor(ClassBasedTestDescriptor.java:364) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateTestClass(ClassBasedTestDescriptor.java:311) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.ClassTestDescriptor.instantiateTestClass(ClassTestDescriptor.java:79) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:287) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:279) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at java.base/java.util.Optional.orElseGet(Optional.java:364) ~[na:na]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:278) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:106) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:105) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:69) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:123) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:123) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:90) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56) ~[surefire-junit-platform-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184) ~[surefire-junit-platform-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148) ~[surefire-junit-platform-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122) ~[surefire-junit-platform-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385) ~[surefire-booter-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162) ~[surefire-booter-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507) ~[surefire-booter-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495) ~[surefire-booter-3.2.5.jar:3.2.5]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.CommandExecutionException: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/changelog.xml::homework-2-schedule-courier-for-day::Sergej Grigorik:
+     Reason: liquibase.exception.DatabaseException: Синтаксическая ошибка в выражении SQL "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; ожидалось "identifier"
+Syntax error in SQL statement "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; expected "identifier"; SQL statement:
+create table schedule_courier_for_day
+(
+    id       SERIAL PRIMARY KEY,
+    courier_id INT REFERENCES courier ,
+    schedule_courier_id INT REFERENCES  schedule_courier,
+    working_hours_from TIME ,
+    working_hours_to TIME,
+    day VARCHAR(128) ,
+    busy VARCHAR(128)
+
+) [42001-232] [Failed SQL: (42001) create table schedule_courier_for_day
+(
+    id       SERIAL PRIMARY KEY,
+    courier_id INT REFERENCES courier ,
+    schedule_courier_id INT REFERENCES  schedule_courier,
+    working_hours_from TIME ,
+    working_hours_to TIME,
+    day VARCHAR(128) ,
+    busy VARCHAR(128)
+
+)]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1806) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313) ~[spring-beans-6.1.13.jar:6.1.13]
+	... 77 common frames omitted
+Caused by: liquibase.exception.UnexpectedLiquibaseException: liquibase.exception.CommandExecutionException: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/changelog.xml::homework-2-schedule-courier-for-day::Sergej Grigorik:
+     Reason: liquibase.exception.DatabaseException: Синтаксическая ошибка в выражении SQL "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; ожидалось "identifier"
+Syntax error in SQL statement "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; expected "identifier"; SQL statement:
+create table schedule_courier_for_day
+(
+    id       SERIAL PRIMARY KEY,
+    courier_id INT REFERENCES courier ,
+    schedule_courier_id INT REFERENCES  schedule_courier,
+    working_hours_from TIME ,
+    working_hours_to TIME,
+    day VARCHAR(128) ,
+    busy VARCHAR(128)
+
+) [42001-232] [Failed SQL: (42001) create table schedule_courier_for_day
+(
+    id       SERIAL PRIMARY KEY,
+    courier_id INT REFERENCES courier ,
+    schedule_courier_id INT REFERENCES  schedule_courier,
+    working_hours_from TIME ,
+    working_hours_to TIME,
+    day VARCHAR(128) ,
+    busy VARCHAR(128)
+
+)]
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:267) ~[liquibase-core-4.29.1.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802) ~[spring-beans-6.1.13.jar:6.1.13]
+	... 84 common frames omitted
+Caused by: liquibase.exception.CommandExecutionException: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/changelog.xml::homework-2-schedule-courier-for-day::Sergej Grigorik:
+     Reason: liquibase.exception.DatabaseException: Синтаксическая ошибка в выражении SQL "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; ожидалось "identifier"
+Syntax error in SQL statement "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; expected "identifier"; SQL statement:
+create table schedule_courier_for_day
+(
+    id       SERIAL PRIMARY KEY,
+    courier_id INT REFERENCES courier ,
+    schedule_courier_id INT REFERENCES  schedule_courier,
+    working_hours_from TIME ,
+    working_hours_to TIME,
+    day VARCHAR(128) ,
+    busy VARCHAR(128)
+
+) [42001-232] [Failed SQL: (42001) create table schedule_courier_for_day
+(
+    id       SERIAL PRIMARY KEY,
+    courier_id INT REFERENCES courier ,
+    schedule_courier_id INT REFERENCES  schedule_courier,
+    working_hours_from TIME ,
+    working_hours_to TIME,
+    day VARCHAR(128) ,
+    busy VARCHAR(128)
+
+)]
+	at liquibase.command.CommandScope.execute(CommandScope.java:258) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Liquibase.lambda$update$0(Liquibase.java:216) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:191) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:200) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:190) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:169) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Liquibase.runInScope(Liquibase.java:1290) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Liquibase.update(Liquibase.java:205) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Liquibase.update(Liquibase.java:188) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:305) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.lambda$afterPropertiesSet$0(SpringLiquibase.java:257) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:191) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:200) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:190) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:169) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:257) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:250) ~[liquibase-core-4.29.1.jar:na]
+	... 86 common frames omitted
+Caused by: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/changelog.xml::homework-2-schedule-courier-for-day::Sergej Grigorik:
+     Reason: liquibase.exception.DatabaseException: Синтаксическая ошибка в выражении SQL "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; ожидалось "identifier"
+Syntax error in SQL statement "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; expected "identifier"; SQL statement:
+create table schedule_courier_for_day
+(
+    id       SERIAL PRIMARY KEY,
+    courier_id INT REFERENCES courier ,
+    schedule_courier_id INT REFERENCES  schedule_courier,
+    working_hours_from TIME ,
+    working_hours_to TIME,
+    day VARCHAR(128) ,
+    busy VARCHAR(128)
+
+) [42001-232] [Failed SQL: (42001) create table schedule_courier_for_day
+(
+    id       SERIAL PRIMARY KEY,
+    courier_id INT REFERENCES courier ,
+    schedule_courier_id INT REFERENCES  schedule_courier,
+    working_hours_from TIME ,
+    working_hours_to TIME,
+    day VARCHAR(128) ,
+    busy VARCHAR(128)
+
+)]
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:148) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.command.core.AbstractUpdateCommandStep.lambda$run$0(AbstractUpdateCommandStep.java:113) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:191) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:200) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:190) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:169) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.command.core.AbstractUpdateCommandStep.run(AbstractUpdateCommandStep.java:111) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.command.core.UpdateCommandStep.run(UpdateCommandStep.java:105) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.command.CommandScope.execute(CommandScope.java:220) ~[liquibase-core-4.29.1.jar:na]
+	... 102 common frames omitted
+Caused by: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/changelog.xml::homework-2-schedule-courier-for-day::Sergej Grigorik:
+     Reason: liquibase.exception.DatabaseException: Синтаксическая ошибка в выражении SQL "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; ожидалось "identifier"
+Syntax error in SQL statement "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; expected "identifier"; SQL statement:
+create table schedule_courier_for_day
+(
+    id       SERIAL PRIMARY KEY,
+    courier_id INT REFERENCES courier ,
+    schedule_courier_id INT REFERENCES  schedule_courier,
+    working_hours_from TIME ,
+    working_hours_to TIME,
+    day VARCHAR(128) ,
+    busy VARCHAR(128)
+
+) [42001-232] [Failed SQL: (42001) create table schedule_courier_for_day
+(
+    id       SERIAL PRIMARY KEY,
+    courier_id INT REFERENCES courier ,
+    schedule_courier_id INT REFERENCES  schedule_courier,
+    working_hours_from TIME ,
+    working_hours_to TIME,
+    day VARCHAR(128) ,
+    busy VARCHAR(128)
+
+)]
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:819) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.changelog.visitor.UpdateVisitor.executeAcceptedChange(UpdateVisitor.java:119) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.changelog.visitor.UpdateVisitor.visit(UpdateVisitor.java:68) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.changelog.ChangeLogIterator.lambda$run$0(ChangeLogIterator.java:131) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:191) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:200) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:190) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:169) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.changelog.ChangeLogIterator.lambda$run$1(ChangeLogIterator.java:120) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:191) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:200) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:190) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:169) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:257) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:261) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:89) ~[liquibase-core-4.29.1.jar:na]
+	... 110 common frames omitted
+Caused by: liquibase.exception.DatabaseException: Синтаксическая ошибка в выражении SQL "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; ожидалось "identifier"
+Syntax error in SQL statement "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; expected "identifier"; SQL statement:
+create table schedule_courier_for_day
+(
+    id       SERIAL PRIMARY KEY,
+    courier_id INT REFERENCES courier ,
+    schedule_courier_id INT REFERENCES  schedule_courier,
+    working_hours_from TIME ,
+    working_hours_to TIME,
+    day VARCHAR(128) ,
+    busy VARCHAR(128)
+
+) [42001-232] [Failed SQL: (42001) create table schedule_courier_for_day
+(
+    id       SERIAL PRIMARY KEY,
+    courier_id INT REFERENCES courier ,
+    schedule_courier_id INT REFERENCES  schedule_courier,
+    working_hours_from TIME ,
+    working_hours_to TIME,
+    day VARCHAR(128) ,
+    busy VARCHAR(128)
+
+)]
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:476) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:83) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:185) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.executor.AbstractExecutor.execute(AbstractExecutor.java:141) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.database.AbstractJdbcDatabase.executeStatements(AbstractJdbcDatabase.java:1189) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:775) ~[liquibase-core-4.29.1.jar:na]
+	... 125 common frames omitted
+Caused by: org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; ожидалось "identifier"
+Syntax error in SQL statement "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; expected "identifier"; SQL statement:
+create table schedule_courier_for_day
+(
+    id       SERIAL PRIMARY KEY,
+    courier_id INT REFERENCES courier ,
+    schedule_courier_id INT REFERENCES  schedule_courier,
+    working_hours_from TIME ,
+    working_hours_to TIME,
+    day VARCHAR(128) ,
+    busy VARCHAR(128)
+
+) [42001-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.message.DbException.getSyntaxError(DbException.java:261) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.readIdentifier(Parser.java:5527) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parseTableColumnDefinition(Parser.java:8871) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parseCreateTable(Parser.java:8819) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parseCreate(Parser.java:6398) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parsePrepared(Parser.java:645) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parse(Parser.java:581) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parse(Parser.java:556) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.prepareCommand(Parser.java:484) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:645) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:561) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1164) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:245) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231) ~[h2-2.3.232.jar:2.3.232]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-5.1.0.jar:na]
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:470) ~[liquibase-core-4.29.1.jar:na]
+	... 130 common frames omitted
+
+2024-10-22T12:54:57.456+03:00  INFO 18060 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.kciray.controller.PfccControllerTest]: PfccControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-10-22T12:54:57.456+03:00  INFO 18060 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.kciray.Main for test class com.kciray.controller.PfccControllerTest
+2024-10-22T12:54:57.488+03:00  INFO 18060 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.kciray.repository.impl.AddressRepositoryImplTest]: AddressRepositoryImplTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-10-22T12:54:57.536+03:00  INFO 18060 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.kciray.Main for test class com.kciray.repository.impl.AddressRepositoryImplTest
+2024-10-22T12:54:57.614+03:00  INFO 18060 --- [main] c.k.r.impl.AddressRepositoryImplTest     : Starting AddressRepositoryImplTest using Java 22.0.2 with PID 18060 (started by Asus in D:\final\skil task\main)
+2024-10-22T12:54:57.614+03:00  INFO 18060 --- [main] c.k.r.impl.AddressRepositoryImplTest     : The following 1 profile is active: "test"
+2024-10-22T12:54:58.636+03:00  INFO 18060 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-22T12:54:58.732+03:00  INFO 18060 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 103 ms. Found 13 JPA repository interfaces.
+2024-10-22T12:54:58.905+03:00  INFO 18060 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-10-22T12:54:58.905+03:00  INFO 18060 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection conn10: url=jdbc:h2:mem:testdb user=POSTGRES
+2024-10-22T12:54:58.905+03:00  INFO 18060 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-10-22T12:54:58.921+03:00  INFO 18060 --- [main] liquibase.database                       : Set default schema name to PUBLIC
+2024-10-22T12:54:59.056+03:00  INFO 18060 --- [main] liquibase.changelog                      : Reading from PUBLIC.DATABASECHANGELOG
+2024-10-22T12:54:59.119+03:00  INFO 18060 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2024-10-22T12:54:59.119+03:00  INFO 18060 --- [main] liquibase.command                        : Using deploymentId: 9590899119
+2024-10-22T12:54:59.119+03:00  INFO 18060 --- [main] liquibase.changelog                      : Reading from PUBLIC.DATABASECHANGELOG
+2024-10-22T12:54:59.134+03:00  INFO 18060 --- [main] liquibase.ui                             : Running Changeset: db/changelog/changelog.xml::homework-2-schedule-courier-for-day::Sergej Grigorik
+2024-10-22T12:54:59.151+03:00 ERROR 18060 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changelog.xml::homework-2-schedule-courier-for-day::Sergej Grigorik encountered an exception.
+
+liquibase.exception.DatabaseException: Синтаксическая ошибка в выражении SQL "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; ожидалось "identifier"
+Syntax error in SQL statement "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; expected "identifier"; SQL statement:
+create table schedule_courier_for_day
+(
+    id       SERIAL PRIMARY KEY,
+    courier_id INT REFERENCES courier ,
+    schedule_courier_id INT REFERENCES  schedule_courier,
+    working_hours_from TIME ,
+    working_hours_to TIME,
+    day VARCHAR(128) ,
+    busy VARCHAR(128)
+
+) [42001-232] [Failed SQL: (42001) create table schedule_courier_for_day
+(
+    id       SERIAL PRIMARY KEY,
+    courier_id INT REFERENCES courier ,
+    schedule_courier_id INT REFERENCES  schedule_courier,
+    working_hours_from TIME ,
+    working_hours_to TIME,
+    day VARCHAR(128) ,
+    busy VARCHAR(128)
+
+)]
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:476) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:83) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:185) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.executor.AbstractExecutor.execute(AbstractExecutor.java:141) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.database.AbstractJdbcDatabase.executeStatements(AbstractJdbcDatabase.java:1189) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:775) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.changelog.visitor.UpdateVisitor.executeAcceptedChange(UpdateVisitor.java:119) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.changelog.visitor.UpdateVisitor.visit(UpdateVisitor.java:68) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.changelog.ChangeLogIterator.lambda$run$0(ChangeLogIterator.java:131) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:191) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:200) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:190) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:169) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.changelog.ChangeLogIterator.lambda$run$1(ChangeLogIterator.java:120) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:191) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:200) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:190) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:169) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:257) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:261) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:89) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.command.core.AbstractUpdateCommandStep.lambda$run$0(AbstractUpdateCommandStep.java:113) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:191) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:200) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:190) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:169) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.command.core.AbstractUpdateCommandStep.run(AbstractUpdateCommandStep.java:111) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.command.core.UpdateCommandStep.run(UpdateCommandStep.java:105) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.command.CommandScope.execute(CommandScope.java:220) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Liquibase.lambda$update$0(Liquibase.java:216) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:191) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:200) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:190) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:169) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Liquibase.runInScope(Liquibase.java:1290) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Liquibase.update(Liquibase.java:205) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Liquibase.update(Liquibase.java:188) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:305) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.lambda$afterPropertiesSet$0(SpringLiquibase.java:257) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:191) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:200) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:190) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:169) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:257) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:250) ~[liquibase-core-4.29.1.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:954) ~[spring-context-6.1.13.jar:6.1.13]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625) ~[spring-context-6.1.13.jar:6.1.13]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.3.4.jar:3.3.4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.3.4.jar:3.3.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.3.4.jar:3.3.4]
+	at org.springframework.boot.test.context.SpringBootContextLoader.lambda$loadContext$3(SpringBootContextLoader.java:137) ~[spring-boot-test-3.3.4.jar:3.3.4]
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:58) ~[spring-core-6.1.13.jar:6.1.13]
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:46) ~[spring-core-6.1.13.jar:6.1.13]
+	at org.springframework.boot.SpringApplication.withHook(SpringApplication.java:1463) ~[spring-boot-3.3.4.jar:3.3.4]
+	at org.springframework.boot.test.context.SpringBootContextLoader$ContextLoaderHook.run(SpringBootContextLoader.java:553) ~[spring-boot-test-3.3.4.jar:3.3.4]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:137) ~[spring-boot-test-3.3.4.jar:3.3.4]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:108) ~[spring-boot-test-3.3.4.jar:3.3.4]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:225) ~[spring-test-6.1.13.jar:6.1.13]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:152) ~[spring-test-6.1.13.jar:6.1.13]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:130) ~[spring-test-6.1.13.jar:6.1.13]
+	at org.springframework.test.context.junit.jupiter.SpringExtension.getApplicationContext(SpringExtension.java:355) ~[spring-test-6.1.13.jar:6.1.13]
+	at org.springframework.test.context.junit.jupiter.SpringExtension.resolveParameter(SpringExtension.java:341) ~[spring-test-6.1.13.jar:6.1.13]
+	at org.junit.jupiter.engine.execution.ParameterResolutionUtils.resolveParameter(ParameterResolutionUtils.java:136) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.ParameterResolutionUtils.resolveParameters(ParameterResolutionUtils.java:103) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:59) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestClassConstructor(ClassBasedTestDescriptor.java:364) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateTestClass(ClassBasedTestDescriptor.java:311) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.ClassTestDescriptor.instantiateTestClass(ClassTestDescriptor.java:79) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:287) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:279) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at java.base/java.util.Optional.orElseGet(Optional.java:364) ~[na:na]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:278) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:106) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:105) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:69) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:123) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:123) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:90) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56) ~[surefire-junit-platform-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184) ~[surefire-junit-platform-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148) ~[surefire-junit-platform-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122) ~[surefire-junit-platform-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385) ~[surefire-booter-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162) ~[surefire-booter-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507) ~[surefire-booter-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495) ~[surefire-booter-3.2.5.jar:3.2.5]
+Caused by: org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; ожидалось "identifier"
+Syntax error in SQL statement "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; expected "identifier"; SQL statement:
+create table schedule_courier_for_day
+(
+    id       SERIAL PRIMARY KEY,
+    courier_id INT REFERENCES courier ,
+    schedule_courier_id INT REFERENCES  schedule_courier,
+    working_hours_from TIME ,
+    working_hours_to TIME,
+    day VARCHAR(128) ,
+    busy VARCHAR(128)
+
+) [42001-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.message.DbException.getSyntaxError(DbException.java:261) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.readIdentifier(Parser.java:5527) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parseTableColumnDefinition(Parser.java:8871) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parseCreateTable(Parser.java:8819) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parseCreate(Parser.java:6398) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parsePrepared(Parser.java:645) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parse(Parser.java:581) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parse(Parser.java:556) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.prepareCommand(Parser.java:484) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:645) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:561) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1164) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:245) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231) ~[h2-2.3.232.jar:2.3.232]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-5.1.0.jar:na]
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:470) ~[liquibase-core-4.29.1.jar:na]
+	... 130 common frames omitted
+
+2024-10-22T12:54:59.151+03:00  INFO 18060 --- [main] liquibase.util                           : UPDATE SUMMARY
+2024-10-22T12:54:59.151+03:00  INFO 18060 --- [main] liquibase.util                           : Run:                          0
+2024-10-22T12:54:59.151+03:00  INFO 18060 --- [main] liquibase.util                           : Previously run:              22
+2024-10-22T12:54:59.151+03:00  INFO 18060 --- [main] liquibase.util                           : Filtered out:                 0
+2024-10-22T12:54:59.151+03:00  INFO 18060 --- [main] liquibase.util                           : -------------------------------
+2024-10-22T12:54:59.151+03:00  INFO 18060 --- [main] liquibase.util                           : Total change sets:           27
+2024-10-22T12:54:59.151+03:00  INFO 18060 --- [main] liquibase.util                           : Update summary generated
+2024-10-22T12:54:59.151+03:00  INFO 18060 --- [main] liquibase.command                        : Update command encountered an exception.
+2024-10-22T12:54:59.151+03:00  INFO 18060 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2024-10-22T12:54:59.151+03:00  INFO 18060 --- [main] liquibase.command                        : Logging exception.
+2024-10-22T12:54:59.151+03:00  INFO 18060 --- [main] liquibase.ui                             : ERROR: Exception Details
+2024-10-22T12:54:59.151+03:00  INFO 18060 --- [main] liquibase.ui                             : ERROR: Exception Primary Class:  JdbcSQLSyntaxErrorException
+2024-10-22T12:54:59.151+03:00  INFO 18060 --- [main] liquibase.ui                             : ERROR: Exception Primary Reason:  Синтаксическая ошибка в выражении SQL "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; ожидалось "identifier"
+Syntax error in SQL statement "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; expected "identifier"; SQL statement:
+create table schedule_courier_for_day
+(
+    id       SERIAL PRIMARY KEY,
+    courier_id INT REFERENCES courier ,
+    schedule_courier_id INT REFERENCES  schedule_courier,
+    working_hours_from TIME ,
+    working_hours_to TIME,
+    day VARCHAR(128) ,
+    busy VARCHAR(128)
+
+) [42001-232]
+2024-10-22T12:54:59.151+03:00  INFO 18060 --- [main] liquibase.ui                             : ERROR: Exception Primary Source:  H2 2.3.232 (2024-08-11)
+2024-10-22T12:54:59.151+03:00  INFO 18060 --- [main] liquibase.command                        : Command execution complete
+2024-10-22T12:54:59.166+03:00  WARN 18060 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'liquibase' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.CommandExecutionException: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/changelog.xml::homework-2-schedule-courier-for-day::Sergej Grigorik:
+     Reason: liquibase.exception.DatabaseException: Синтаксическая ошибка в выражении SQL "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; ожидалось "identifier"
+Syntax error in SQL statement "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; expected "identifier"; SQL statement:
+create table schedule_courier_for_day
+(
+    id       SERIAL PRIMARY KEY,
+    courier_id INT REFERENCES courier ,
+    schedule_courier_id INT REFERENCES  schedule_courier,
+    working_hours_from TIME ,
+    working_hours_to TIME,
+    day VARCHAR(128) ,
+    busy VARCHAR(128)
+
+) [42001-232] [Failed SQL: (42001) create table schedule_courier_for_day
+(
+    id       SERIAL PRIMARY KEY,
+    courier_id INT REFERENCES courier ,
+    schedule_courier_id INT REFERENCES  schedule_courier,
+    working_hours_from TIME ,
+    working_hours_to TIME,
+    day VARCHAR(128) ,
+    busy VARCHAR(128)
+
+)]
+2024-10-22T12:54:59.166+03:00  INFO 18060 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2024-10-22T12:54:59.200+03:00  INFO 18060 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2024-10-22T12:54:59.200+03:00  INFO 18060 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-10-22T12:54:59.200+03:00 ERROR 18060 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Failed to initialize dependency 'liquibase' of LoadTimeWeaverAware bean 'entityManagerFactory': Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.CommandExecutionException: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/changelog.xml::homework-2-schedule-courier-for-day::Sergej Grigorik:
+     Reason: liquibase.exception.DatabaseException: Синтаксическая ошибка в выражении SQL "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; ожидалось "identifier"
+Syntax error in SQL statement "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; expected "identifier"; SQL statement:
+create table schedule_courier_for_day
+(
+    id       SERIAL PRIMARY KEY,
+    courier_id INT REFERENCES courier ,
+    schedule_courier_id INT REFERENCES  schedule_courier,
+    working_hours_from TIME ,
+    working_hours_to TIME,
+    day VARCHAR(128) ,
+    busy VARCHAR(128)
+
+) [42001-232] [Failed SQL: (42001) create table schedule_courier_for_day
+(
+    id       SERIAL PRIMARY KEY,
+    courier_id INT REFERENCES courier ,
+    schedule_courier_id INT REFERENCES  schedule_courier,
+    working_hours_from TIME ,
+    working_hours_to TIME,
+    day VARCHAR(128) ,
+    busy VARCHAR(128)
+
+)]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:326) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:954) ~[spring-context-6.1.13.jar:6.1.13]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:625) ~[spring-context-6.1.13.jar:6.1.13]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.3.4.jar:3.3.4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.3.4.jar:3.3.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.3.4.jar:3.3.4]
+	at org.springframework.boot.test.context.SpringBootContextLoader.lambda$loadContext$3(SpringBootContextLoader.java:137) ~[spring-boot-test-3.3.4.jar:3.3.4]
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:58) ~[spring-core-6.1.13.jar:6.1.13]
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:46) ~[spring-core-6.1.13.jar:6.1.13]
+	at org.springframework.boot.SpringApplication.withHook(SpringApplication.java:1463) ~[spring-boot-3.3.4.jar:3.3.4]
+	at org.springframework.boot.test.context.SpringBootContextLoader$ContextLoaderHook.run(SpringBootContextLoader.java:553) ~[spring-boot-test-3.3.4.jar:3.3.4]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:137) ~[spring-boot-test-3.3.4.jar:3.3.4]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:108) ~[spring-boot-test-3.3.4.jar:3.3.4]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:225) ~[spring-test-6.1.13.jar:6.1.13]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:152) ~[spring-test-6.1.13.jar:6.1.13]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:130) ~[spring-test-6.1.13.jar:6.1.13]
+	at org.springframework.test.context.junit.jupiter.SpringExtension.getApplicationContext(SpringExtension.java:355) ~[spring-test-6.1.13.jar:6.1.13]
+	at org.springframework.test.context.junit.jupiter.SpringExtension.resolveParameter(SpringExtension.java:341) ~[spring-test-6.1.13.jar:6.1.13]
+	at org.junit.jupiter.engine.execution.ParameterResolutionUtils.resolveParameter(ParameterResolutionUtils.java:136) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.ParameterResolutionUtils.resolveParameters(ParameterResolutionUtils.java:103) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:59) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestClassConstructor(ClassBasedTestDescriptor.java:364) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateTestClass(ClassBasedTestDescriptor.java:311) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.ClassTestDescriptor.instantiateTestClass(ClassTestDescriptor.java:79) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:287) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:279) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at java.base/java.util.Optional.orElseGet(Optional.java:364) ~[na:na]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:278) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:106) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:105) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:69) ~[junit-jupiter-engine-5.10.3.jar:5.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:123) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:123) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:90) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54) ~[junit-platform-engine-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47) ~[junit-platform-launcher-1.10.3.jar:1.10.3]
+	at org.apache.maven.surefire.junitplatform.LazyLauncher.execute(LazyLauncher.java:56) ~[surefire-junit-platform-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:184) ~[surefire-junit-platform-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:148) ~[surefire-junit-platform-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:122) ~[surefire-junit-platform-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385) ~[surefire-booter-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162) ~[surefire-booter-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507) ~[surefire-booter-3.2.5.jar:3.2.5]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495) ~[surefire-booter-3.2.5.jar:3.2.5]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.CommandExecutionException: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/changelog.xml::homework-2-schedule-courier-for-day::Sergej Grigorik:
+     Reason: liquibase.exception.DatabaseException: Синтаксическая ошибка в выражении SQL "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; ожидалось "identifier"
+Syntax error in SQL statement "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; expected "identifier"; SQL statement:
+create table schedule_courier_for_day
+(
+    id       SERIAL PRIMARY KEY,
+    courier_id INT REFERENCES courier ,
+    schedule_courier_id INT REFERENCES  schedule_courier,
+    working_hours_from TIME ,
+    working_hours_to TIME,
+    day VARCHAR(128) ,
+    busy VARCHAR(128)
+
+) [42001-232] [Failed SQL: (42001) create table schedule_courier_for_day
+(
+    id       SERIAL PRIMARY KEY,
+    courier_id INT REFERENCES courier ,
+    schedule_courier_id INT REFERENCES  schedule_courier,
+    working_hours_from TIME ,
+    working_hours_to TIME,
+    day VARCHAR(128) ,
+    busy VARCHAR(128)
+
+)]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1806) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313) ~[spring-beans-6.1.13.jar:6.1.13]
+	... 77 common frames omitted
+Caused by: liquibase.exception.UnexpectedLiquibaseException: liquibase.exception.CommandExecutionException: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/changelog.xml::homework-2-schedule-courier-for-day::Sergej Grigorik:
+     Reason: liquibase.exception.DatabaseException: Синтаксическая ошибка в выражении SQL "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; ожидалось "identifier"
+Syntax error in SQL statement "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; expected "identifier"; SQL statement:
+create table schedule_courier_for_day
+(
+    id       SERIAL PRIMARY KEY,
+    courier_id INT REFERENCES courier ,
+    schedule_courier_id INT REFERENCES  schedule_courier,
+    working_hours_from TIME ,
+    working_hours_to TIME,
+    day VARCHAR(128) ,
+    busy VARCHAR(128)
+
+) [42001-232] [Failed SQL: (42001) create table schedule_courier_for_day
+(
+    id       SERIAL PRIMARY KEY,
+    courier_id INT REFERENCES courier ,
+    schedule_courier_id INT REFERENCES  schedule_courier,
+    working_hours_from TIME ,
+    working_hours_to TIME,
+    day VARCHAR(128) ,
+    busy VARCHAR(128)
+
+)]
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:267) ~[liquibase-core-4.29.1.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1853) ~[spring-beans-6.1.13.jar:6.1.13]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1802) ~[spring-beans-6.1.13.jar:6.1.13]
+	... 84 common frames omitted
+Caused by: liquibase.exception.CommandExecutionException: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/changelog.xml::homework-2-schedule-courier-for-day::Sergej Grigorik:
+     Reason: liquibase.exception.DatabaseException: Синтаксическая ошибка в выражении SQL "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; ожидалось "identifier"
+Syntax error in SQL statement "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; expected "identifier"; SQL statement:
+create table schedule_courier_for_day
+(
+    id       SERIAL PRIMARY KEY,
+    courier_id INT REFERENCES courier ,
+    schedule_courier_id INT REFERENCES  schedule_courier,
+    working_hours_from TIME ,
+    working_hours_to TIME,
+    day VARCHAR(128) ,
+    busy VARCHAR(128)
+
+) [42001-232] [Failed SQL: (42001) create table schedule_courier_for_day
+(
+    id       SERIAL PRIMARY KEY,
+    courier_id INT REFERENCES courier ,
+    schedule_courier_id INT REFERENCES  schedule_courier,
+    working_hours_from TIME ,
+    working_hours_to TIME,
+    day VARCHAR(128) ,
+    busy VARCHAR(128)
+
+)]
+	at liquibase.command.CommandScope.execute(CommandScope.java:258) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Liquibase.lambda$update$0(Liquibase.java:216) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:191) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:200) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:190) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:169) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Liquibase.runInScope(Liquibase.java:1290) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Liquibase.update(Liquibase.java:205) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Liquibase.update(Liquibase.java:188) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:305) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.lambda$afterPropertiesSet$0(SpringLiquibase.java:257) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:191) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:200) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:190) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:169) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:257) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:250) ~[liquibase-core-4.29.1.jar:na]
+	... 86 common frames omitted
+Caused by: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/changelog.xml::homework-2-schedule-courier-for-day::Sergej Grigorik:
+     Reason: liquibase.exception.DatabaseException: Синтаксическая ошибка в выражении SQL "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; ожидалось "identifier"
+Syntax error in SQL statement "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; expected "identifier"; SQL statement:
+create table schedule_courier_for_day
+(
+    id       SERIAL PRIMARY KEY,
+    courier_id INT REFERENCES courier ,
+    schedule_courier_id INT REFERENCES  schedule_courier,
+    working_hours_from TIME ,
+    working_hours_to TIME,
+    day VARCHAR(128) ,
+    busy VARCHAR(128)
+
+) [42001-232] [Failed SQL: (42001) create table schedule_courier_for_day
+(
+    id       SERIAL PRIMARY KEY,
+    courier_id INT REFERENCES courier ,
+    schedule_courier_id INT REFERENCES  schedule_courier,
+    working_hours_from TIME ,
+    working_hours_to TIME,
+    day VARCHAR(128) ,
+    busy VARCHAR(128)
+
+)]
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:148) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.command.core.AbstractUpdateCommandStep.lambda$run$0(AbstractUpdateCommandStep.java:113) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:191) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:200) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:190) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:169) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.command.core.AbstractUpdateCommandStep.run(AbstractUpdateCommandStep.java:111) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.command.core.UpdateCommandStep.run(UpdateCommandStep.java:105) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.command.CommandScope.execute(CommandScope.java:220) ~[liquibase-core-4.29.1.jar:na]
+	... 102 common frames omitted
+Caused by: liquibase.exception.MigrationFailedException: Migration failed for changeset db/changelog/changelog.xml::homework-2-schedule-courier-for-day::Sergej Grigorik:
+     Reason: liquibase.exception.DatabaseException: Синтаксическая ошибка в выражении SQL "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; ожидалось "identifier"
+Syntax error in SQL statement "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; expected "identifier"; SQL statement:
+create table schedule_courier_for_day
+(
+    id       SERIAL PRIMARY KEY,
+    courier_id INT REFERENCES courier ,
+    schedule_courier_id INT REFERENCES  schedule_courier,
+    working_hours_from TIME ,
+    working_hours_to TIME,
+    day VARCHAR(128) ,
+    busy VARCHAR(128)
+
+) [42001-232] [Failed SQL: (42001) create table schedule_courier_for_day
+(
+    id       SERIAL PRIMARY KEY,
+    courier_id INT REFERENCES courier ,
+    schedule_courier_id INT REFERENCES  schedule_courier,
+    working_hours_from TIME ,
+    working_hours_to TIME,
+    day VARCHAR(128) ,
+    busy VARCHAR(128)
+
+)]
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:819) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.changelog.visitor.UpdateVisitor.executeAcceptedChange(UpdateVisitor.java:119) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.changelog.visitor.UpdateVisitor.visit(UpdateVisitor.java:68) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.changelog.ChangeLogIterator.lambda$run$0(ChangeLogIterator.java:131) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:191) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:200) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:190) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:169) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.changelog.ChangeLogIterator.lambda$run$1(ChangeLogIterator.java:120) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:191) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:200) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:190) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:169) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:257) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.Scope.child(Scope.java:261) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:89) ~[liquibase-core-4.29.1.jar:na]
+	... 110 common frames omitted
+Caused by: liquibase.exception.DatabaseException: Синтаксическая ошибка в выражении SQL "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; ожидалось "identifier"
+Syntax error in SQL statement "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; expected "identifier"; SQL statement:
+create table schedule_courier_for_day
+(
+    id       SERIAL PRIMARY KEY,
+    courier_id INT REFERENCES courier ,
+    schedule_courier_id INT REFERENCES  schedule_courier,
+    working_hours_from TIME ,
+    working_hours_to TIME,
+    day VARCHAR(128) ,
+    busy VARCHAR(128)
+
+) [42001-232] [Failed SQL: (42001) create table schedule_courier_for_day
+(
+    id       SERIAL PRIMARY KEY,
+    courier_id INT REFERENCES courier ,
+    schedule_courier_id INT REFERENCES  schedule_courier,
+    working_hours_from TIME ,
+    working_hours_to TIME,
+    day VARCHAR(128) ,
+    busy VARCHAR(128)
+
+)]
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:476) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:83) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:185) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.executor.AbstractExecutor.execute(AbstractExecutor.java:141) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.database.AbstractJdbcDatabase.executeStatements(AbstractJdbcDatabase.java:1189) ~[liquibase-core-4.29.1.jar:na]
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:775) ~[liquibase-core-4.29.1.jar:na]
+	... 125 common frames omitted
+Caused by: org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; ожидалось "identifier"
+Syntax error in SQL statement "create table schedule_courier_for_day\000a(\000a    id       SERIAL PRIMARY KEY,\000a    courier_id INT REFERENCES courier ,\000a    schedule_courier_id INT REFERENCES  schedule_courier,\000a    working_hours_from TIME ,\000a    working_hours_to TIME,\000a    [*]day VARCHAR(128) ,\000a    busy VARCHAR(128)\000a\000a)"; expected "identifier"; SQL statement:
+create table schedule_courier_for_day
+(
+    id       SERIAL PRIMARY KEY,
+    courier_id INT REFERENCES courier ,
+    schedule_courier_id INT REFERENCES  schedule_courier,
+    working_hours_from TIME ,
+    working_hours_to TIME,
+    day VARCHAR(128) ,
+    busy VARCHAR(128)
+
+) [42001-232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.message.DbException.getSyntaxError(DbException.java:261) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.readIdentifier(Parser.java:5527) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parseTableColumnDefinition(Parser.java:8871) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parseCreateTable(Parser.java:8819) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parseCreate(Parser.java:6398) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parsePrepared(Parser.java:645) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parse(Parser.java:581) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.parse(Parser.java:556) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.command.Parser.prepareCommand(Parser.java:484) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:645) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:561) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1164) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:245) ~[h2-2.3.232.jar:2.3.232]
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231) ~[h2-2.3.232.jar:2.3.232]
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java) ~[HikariCP-5.1.0.jar:na]
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:470) ~[liquibase-core-4.29.1.jar:na]
+	... 130 common frames omitted
+
+2024-10-22T12:54:59.226+03:00  INFO 18060 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.kciray.repository.impl.CategoryRepositoryImplTest]: CategoryRepositoryImplTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-10-22T12:54:59.229+03:00  INFO 18060 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.kciray.Main for test class com.kciray.repository.impl.CategoryRepositoryImplTest
+2024-10-22T12:54:59.244+03:00  INFO 18060 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.kciray.repository.impl.DishRepositoryImplTest]: DishRepositoryImplTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-10-22T12:54:59.244+03:00  INFO 18060 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.kciray.Main for test class com.kciray.repository.impl.DishRepositoryImplTest
+2024-10-22T12:54:59.260+03:00  INFO 18060 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.kciray.repository.impl.RestaurantRepositoryImplTest]: RestaurantRepositoryImplTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-10-22T12:54:59.260+03:00  INFO 18060 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.kciray.Main for test class com.kciray.repository.impl.RestaurantRepositoryImplTest
+2024-10-22T12:54:59.276+03:00  INFO 18060 --- [main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.kciray.repository.impl.UserRepositoryImplTest]: UserRepositoryImplTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-10-22T12:54:59.276+03:00  INFO 18060 --- [main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.kciray.Main for test class com.kciray.repository.impl.UserRepositoryImplTest

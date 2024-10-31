@@ -9,8 +9,8 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Optional;
 
-import static com.kciray.model.address.QCity.*;
-import static com.kciray.model.address.QRegion.*;
+import static com.kciray.model.address.QCity.city;
+import static com.kciray.model.address.QRegion.region;
 
 @Repository
 public class CityRepositoryImpl extends RepositoryBase<Integer, City> implements CityRepository {
@@ -39,16 +39,11 @@ public class CityRepositoryImpl extends RepositoryBase<Integer, City> implements
         return new JPAQuery<City>(entityManager)
                 .select(city)
                 .from(region)
-                .join(region.city,city)
+                .join(region.city, city)
                 .where(region.nameRegion.eq(regionName))
                 .orderBy(city.id.asc())
                 .fetch();
     }
-
-
-
-
-
 
 }
 

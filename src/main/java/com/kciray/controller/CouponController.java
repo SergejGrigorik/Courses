@@ -2,6 +2,7 @@ package com.kciray.controller;
 
 import com.kciray.dto.CouponDto;
 import com.kciray.service.CouponService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -16,13 +17,13 @@ public class CouponController {
 
     private final CouponService couponService;
 
-    @PreAuthorize("hasRole('ADMINISTRATOR')")
+    @PreAuthorize("hasRole('OPERATOR')")
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public CouponDto create(@RequestBody CouponDto couponDto) {
+    public CouponDto create(@RequestBody @Valid CouponDto couponDto) {
         return couponService.create(couponDto);
     }
 
-    @PreAuthorize("hasRole('ADMINISTRATOR')")
+    @PreAuthorize("hasRole('DELETE_COUPON')")
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable("id") Integer id) {

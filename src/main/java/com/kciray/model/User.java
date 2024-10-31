@@ -7,13 +7,9 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import static com.fasterxml.jackson.databind.cfg.CoercionInputShape.Array;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -44,7 +40,7 @@ public class User implements BaseEntity<Integer>, UserDetails {
     private String email;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn (name = "role_id", nullable = false)
+    @JoinColumn(name = "role_id", nullable = false)
     private Role role;
 
     @Override
@@ -53,10 +49,6 @@ public class User implements BaseEntity<Integer>, UserDetails {
                 .map(x -> new SimpleGrantedAuthority(x.getNamePrivilege()))
                 .collect(Collectors.toList());
         priviliges.add(new SimpleGrantedAuthority(role.getRole().name()));
-
-//        List<SimpleGrantedAuthority> simpleGrantedAuthorities = new ArrayList<>(role.getPrivileges().stream()
-//                .map(x -> new SimpleGrantedAuthority(x.getNamePrivilege()))
-//                .toList());
 
         return priviliges;
     }

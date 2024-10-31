@@ -9,7 +9,10 @@ import com.kciray.repository.DishRepository;
 import com.kciray.repository.RepositoryBase;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
-import jakarta.persistence.criteria.*;
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.CriteriaQuery;
+import jakarta.persistence.criteria.Predicate;
+import jakarta.persistence.criteria.Root;
 import org.springframework.data.domain.Pageable;
 
 import java.util.ArrayList;
@@ -23,8 +26,8 @@ public class DishRepositoryImpl extends RepositoryBase<Integer, Dish> implements
 
     public DishRepositoryImpl() {
         super(Dish.class);
-
     }
+
     public List<Dish> findAllDishByRestaurantIdAndCategoryById(Integer restaurantId, Integer categoryId) {
         CriteriaBuilder cb = entityManager.getCriteriaBuilder();
         CriteriaQuery<Dish> query = cb.createQuery(Dish.class);
@@ -37,21 +40,13 @@ public class DishRepositoryImpl extends RepositoryBase<Integer, Dish> implements
         return entityManager.createQuery(query).getResultList();
     }
 
-//    @Override
-//    public List<Dish> findAllBy(Pageable pageable){
-//        return em.createQuery("select d from Dish d order by d.id limit :limit offset :offset", Dish.class)
-//                .setParameter("limit",pageable.getPageSize())
-//                .setParameter("offset",pageable.getOffset())
-//                .getResultList();
-//    }
 
     @Override
-    public List<Dish> findAllBy(Pageable pageable){
+    public List<Dish> findAllBy(Pageable pageable) {
         return em.createQuery("select d from Dish d order by d.id ", Dish.class)
                 .setFirstResult((int) pageable.getOffset())
                 .setMaxResults(pageable.getPageSize())
                 .getResultList();
-
     }
 
     @Override
@@ -62,32 +57,32 @@ public class DishRepositoryImpl extends RepositoryBase<Integer, Dish> implements
         from.join(Dish_.restaurant);
         query.select(from);
         List<Predicate> predicates = new ArrayList<>();
-        if (dishFilter.name()!=null){
-            predicates.add(cb.like(from.get(Dish_.name), "%"+dishFilter.name()+"%"));
+        if (dishFilter.name() != null) {
+            predicates.add(cb.like(from.get(Dish_.name), "%" + dishFilter.name() + "%"));
         }
-        if (dishFilter.fromPrice()!=null && dishFilter.toPrice()!=null){
+        if (dishFilter.fromPrice() != null && dishFilter.toPrice() != null) {
             predicates.add(cb.between(from.get(Dish_.price), dishFilter.fromPrice(), dishFilter.toPrice()));
         }
-        if (dishFilter.fromPrice()!=null ) {
+        if (dishFilter.fromPrice() != null) {
             predicates.add(cb.gt(from.get(Dish_.price), dishFilter.fromPrice()));
         }
-        if (dishFilter.toPrice()!=null ) {
+        if (dishFilter.toPrice() != null) {
             predicates.add(cb.le(from.get(Dish_.price), dishFilter.toPrice()));
         }
-        if (dishFilter.fromWeight()!=null){
+        if (dishFilter.fromWeight() != null) {
             predicates.add(cb.gt(from.get(Dish_.weight), dishFilter.fromWeight()));
         }
-        if (dishFilter.toWeight()!=null){
+        if (dishFilter.toWeight() != null) {
             predicates.add(cb.le(from.get(Dish_.weight), dishFilter.toWeight()));
         }
-        if (dishFilter.restaurantId()!=null){
+        if (dishFilter.restaurantId() != null) {
             predicates.add(cb.equal(from.get(Dish_.restaurant).get(Restaurant_.id), dishFilter.restaurantId()));
         }
-        if (dishFilter.categoryId()!=null){
+        if (dishFilter.categoryId() != null) {
             predicates.add(cb.equal(from.get(Dish_.category).get(Category_.id), dishFilter.categoryId()));
         }
 
-        if (dishFilter.fromWeight()!=null && dishFilter.toWeight()!=null){
+        if (dishFilter.fromWeight() != null && dishFilter.toWeight() != null) {
             predicates.add(cb.between(from.get(Dish_.weight), dishFilter.fromWeight(), dishFilter.toWeight()));
         }
         query.where(predicates.toArray(Predicate[]::new));

@@ -8,7 +8,6 @@ import com.kciray.service.PfccService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
 @Service
 public class PfccServiceImpl extends AbstractService<Integer, Pfcc, PfccDto> implements PfccService {
     @Autowired

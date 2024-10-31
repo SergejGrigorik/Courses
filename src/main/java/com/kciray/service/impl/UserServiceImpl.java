@@ -1,6 +1,5 @@
 package com.kciray.service.impl;
 
-
 import com.kciray.dto.UserDto;
 import com.kciray.dto.entityfilter.UserFilter;
 import com.kciray.exception.ResourceNotFoundException;
@@ -11,6 +10,8 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.access.prepost.PostAuthorize;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
@@ -42,7 +43,6 @@ public class UserServiceImpl implements UserService {
         if (userRepository.existsByEmail(categoryCardToSave.getEmail())) {
             throw new RuntimeException("A user with this email already exists");
         }
-
         return save(categoryCardToSave);
     }
 
@@ -52,10 +52,16 @@ public class UserServiceImpl implements UserService {
 
     }
 
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        return this.getByUsername(username);
+    }
+
     public UserDetailsService userDetailsService() {
         return this::getByUsername;
     }
 
+    @PostAuthorize("@securityExpression.checkGetUserPermissions(principal, returnObject)")
     public UserDto findById(Integer id) {
         return modelMapper.map(userRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException(String.format("Request with id = %id  not found", id))), UserDto.class);
     }

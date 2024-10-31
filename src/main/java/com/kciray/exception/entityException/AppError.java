@@ -1,6 +1,5 @@
 package com.kciray.exception.entityException;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

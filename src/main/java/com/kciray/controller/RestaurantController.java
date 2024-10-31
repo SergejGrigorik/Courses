@@ -2,6 +2,7 @@ package com.kciray.controller;
 
 import com.kciray.dto.RestaurantDto;
 import com.kciray.service.RestaurantService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -21,21 +22,21 @@ public class RestaurantController {
         return restaurantService.findAll();
     }
 
-    @PreAuthorize("hasRole('ADMINISTRATOR')")
+    @PreAuthorize("hasRole('READ_RESTAURANT')")
     @GetMapping("/{id}")
     public RestaurantDto findById(@PathVariable("id") Integer id) {
         return restaurantService.findById(id);
     }
 
-    @PreAuthorize("hasRole('ADMINISTRATOR')")
+    @PreAuthorize("hasRole('OPERATOR')")
     @PostMapping
-    public RestaurantDto create(@RequestBody RestaurantDto restaurantDto) {
+    public RestaurantDto create(@RequestBody @Valid RestaurantDto restaurantDto) {
         return restaurantService.create(restaurantDto);
     }
 
-    @PreAuthorize("hasRole('ADMINISTRATOR')")
+    @PreAuthorize("hasRole('OPERATOR')")
     @PutMapping("/{id}")
-    public RestaurantDto update(@PathVariable("id") Integer id, @RequestBody RestaurantDto restaurantDto) {
+    public RestaurantDto update(@PathVariable("id") Integer id, @RequestBody @Valid  RestaurantDto restaurantDto) {
         return restaurantService.update(id, restaurantDto);
     }
 

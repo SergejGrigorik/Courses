@@ -1,12 +1,13 @@
 package com.kciray.service.order.impl;
 
+import com.kciray.dto.DeliveryDto;
 import com.kciray.dto.address.AddressDto;
+import com.kciray.exception.ResourceNotFoundException;
 import com.kciray.model.*;
 import com.kciray.model.address.Address;
 import com.kciray.model.order.Order;
 import com.kciray.model.status.StatusLookCourier;
 import com.kciray.repository.order.DeliveryRepository;
-import com.kciray.service.AddressService;
 import com.kciray.service.CourierService;
 import com.kciray.service.DeliveryStandService;
 import com.kciray.service.ScheduleRestaurantService;
@@ -23,8 +24,10 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 
 import static java.time.temporal.TemporalAdjusters.nextOrSame;
 
@@ -46,11 +49,9 @@ public class DeliveryServiceImpl implements DeliveryService {
     private LocalTime timeDelivery;
     private DeliveryStand deliveryStandSave;
     private Restaurant restaurant;
-    private AddressDto addressDto;
 
     @Override
     public void createDelivery(LocalDate date, LocalTime time, String promoCode, AddressDto addressDto) {
-        this.addressDto = addressDto;
         this.dateDelivery = date;
         this.timeDelivery = time;
         order = orderService.getOrder(promoCode);
@@ -117,7 +118,7 @@ public class DeliveryServiceImpl implements DeliveryService {
         LocalDateTime dateTimePlus3Minutes = deliveryStand.getCreatedAt().minusMinutes(3);
         if (dateTimePlus3Minutes.isAfter(LocalDateTime.now()) && deliveryStand.getCourier() != null) {
             deliverySave.setCourier(deliveryStand.getCourier());
-            deliveryRepository.update(deliverySave.getId(), deliverySave.getCourier(), StatusLookCourier.FOUND);
+            deliveryRepository.updateStatusAndCourier(deliverySave.getId(), deliverySave.getCourier(), StatusLookCourier.FOUND);
             deliveryStandService.updateStatus(deliveryStandSave.getId(), StatusLookCourier.FOUND);
             deliveryStandService.deleteById(deliveryStand.getId());
 
@@ -126,7 +127,7 @@ public class DeliveryServiceImpl implements DeliveryService {
             if (freeCourier.isPresent()) {
                 deliverySave.setCourier(freeCourier.get());
                 deliveryStandService.update(deliveryStandSave.getId(), freeCourier.get(), StatusLookCourier.FOUND);
-                deliveryRepository.update(deliverySave.getId(), freeCourier.get(), StatusLookCourier.FOUND);
+                deliveryRepository.updateStatusAndCourier(deliverySave.getId(), freeCourier.get(), StatusLookCourier.FOUND);
                 deliveryStandService.deleteById(deliveryStand.getId());
             } else {
                 deliveryStandService.updateStatus(deliveryStandSave.getId(), StatusLookCourier.NOTFOUND);
@@ -134,8 +135,6 @@ public class DeliveryServiceImpl implements DeliveryService {
                 ;
             }
         }
-
-
     }
 
     public User getUser() {
@@ -144,6 +143,35 @@ public class DeliveryServiceImpl implements DeliveryService {
                 .map(auth -> auth.getPrincipal())
                 .filter(p -> p instanceof User)
                 .map(u -> ((User) u)).get();
+    }
+
+    @Override
+    public DeliveryDto create(DeliveryDto entity) {
+        return null;
+    }
+
+    @Override
+    public DeliveryDto findById(Integer id) {
+        return modelMapper.map(deliveryRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Address with id " + id + " not found")), DeliveryDto.class);
+    }
+
+    @Override
+    public List<DeliveryDto> findAll() {
+        return deliveryRepository.findAll()
+                .stream().map(delivery -> modelMapper.map(delivery, DeliveryDto.class)).collect(Collectors.toList());
+    }
+
+    @Override
+    public void deleteById(Integer id) {
+        deliveryRepository.deleteById(id);
+    }
+
+    @Override
+    public DeliveryDto update(Integer id, DeliveryDto entity) {
+        modelMapper.map(entity , Delivery.class);
+        Delivery delivery = deliveryRepository.update(id, modelMapper.map(entity, Delivery.class));
+        return modelMapper.map(delivery,DeliveryDto.class);
     }
 }
 

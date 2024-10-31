@@ -2,6 +2,7 @@ package com.kciray.controller;
 
 import com.kciray.dto.CategoryDto;
 import com.kciray.service.CategoryService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -28,13 +29,13 @@ public class CategoryController {
 
     @PreAuthorize("hasRole('ADMINISTRATOR')")
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public CategoryDto create(@RequestBody CategoryDto categoryDto) {
+    public CategoryDto create(@RequestBody @Valid CategoryDto categoryDto) {
         return categoryService.create(categoryDto);
     }
 
     @PreAuthorize("hasRole('ADMINISTRATOR')")
     @PutMapping("/{id}")
-    public CategoryDto update(@PathVariable("id") Integer id, @RequestBody CategoryDto categoryDto) {
+    public CategoryDto update(@PathVariable("id") Integer id, @RequestBody @Valid  CategoryDto categoryDto) {
         return categoryService.update(id, categoryDto);
     }
 

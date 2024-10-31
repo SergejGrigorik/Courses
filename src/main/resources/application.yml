@@ -1,4 +1,6 @@
 spring:
+  main:
+    allow-circular-references: true
 
   jpa:
     properties:
@@ -15,8 +17,14 @@ spring:
     change-log: db/changelog/db.changelog-master.xml
     enabled: true
 
+#  datasource:
+#    url: jdbc:postgresql://db:5433/postgres
+#    username: my_user
+#    password: 12345
+#    driver: org.postgresql.Driver
+
   datasource:
-    url: jdbc:postgresql://db:5432/postgres
+    url: jdbc:postgresql://localhost:5433/postgres
     username: my_user
     password: 12345
     driver: org.postgresql.Driver
@@ -25,12 +33,20 @@ token:
   signing:
     key: 53A73E5F1C4E0A2D3B5F2D784E6A1B423D6F247D1F6E5C3A596D635A75327855
 
+springdoc:
+  swagger-ui:
+    path: /swagger-ui
+
 logging:
   file:
     name: file.log
     path: /
   level:
     root: info
+    org:
+      springframework:
+        jdbc:
+          core: trace
 
 scheduled:
   fixedRateString:

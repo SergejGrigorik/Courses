@@ -1,4 +1,4 @@
-package com.kciray.domain.dto;
+package com.kciray.dto.dtoSecurity;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;

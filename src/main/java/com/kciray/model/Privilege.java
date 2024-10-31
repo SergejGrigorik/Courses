@@ -25,6 +25,4 @@ public class Privilege {
     @ManyToMany(mappedBy = "privileges")
     private List<Role> roles = new ArrayList<>();
 
-//    @OneToMany(mappedBy = "privilege")
-//    private List<RolePrivilege> rolePrivileges = new ArrayList<>();
 }

@@ -11,8 +11,8 @@ import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString(exclude = {"restaurantChain", "address", "dish", "coupons", "deliveries", "restaurantOperatories"})
-@EqualsAndHashCode(exclude = {"restaurantChain", "address", "dish", "coupons", "deliveries", "restaurantOperatories"})
+@ToString(exclude = {"restaurantChain", "address", "dish", "coupons", "deliveries", "restaurantOperator"})
+@EqualsAndHashCode(exclude = {"restaurantChain", "address", "dish", "coupons", "deliveries", "restaurantOperator"})
 @Data
 @Builder
 @Component
@@ -49,6 +49,6 @@ public class Restaurant implements BaseEntity<Integer> {
 
     @Builder.Default
     @OneToMany(mappedBy = "restaurant")
-    private List<RestaurantOperator> restaurantOperatories = new ArrayList<RestaurantOperator>();
+    private List<RestaurantOperator> restaurantOperator = new ArrayList<RestaurantOperator>();
 
 }

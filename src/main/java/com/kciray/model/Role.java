@@ -33,7 +33,4 @@ public class Role implements BaseEntity<Integer>  {
             inverseJoinColumns = @JoinColumn(name = "privilege_id"))
     private List<Privilege> privileges = new ArrayList<>();
 
-//    @OneToMany(mappedBy = "role", fetch = FetchType.LAZY)
-//    private List<RolePrivilege> rolePrivileges = new ArrayList<>();
-
 }

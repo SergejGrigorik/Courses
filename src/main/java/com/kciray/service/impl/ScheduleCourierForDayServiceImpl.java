@@ -27,19 +27,19 @@ public class ScheduleCourierForDayServiceImpl implements ScheduleCourierForDaySe
     private LocalTime workingHoursFrom;
 
     public void createScheduleForDay() {
-        createScheduleForTo();
+        findAllCourier();
     }
 
     @Scheduled(cron = "${scheduled.cron.time.createScheduleForDay}", timeUnit = TimeUnit.MINUTES)
-    public void createScheduleForTo() {
+    public void findAllCourier() {
         scheduleCouriers = scheduleCourierService.findAll();
         for (ScheduleCourier scheduleCourier1 : scheduleCouriers) {
-            createSchedualeTime(scheduleCourier1);
+            createScheduleTime(scheduleCourier1);
         }
 
     }
 
-    public void createSchedualeTime(ScheduleCourier scheduleCourier) {
+    public void createScheduleTime(ScheduleCourier scheduleCourier) {
         scheduleCourierForDayRepository.deleteAll();
         workingHoursTo = scheduleCourier.getWorkingHoursTo();
         workingHoursFrom = scheduleCourier.getWorkingHoursFrom();
