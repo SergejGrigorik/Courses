@@ -16,7 +16,6 @@ public interface DeliveryStandRepository extends JpaRepository<DeliveryStand, In
            "where d.id = :id")
     void update(Integer id, Courier freeCourier, StatusLookCourier statusLookCourier);
 
-    @Modifying(clearAutomatically = true)
     DeliveryStand saveAndFlush(DeliveryStand deliveryStand);
 
     Optional<DeliveryStand> findById(Integer id);

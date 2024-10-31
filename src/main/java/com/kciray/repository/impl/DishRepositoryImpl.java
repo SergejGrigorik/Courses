@@ -40,13 +40,6 @@ public class DishRepositoryImpl extends RepositoryBase<Integer, Dish> implements
         return entityManager.createQuery(query).getResultList();
     }
 
-//    @Override
-//    public List<Dish> findAllBy(Pageable pageable){
-//        return em.createQuery("select d from Dish d order by d.id limit :limit offset :offset", Dish.class)
-//                .setParameter("limit",pageable.getPageSize())
-//                .setParameter("offset",pageable.getOffset())
-//                .getResultList();
-//    }
 
     @Override
     public List<Dish> findAllBy(Pageable pageable) {
