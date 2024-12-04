@@ -70,7 +70,8 @@
     </changeSet>
 
     <changeSet id="homework-2-category" author="Sergej Grigorik">
-        <sqlFile encoding="utf8" path="./sql/18.create-table-category.sql" relativeToChangelogFile="true"/>
+        <sqlFile encoding="utf8" path="./sql/18.create-table-category.sql"
+                 relativeToChangelogFile="true"/>
     </changeSet>
 
     <changeSet id="homework-2-pfcc" author="Sergej Grigorik">

@@ -3,11 +3,15 @@ package com.kciray.controller;
 import com.kciray.dto.address.AddressDto;
 import com.kciray.service.AddressService;
 import com.kciray.validated.Create;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.groups.Default;
 import lombok.RequiredArgsConstructor;
+import org.springframework.format.annotation.NumberFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
@@ -27,8 +31,9 @@ public class AddressController {
         return addressService.findAll();
     }
 
-    @GetMapping("/{id}")
-    public AddressDto findById(@PathVariable("id") Integer id) {
+    @GetMapping(path = {"/{id}"})
+    public AddressDto findById(@PathVariable("id") Integer id,
+                               HttpServletResponse response) {
         return addressService.findById(id);
     }
 

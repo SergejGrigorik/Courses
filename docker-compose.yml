@@ -1,35 +1,105 @@
-version: '3'
+#version: '3'
+#
+#services:
+#  app:
+#    build:
+#      context: .
+#    container_name: app
+#    ports:
+#      - '8081:8080'
+#    depends_on:
+#      - db
+#    environment:
+#      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5433/postgres
+#      - SPRING_DATASOURCE_USERNAME=my_user
+#      - SPRING_DATASOURCE_PASSWORD=12345
+#      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+#    command: sh -c "cp -r /usr/local/tomcat/webapps.dist/manager /usr/local/tomcat/webapps && cp -r /usr/local/tomcat/conf/context.xml /usr/local/tomcat/webapps/manager/META-INF/context.xml && catalina.sh run"
+#  db:
+#    image: 'postgres:13.1-alpine'
+#    container_name: postgresql
+#    restart: always
+#    environment:
+#      - POSTGRES_USER=my_user
+#      - POSTGRES_PASSWORD=12345
+#    volumes:
+#      - postgres-data:/var/lib/postgresql/data
+#    ports:
+#      - '5433:5432'
+#
+#volumes:
+#  postgres-data:
 
+
+
+#services:
+#  postgres:
+#    image: postgres:17.2
+#    restart: "no"
+#    ports:
+#      - "5432:5432"
+#    volumes:
+#      - postgres_data:/var/lib/postgresql/data
+#    environment:
+#      POSTGRES_USER: my_user
+#      POSTGRES_PASSWORD: 12345
+#      POSTGRES_DB: postgres
+#    healthcheck:
+#      test: pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB
+#      interval: 10s
+#      timeout: 5s
+#      start_period: 10s
+#      retries: 5
+#volumes:
+#  postgres_data:
+
+version: '3.8'
 services:
-  app:
+
+  client-backend:
+    image: client:0.0.1
     build:
       context: .
-    container_name: app
+      dockerfile: Dockerfile
     ports:
-      - '8080:8080'
+      - "8181:8181"
     depends_on:
-      - db
+      service-db:
+        condition: service_healthy
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5433/postgres
-      - SPRING_DATASOURCE_USERNAME=my_user
-      - SPRING_DATASOURCE_PASSWORD=12345
-      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
-    command: sh -c "cp -r /usr/local/tomcat/webapps.dist/manager /usr/local/tomcat/webapps && cp -r /usr/local/tomcat/conf/context.xml /usr/local/tomcat/webapps/manager/META-INF/context.xml && catalina.sh run"
-  db:
-    image: 'postgres:13.1-alpine'
-    container_name: postgresql
+      - SERVER_PORT= 8181
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://service-db/postgres
+
+  service-db:
+    image: postgres:14.7-alpine
+    environment:
+      POSTGRES_USER: username
+      POSTGRES_PASSWORD: password
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready", "-d", "books_db" ]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+    ports:
+      - "15432:5432"
+    volumes:
+      - ./infrastructure/db/create_db.sql:/docker-entrypoint-initdb.d/create_db.sql
+      - db-data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  pgadmin:
+    container_name: pgadmin4_container
+    image: dpage/pgadmin4:7
     restart: always
     environment:
-      - POSTGRES_USER=my_user
-      - POSTGRES_PASSWORD=12345
-    volumes:
-      - postgres-data:/var/lib/postgresql/data
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: root
     ports:
-      - '5433:5432'
+      - "5050:80"
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
 
 volumes:
-  postgres-data:
-
-
-
+  db-data:
+  pgadmin-data:
 
